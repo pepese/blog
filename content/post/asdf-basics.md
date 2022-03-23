@@ -9,7 +9,7 @@ image:       ""
 tags:
 - asdf
 categories:
-- Tech
+- tech
 ---
 
 [asdf](https://asdf-vm.com/#/core-manage-asdf) を使って Mac に環境構築する方法について記載する。

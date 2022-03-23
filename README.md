@@ -2,7 +2,14 @@
 
 ## メモ
 
+### 常用コマンド
+
 ```bash
+# 記事作成
+$ hugo new draft/xxxx.md
+$ hugo new post/xxxx.md
+# 記事名（xxxx）は URL と同じにする
+
 # ローカル実行
 $ hugo server -D
 
@@ -16,7 +23,36 @@ $ git commit -m update
 $ git push origin master
 ```
 
-## 作成メモ
+### 整理
+
+#### タグ
+
+全て小文字にする。  
+大分類、小分類の 2 個つけるようにする。
+
+- 大分類
+  - 小分類
+- aws
+  - "aws cli"
+  - ec2
+  - elasticsearch
+  - iam
+  - kibana
+  - lambda
+  - watcher
+- プログラミング言語
+  - フレームワーク
+- hugo
+- kubernetes
+    - helm
+
+#### カテゴリ
+
+全て小文字にする。
+
+- tech -> テックネタ
+
+## 作成時メモ
 
 ### 初回作成
 
