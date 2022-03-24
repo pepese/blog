@@ -32,11 +32,11 @@ go version go1.12.5 darwin/amd64
 https://golang.org/doc/install/source#environment
 
 - `GOROOT`
-    - go のバイナリのホームまでのパス
+    - go のバイナリのホームまでのパス
 	- `go env GOROOT` で値確認
 - `GOPATH`
     - `go env GOPATH` で値確認
-    - go の各種資材が配置パスであってプロジェクトのパスでないことに注意
+    - go の各種資材が配置パスであってプロジェクトのパスでないことに注意
     - プロジェクトのパスは `$GOPATH/src/github.com/<Githubアカウント名>/<プロジェクト名>`
 	    - ただし、後述する **GOPATH mode** の場合
 - `GOOS`
@@ -44,7 +44,7 @@ https://golang.org/doc/install/source#environment
 - `GOARCH`
     - コンパイルして作成するバイナリの対象 CPU を指定する
 
-`.zshenv` （ bash の場合は `.bash_profile` ）に以下を追記。
+`.zshenv` （ bash の場合は `.bash_profile` ）に以下を追記。
 
 ```zsh
 export GOPATH=`go env GOPATH`
@@ -697,7 +697,7 @@ func main() {
 
 ## defer
 
-`defer` ステートメントは、 `defer` へ渡した関数の実行を、呼び出し元の関数の終わり( `return` 後)まで遅延させる。  
+`defer` ステートメントは、 `defer` へ渡した関数の実行を、呼び出し元の関数の終わり( `return` 後)まで遅延させる。  
 `defer` へ渡した関数の引数は、すぐに評価されるが、その関数自体は呼び出し元の関数が `return` するまで実行されない。
 
 ```go
@@ -1292,7 +1292,7 @@ func main() {
 
 ## sync.Mutex
 
-チャネルは goroutine 間でデータの送受信とブロックを実現するものだが、データ送受信が不要な場合は **sync.Mutex** （排他制御・ミューテックス： mutual exclusion の略）を利用する。  
+チャネルは goroutine 間でデータの送受信とブロックを実現するものだが、データ送受信が不要な場合は **sync.Mutex** （排他制御・ミューテックス： mutual exclusion の略）を利用する。  
 所謂ロック機構（ `Lock` `Unlock` ）の機能を提供し、 **クリティカルセッション** （他の処理の介入抑止し、データの生合成を守る必要のある一連の一まとまりの処理）を保護する。
 
 ```go
@@ -1330,7 +1330,7 @@ func main() {
 }
 ```
 
-上記はロック機構によりきちんと 10 単位でカウントアップ・表示されている。
+上記はロック機構によりきちんと 10 単位でカウントアップ・表示されている。
 
 # 参考
 

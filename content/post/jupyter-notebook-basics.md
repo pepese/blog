@@ -40,7 +40,7 @@ $ jupyter notebook
 |:---|:---|
 | `--no-browser` |自動でブラウザを起動しない|
 | `--port xxxx` |ポートの指定|
-| `--help` |ヘルプ|
+| `--help` |ヘルプ|
 
 ## ショートカットまとめ
 
@@ -61,7 +61,7 @@ $ jupyter notebook
 | `M` |マークダウンモード|
 | `1` 〜 `6` |見出し１〜見出し６で書き出す|
 | `00` |カーネルをリスタート|
-| `S` or `Command + S` |保存|
+| `S` or `Command + S` |保存|
 
 ### 編集モード（ `Enter` 押したとき）
 
@@ -79,7 +79,7 @@ $ jupyter notebook
 
 # JupyterHub
 
-JupyterHub を導入することで以下が可能になる。
+JupyterHub を導入することで以下が可能になる。
 
 - マルチユーザ
 - ユーザ管理・認証
