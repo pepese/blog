@@ -2,4 +2,4 @@ User-agent: *
 Disallow : /img/
 Disallow : /css/
 Disallow : /js/
-Sitemap : {{ $.Site.BaseURL }}sitemap.xml
+Sitemap : {{ $.Site.BaseURL }}/sitemap.xml

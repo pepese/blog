@@ -1,4 +1,4 @@
-baseurl = "https://blog.pepese.com/"
+baseurl = "https://blog.pepese.com"
 title = "ぺーぺーSEのブログ"
 theme = "hugo-theme-cleanwhite"
 languageCode = "ja"
@@ -14,7 +14,8 @@ enableRobotsTXT = true
 home = ["HTML"]
 
 [params]
-  header_image = "" # ページヘッダの画像
+  title = "ぺーぺーSEのブログ"
+  header_image = "" # ヘッダ画像、兼、Twitter Card Image
   SEOTitle = "ぺーぺーSEのブログ"
   description = "ぺーぺーSEがテックネタを書きます。"
   keyword = "ぺーぺーSE, ぺーぺーSEのブログ, Web, Istio, Kubernetes, Microservice"
@@ -76,3 +77,6 @@ home = ["HTML"]
     startLevel = 1
   [markup.highlight]
     style = "dracula"
+  [markup.goldmark]            # Markdown中にそのまま HTML を書ける設定
+    [markup.goldmark.renderer] #
+      unsafe = true            #
