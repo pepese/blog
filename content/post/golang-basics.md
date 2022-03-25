@@ -1344,3 +1344,8 @@ func main() {
     - 文法がわかる
 - [Go言語入門](https://gist.github.com/hayajo/9559874)
 - [はじめてのGo言語](http://cuto.unirita.co.jp/gostudy/)
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle golang --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VPSXF6N&linkId=41e7577d372f3469241a8f7608cc6fc2"></iframe>

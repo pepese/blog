@@ -178,11 +178,16 @@ Node.jsのAPIリファレンスは[ここ](https://nodejs.org/api/)。
 
 ■hello.js
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/nodejs-sample/hello.js?footer=0"></script>
+```javascript
+exports.sayHello = function(){ return "Hello World !" }
+```
 
 ■main.js
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/nodejs-sample/main.js?footer=0"></script>
+```javascript
+var hello = require('./hello.js');
+console.log(hello.sayHello());
+```
 
 上記JSファイルを作成して下記を実行。
 
@@ -199,7 +204,14 @@ Node.jsでHTTPサービスを立ち上げてみる。
 
 ■app.js
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/nodejs-sample/app.js?footer=0"></script>
+```javascript
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World !\n');
+}).listen(1337, "127.0.0.1");
+console.log('Server running at http://127.0.0.1:1337/');
+```
 
 下記を実行してブラウザで `http://127.0.0.1:1337/` へアクセスすると「Hello World !」と表示される。
 
@@ -223,3 +235,8 @@ $ forever stop app.js
 
 - [Node.jsでのJavaScriptメモリリークを発見するための簡単ガイド](http://postd.cc/simple-guide-to-finding-a-javascript-memory-leak-in-node-js/)
     - JavaScriptは **ガベージコレクション** を行う言語。
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle node.js --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B08HRMTXHB&linkId=f02e6af82c7864b6df5fd31c0639d4bf"></iframe>

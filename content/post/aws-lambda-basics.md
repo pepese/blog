@@ -437,3 +437,8 @@ Lambda 関数の呼び出しタイプによってペイロード（ユーザか�
 - CloudWatch ジョブ/CRON -> Lambda
 
 上記組み合わせて利用することも可能。
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle aws lambda --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B09TVG5H17&linkId=cb907028d3ba6043af684b6f593c2763"></iframe>

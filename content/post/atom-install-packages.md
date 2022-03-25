@@ -32,7 +32,7 @@ $ brew cask install atom
 
 上記がなんのことかわからない人は以下参照。
 
-- https://blog.pepese.com/entry/homebrew-basics/
+- https://blog.pepese.com/mac-homebrew-basics/
 
 # 起動方法
 

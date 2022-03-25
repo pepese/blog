@@ -190,7 +190,7 @@ export class AppModule { }
 
 その他Angularの詳細については以下参照。
 
-- [Angular入門](https://blog.pepese.com/entry/angular-basics/)
+- [Angular入門](https://blog.pepese.com/angular-basics/)
 
 
 ## サーバサイド
@@ -203,7 +203,7 @@ Angular CLIで作成したプロジェクトにサーバサイド、つまりExp
 サーバサイドアプリケーションを作成する方法は以下を参照。  
 「フロントエンドアプリケーションをプロジェクトに同梱する場合、REST APIアプリを作成する場合」のほうの構成。
 
-- [Express入門](https://blog.pepese.com/entry/express-basics/)
+- [Express入門](https://blog.pepese.com/express-basics/)
 
 ## 起動
 

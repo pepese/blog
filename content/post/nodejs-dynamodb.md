@@ -57,23 +57,103 @@ node_modules
 - app/getItem.js
 - app/deleteItem.js
 
-[DynamoDB入門](https://blog.pepese.com/entry/dynamodb-basics/) で作成したテーブルにアクセスする前提。
+[DynamoDB入門](https://blog.pepese.com/aws-dynamodb-basics/) で作成したテーブルにアクセスする前提。
 
 ## app/dynamodb.js
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/dynamodb-js/app/dynamodb.js?footer=0"></script>
+```javascript
+const aws = require("aws-sdk");
+const dynamodb = new aws.DynamoDB({region: 'ap-northeast-1'});
+
+module.exports = dynamodb;
+```
 
 ## app/putItem.js
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/dynamodb-js/app/putItem.js?footer=0"></script>
+```javascript
+const path = require('path');
+const dynamodb = require(path.join(__dirname, 'dynamodb'));
+
+const params = {
+  TableName: "test_table",
+  Item:{
+    "test_hash": {
+      S: "xxxxx3"
+    },
+    "test_range": {
+      S: "yyyyy3"
+    },
+    "test_value": {
+      S: "zzzzz3"
+    }
+  }
+};
+
+dynamodb.putItem(params, (err, data) => {
+  if (err) {
+    console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
+  } else {
+    console.log("Added item:", JSON.stringify(data, null, 2));
+  }
+});
+```
 
 ## app/getItem.js
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/dynamodb-js/app/getItem.js?footer=0"></script>
+```javascript
+const path = require('path');
+const dynamodb = require(path.join(__dirname, 'dynamodb'));
+
+const params = {
+  TableName: "test_table",
+  Key:{
+    "test_hash": {
+      S: "xxxxx"
+    },
+    "test_range": {
+      S: "yyyyy"
+    }
+  },
+  AttributesToGet: [
+    "test_value"
+  ]
+};
+
+dynamodb.getItem(params, (err, data) => {
+  if (err) {
+    console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
+  } else {
+    console.log("Added item:", JSON.stringify(data, null, 2));
+  }
+});
+```
 
 ## app/deleteItem.js
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/dynamodb-js/app/deleteItem.js?footer=0"></script>
+```javascript
+const path = require('path');
+const dynamodb = require(path.join(__dirname, 'dynamodb'));
+
+const params = {
+  TableName: "test_table",
+  Key:{
+    "test_hash": {
+      S: "xxxxx"
+    },
+    "test_range": {
+      S: "yyyyy"
+    }
+  }
+};
+
+dynamodb.deleteItem(params, (err, data) => {
+  if (err) {
+    console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
+  } else {
+    console.log("Added item:", JSON.stringify(data, null, 2));
+  }
+});
+```
 
 # 実行
 
@@ -82,3 +162,8 @@ $ node app/putItem.js
 $ node app/getItem.js
 $ node app/deleteItem.js
 ```
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle node.js --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B08HRMTXHB&linkId=f02e6af82c7864b6df5fd31c0639d4bf"></iframe>

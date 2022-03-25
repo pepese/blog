@@ -40,7 +40,7 @@ Git/Githubのメモ。
 
 以下を参照。
 
-- [Macで開発環境を作る](https://blog.pepese.com/entry/mac-dev-environment/)
+- [Macで開発環境を作る](https://blog.pepese.com/mac-dev-environment/)
 
 ### Gitクライアント設定
 
@@ -239,7 +239,7 @@ $ git rm -r [削除したいディレクトリ]
 
 もうちょっと知りたい人は以下を参照。
 
-- [Gitコマンド整理](https://blog.pepese.com/entry/git-commands/)
+- [Gitコマンド整理](https://blog.pepese.com/git-commands/)
 
 # その他 Tips
 

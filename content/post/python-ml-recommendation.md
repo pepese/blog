@@ -357,3 +357,8 @@ algo.fit(trainset)
     - [レコメンドアルゴリズムの基本と周辺知識と実装方法](https://www.slideshare.net/takemikami/ss-76817490)
     - [推薦システムの基本的な評価指標について整理してみた](https://datahotel.io/archives/4778)
     - [MatrixFacorization を使った評価予測](https://ameblo.jp/principia-ca/entry-10980281840.html)
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle python --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=479738946X&linkId=6a85a5dd8a1e65d5de970b2542faceb0"></iframe>

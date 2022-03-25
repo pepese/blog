@@ -445,22 +445,3 @@ $$
 
 なぜか改行はバックスラッシュが 6 つ必要、、、？  
 書きっぷりは [公式](https://www.mathjax.org/) など参照。
-
-
-## Gist-it で Github のソースコード貼り付け
-
-以下のようにスクリプトを貼り付ける。
-
-```html
-<script src="https://gist-it.appspot.com/github/[Github Account]/[Repository]/blob/[branch]/[path-to-file]?footer=0"></script>
-```
-
-例えば以下。
-
-```html
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/express-sample/app/controllers/get_index.js?footer=0"></script>
-```
-
-以下のように表示される。
-
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/express-sample/app/controllers/get_index.js?footer=0"></script>

@@ -34,7 +34,7 @@ pip install jupyter scikit-learn matplotlib scipy
 実行環境は Jupyter Notebook を想定。実行方法は `jupyter notebook` 。  
 **matplotlib** の使い方は以下を参照。
 
-- [matplotlib入門](http://blog.pepese.com/entry/2016/09/18/174407)
+- [matplotlib入門](http://blog.pepese.com/python-matplotlib-basics)
 
 # k-means の実装
 
@@ -93,3 +93,11 @@ model = cluster.AgglomerativeClustering(n_clusters=3, linkage='ward')
 ```python
 model = cluster.AffinityPropagation()
 ```
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle python --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=479738946X&linkId=6a85a5dd8a1e65d5de970b2542faceb0"></iframe>
+
+<!-- amazon affiliate book scikit-learn --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4873117984&linkId=587c0f7956fc7ccb395c17fc18b32e7c"></iframe>

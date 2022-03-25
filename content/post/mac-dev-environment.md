@@ -7,6 +7,7 @@ date:        2017-05-10
 author:      "ぺーぺーSE"
 image:       ""
 tags:
+- mac
 - homebrew
 - anyenv
 - java
@@ -71,7 +72,7 @@ $ xcode-select --install
 
 以下を参照。
 
-- [Homebrew入門](https://blog.pepese.com/entry/homebrew-basics/)
+- [Homebrew入門](https://blog.pepese.com/mac-homebrew-basics/)
 
 ## iTerm2をインストール
 
@@ -99,15 +100,15 @@ Macデフォルトのターミナルより便利。
 
 Gitの使い方は以下。
 
-- [Git入門](https://blog.pepese.com/entry/git-basics/)
+- [Git入門](https://blog.pepese.com/git-basics/)
 
 ## anyenvかasdfをインストール
 
 プログラミング言語・コマンドラインツールのインストール・バージョン管理ができるようになる。  
 以下を参照。
 
-- [すべての\*\*envを管理するanyenv](https://blog.pepese.com/entry/anyenv/)
-- [asdfでバージョン管理](https://blog.pepese.com/entry/asdf/)
+- [すべての\*\*envを管理するanyenv](https://blog.pepese.com/anyenv/)
+- [asdfでバージョン管理](https://blog.pepese.com/asdf/)
     - こっちのがおすすめ
 
 ## SDKMAN をインストール
@@ -116,7 +117,7 @@ Java 系ツールのインストール・バージョン管理ができるよう
 anyenv・asdf がお好みでない方はこちら。  
 以下を参照。
 
-- [SDKMAN入門](https://blog.pepese.com/entry/sdkman-basics/)
+- [SDKMAN入門](https://blog.pepese.com/sdkman-basics/)
 - [公式](http://sdkman.io/)
 
 ## Javaをインストール
@@ -176,7 +177,7 @@ OS name: "mac os x", version: "10.14.1", arch: "x86_64", family: "mac"
 
 以下を参照。
 
-- [Visual Studio Code入門](https://blog.pepese.com/entry/vscode-basics/)
+- [Visual Studio Code入門](https://blog.pepese.com/vscode-basics/)
 
 ## STS (Spring Tool Suite)
 

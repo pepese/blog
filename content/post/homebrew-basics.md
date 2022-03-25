@@ -1,12 +1,13 @@
 ---
 title:       "Homebrew入門"
-URL:         "homebrew-basics"
+URL:         "mac-homebrew-basics"
 subtitle:    ""
 description: ""
 date:        2017-05-09
 author:      "ぺーぺーSE"
 image:       ""
 tags:
+- mac
 - homebrew
 categories:
 - tech

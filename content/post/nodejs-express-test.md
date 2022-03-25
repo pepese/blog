@@ -57,7 +57,7 @@ $ ndenv rehash
 
 ## ローカルインストール
 
-[Express入門](https://blog.pepese.com/entry/express-basics/)で作成したプロジェクトにて以下を導入する。
+[Express入門](https://blog.pepese.com/nodejs-express-basics/)で作成したプロジェクトにて以下を導入する。
 
 ```sh
 $ yarn add mocha chai sinon nyc rimraf --dev
@@ -127,13 +127,51 @@ $ mkdir app/spec/controllers
 
 `app/controllers/get_index.js` を対象としたテストスクリプトを以下のように作成する。
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/express-sample/app/spec/controllers/get_index.spec.js?footer=0"></script>
+```javascript
+const sinon = require('sinon');
+const chai = require('chai');
+const expect = chai.expect;
+
+const get_index = require('../../controllers/get_index');
+
+describe('/', () => {
+  it('Index画面が1回レンダリングされること', (done) => {
+    let req,res,spy;
+    req = res = {};
+    spy = res.render = sinon.spy();
+
+    get_index(req, res);
+    expect(spy.calledOnce).to.equal(true);
+
+    done();
+  });
+});
+```
 
 ## テストスクリプト `app/spec/controllers/get_users.spec.js`
 
 `app/controllers/get_users.js` を対象としたテストスクリプトを以下のように作成する。
 
-<script src="https://gist-it.appspot.com/github/pepese/js-sample/blob/master/express-sample/app/spec/controllers/get_users.spec.js?footer=0"></script>
+```javascript
+const sinon = require('sinon');
+const chai = require('chai');
+const expect = chai.expect;
+
+const get_index = require('../../controllers/get_users');
+
+describe('/users', () => {
+  it('Users画面が1回レンダリングされること', (done) => {
+    let req,res,spy;
+    req = res = {};
+    spy = res.send = sinon.spy();
+
+    get_index(req, res);
+    expect(spy.calledOnce).to.equal(true);
+
+    done();
+  });
+});
+```
 
 ## テストの実行
 
@@ -351,3 +389,8 @@ sinon.js の代表的な機能には以下がある。
 
 フェイクには、時間・XMLHttpRequest・サーバーオブジェクトの置き換えができる。  
 ここでは省略する。
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle node.js --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B08HRMTXHB&linkId=f02e6af82c7864b6df5fd31c0639d4bf"></iframe>

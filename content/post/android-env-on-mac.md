@@ -32,7 +32,7 @@ $ brew update
 $ brew cask install android-studio
 ```
 
-Homebrew については [Homebrew 入門](https://blog.pepese.com/entry/homebrew-basics/) を参照。
+Homebrew については [Homebrew 入門](https://blog.pepese.com/mac-homebrew-basics/) を参照。
 
 ## 初回起動時の設定
 

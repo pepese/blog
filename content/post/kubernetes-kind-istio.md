@@ -317,3 +317,8 @@ $ kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 ```
 
 参考：[Getting Started](https://istio.io/latest/docs/setup/getting-started/)
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle kubernetes --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B08FZX8PYW&linkId=57eb8c8b31b521c31701d96143ad2026"></iframe>

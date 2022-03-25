@@ -25,8 +25,8 @@ categories:
 ここで述べる手法は **scikit-learn** に実装されている。  
 なお実装例については以下記事の後半で紹介している。
 
-- [Pythonで機械学習 SVMで2クラス分類問題編](https://blog.pepese.com/entry/python-ml-dl-svm-2class/)
-- [Pythonで機械学習 SVMで多クラス分類問題編](https://blog.pepese.com/entry/python-ml-dl-svm-multiclass/)
+- [Pythonで機械学習 SVMで2クラス分類問題編](https://blog.pepese.com/python-ml-dl-svm-2class/)
+- [Pythonで機械学習 SVMで多クラス分類問題編](https://blog.pepese.com/python-ml-dl-svm-multiclass/)
 
 # 学習用データと評価用データの使い方
 
@@ -40,7 +40,6 @@ categories:
     - 評価用データを変更しながら k 回繰り返した結果の平均を精度に用いることが多い
     - scikit-learn 0.18 までは `sklearn.cross_validation.KFold` モジュールだったが DeprecationWarning となっており、0.20 からは `sklearn.model_selection.KFold` を使用する
         - [参考](http://segafreder.hatenablog.com/entry/2016/10/18/163925)
-
 
 # 精度の指標
 
@@ -105,8 +104,8 @@ $$ F値（F-measure）=\frac{ 2 \times 適合率 \times 再現率 }{ 適合率 +
 2クラス分類問題などでは片方が `Positive` 、もう片方が `Negative` となるため、片方のラベルを Positive として設定してあげることになる。  
 繰り返しになるが、実装例については以下記事の後半で紹介している。
 
-- [Pythonで機械学習 SVMで2クラス分類問題編](https://blog.pepese.com/entry/python-ml-dl-svm-2class/)
-- [Pythonで機械学習 SVMで多クラス分類問題編](https://blog.pepese.com/entry/python-ml-dl-svm-multiclass/)
+- [Pythonで機械学習 SVMで2クラス分類問題編](https://blog.pepese.com/python-ml-dl-svm-2class/)
+- [Pythonで機械学習 SVMで多クラス分類問題編](https://blog.pepese.com/python-ml-dl-svm-multiclass/)
 
 # 精度の向上
 
@@ -145,3 +144,11 @@ $$ F値（F-measure）=\frac{ 2 \times 適合率 \times 再現率 }{ 適合率 +
     - ある弱仮説器が間違ったデータを難易度の高いデータとし、「難易度の高いデータの抽出」と「難易度の高いデータに特化した弱仮説器の重みの計算」を反復して弱仮説器の重みを決定する
 
 **Random Forest** はバギング、 **AdaBoost** はブースティングの例である。
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle python --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=479738946X&linkId=6a85a5dd8a1e65d5de970b2542faceb0"></iframe>
+
+<!-- amazon affiliate book scikit-learn --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4873117984&linkId=587c0f7956fc7ccb395c17fc18b32e7c"></iframe>
