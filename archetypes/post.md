@@ -3,6 +3,7 @@ title:       "{{ replace .Name "-" " " | title }}"
 URL:         "{{ .Name }}"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        {{ now.Format "2006-01-02" }}
 author:      "ぺーぺーSE"
 image:       ""

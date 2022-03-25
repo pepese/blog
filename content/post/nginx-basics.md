@@ -3,6 +3,7 @@ title:       "Nginx入門"
 URL:         "nginx-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-02-04
 author:      "ぺーぺーSE"
 image:       ""

@@ -3,6 +3,7 @@ title:       "Pythonでデータ分析入門"
 URL:         "python-data-analytics-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-02-04
 author:      "ぺーぺーSE"
 image:       ""

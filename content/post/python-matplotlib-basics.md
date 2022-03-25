@@ -3,6 +3,7 @@ title:       "matplotlib入門"
 URL:         "python-matplotlib-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2016-09-18
 author:      "ぺーぺーSE"
 image:       ""

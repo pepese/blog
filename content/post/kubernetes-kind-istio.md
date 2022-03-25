@@ -3,6 +3,7 @@ title:       "KindでIstio環境を構築する"
 URL:         "kubernetes-kind-istio"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2021-01-04
 author:      "ぺーぺーSE"
 image:       ""

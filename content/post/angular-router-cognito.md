@@ -3,6 +3,7 @@ title:       "Cognitoを使ってユーザ認証して画面遷移するAngular�
 URL:         "angular-router-cognito"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-29
 author:      "ぺーぺーSE"
 image:       ""

@@ -3,6 +3,7 @@ title:       "Pandas入門 DataFrame編"
 URL:         "python-pandas-dataframe"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-02-04
 author:      "ぺーぺーSE"
 image:       ""

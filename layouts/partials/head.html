@@ -42,7 +42,11 @@
     {{ end }}
     <!-- end ogp -->
 
+    {{ if .Params.keyword }}
+    <meta name="keyword"  content="{{ .Params.keyword }}">
+    {{ else }}
     <meta name="keyword"  content="{{ .Site.Params.keyword }}">
+    {{ end }}
     <link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}">
 
     <!-- <title>{{ if .Title }}{{ .Title }}-{{ .Site.Params.SEOTitle }}{{ else }}{{ .Site.Params.SEOTitle }}{{ end }}</title> -->

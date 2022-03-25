@@ -3,6 +3,7 @@ title:       "Pythonで機械学習 レコメンド編"
 URL:         "python-ml-recommendation"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-11-26
 author:      "ぺーぺーSE"
 image:       ""

@@ -3,6 +3,7 @@ title:       "Goの変数・型・定数・リテラル"
 URL:         "golang-var-type-const-literal"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-02-08
 author:      "ぺーぺーSE"
 image:       ""

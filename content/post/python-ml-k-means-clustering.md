@@ -3,6 +3,7 @@ title:       "Pythonで機械学習 K Meansでクラスタリング編"
 URL:         "python-ml-k-means-clustering"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-07-05
 author:      "ぺーぺーSE"
 image:       ""

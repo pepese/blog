@@ -3,6 +3,7 @@ title:       "gRPC/Protocol Buffers入門"
 URL:         "grpc-protocolbuffers-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2020-01-03
 author:      "ぺーぺーSE"
 image:       ""

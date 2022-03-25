@@ -3,6 +3,7 @@ title:       "形態素解析システムMeCab入門"
 URL:         "python-mecab-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-02-04
 author:      "ぺーぺーSE"
 image:       ""

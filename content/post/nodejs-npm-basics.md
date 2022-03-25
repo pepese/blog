@@ -3,6 +3,7 @@ title:       "Node.js・npm入門"
 URL:         "nodejs-npm-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-08-14
 author:      "ぺーぺーSE"
 image:       ""

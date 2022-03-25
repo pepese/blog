@@ -3,6 +3,7 @@ title:       "Homebrew入門"
 URL:         "mac-homebrew-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-09
 author:      "ぺーぺーSE"
 image:       ""

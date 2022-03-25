@@ -3,6 +3,7 @@ title:       "Hugo入門"
 URL:         "hugo-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-05-26
 author:      "ぺーぺーSE"
 image:       ""

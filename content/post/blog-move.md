@@ -3,6 +3,7 @@ title:       "ブログ移転時に気をつけること"
 URL:         "blog-move"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-11
 author:      "ぺーぺーSE"
 image:       ""

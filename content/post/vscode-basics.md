@@ -3,6 +3,7 @@ title:       "Visual Studio Code入門"
 URL:         "vscode-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-01-31
 author:      "ぺーぺーSE"
 image:       ""

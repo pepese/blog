@@ -3,6 +3,7 @@ title:       "Goでソート"
 URL:         "golang-sort"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-02-10
 author:      "ぺーぺーSE"
 image:       ""

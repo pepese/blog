@@ -3,6 +3,7 @@ title:       "JavaでDynamoDBへアクセスする"
 URL:         "java-dynamodb"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-08-30
 author:      "ぺーぺーSE"
 image:       ""

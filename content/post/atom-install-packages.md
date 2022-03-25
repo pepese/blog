@@ -3,6 +3,7 @@ title:       "Atomのインストールとパッケージの導入"
 URL:         "atom-install-packages"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-11
 author:      "ぺーぺーSE"
 image:       ""

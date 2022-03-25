@@ -3,6 +3,7 @@ title:       "Kubernetesのアーキテクチャ整理"
 URL:         "kubernetes-architecture"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-01-15
 author:      "ぺーぺーSE"
 image:       ""

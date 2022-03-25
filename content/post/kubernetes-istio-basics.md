@@ -3,6 +3,7 @@ title:       "Istio入門"
 URL:         "kubernetes-istio-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-01-15
 author:      "ぺーぺーSE"
 image:       ""

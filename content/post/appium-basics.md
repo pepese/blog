@@ -3,6 +3,7 @@ title:       "Appium入門"
 URL:         "appium-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-01-06
 author:      "ぺーぺーSE"
 image:       ""

@@ -3,6 +3,7 @@ title:       "所謂MEANスタックを作る"
 URL:         "mean-stack-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-08-14
 author:      "ぺーぺーSE"
 image:       ""

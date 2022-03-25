@@ -3,6 +3,7 @@ title:       "Hexoで作ったブログをGithub Pagesで公開"
 URL:         "hexo-github-pages"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-02
 author:      "ぺーぺーSE"
 image:       ""

@@ -3,6 +3,7 @@ title:       "Pythonで機械学習 SVMで2クラス分類問題編"
 URL:         "python-ml-svm-2class"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-07-05
 author:      "ぺーぺーSE"
 image:       ""

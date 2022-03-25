@@ -3,6 +3,7 @@ title:       "Go入門"
 URL:         "golang-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-01-03
 author:      "ぺーぺーSE"
 image:       ""

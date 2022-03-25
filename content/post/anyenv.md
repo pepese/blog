@@ -2,7 +2,8 @@
 title:       "すべての**envを管理するanyenv"
 URL:         "anyenv"
 subtitle:    ""
-description: ""
+description: "anyenvはスクリプト言語のバージョン管理を行うツール。"
+keyword:     "anyenv,プログラミング言語,バージョン管理"
 date:        2017-07-05
 author:      "ぺーぺーSE"
 image:       ""

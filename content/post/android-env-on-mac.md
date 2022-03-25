@@ -3,6 +3,7 @@ title:       "Androidアプリ入門 Macで環境構築編"
 URL:         "android-env-on-mac"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-01-06
 author:      "ぺーぺーSE"
 image:       ""

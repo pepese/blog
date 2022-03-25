@@ -3,6 +3,7 @@ title:       "Jupyter Notebook入門"
 URL:         "jupyter-notebook-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-02-20
 author:      "ぺーぺーSE"
 image:       ""

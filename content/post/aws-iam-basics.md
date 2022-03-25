@@ -3,6 +3,7 @@ title:       "AWS IAMまとめ"
 URL:         "aws-iam-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2022-03-23
 author:      "ぺーぺーSE"
 image:       ""

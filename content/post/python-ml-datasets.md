@@ -3,6 +3,7 @@ title:       "Pythonで機械学習 データセット編"
 URL:         "python-ml-datasets"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-07-05
 author:      "ぺーぺーSE"
 image:       ""

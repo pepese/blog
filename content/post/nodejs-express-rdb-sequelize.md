@@ -3,6 +3,7 @@ title:       "Node.js・ExpressでブラウザからPUT・DELETEリクエスト�
 URL:         "nodejs-express-rdb-sequelize"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-08-20
 author:      "ぺーぺーSE"
 image:       ""

@@ -3,6 +3,7 @@ title:       "Git入門"
 URL:         "git-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-09
 author:      "ぺーぺーSE"
 image:       ""

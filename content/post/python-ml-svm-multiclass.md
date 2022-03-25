@@ -3,6 +3,7 @@ title:       "Pythonで機械学習 SVMで多クラス分類問題編"
 URL:         "python-ml-svm-multiclass"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-07-06
 author:      "ぺーぺーSE"
 image:       ""

@@ -3,6 +3,7 @@ title:       "Virtualenv入門"
 URL:         "python-virtualenv-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-12-07
 author:      "ぺーぺーSE"
 image:       ""

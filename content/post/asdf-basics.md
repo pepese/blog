@@ -1,9 +1,10 @@
 ---
-title:       "asdfでバージョン管理"
+title:       "マルチランタイムバージョン管理ツールasdf"
 URL:         "asdf-basics"
 subtitle:    ""
-description: ""
-date:        2022-03-23
+description: "asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツール。"
+keyword:     "asdf,プログラミング言語,ツール,バージョン管理,ランタイム"
+date:        2022-03-25
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -12,35 +13,51 @@ categories:
 - tech
 ---
 
-[asdf](https://asdf-vm.com/#/core-manage-asdf) を使って Mac に環境構築する方法について記載する。
+[asdf](https://asdf-vm.com) を使えば、複数のプログラミング言語ランタイムおよびそのバージョンを `asdf` コマンドだけで管理することができる。  
+ここでは、Mac に環境構築する方法について記載する。
 
 <!--more-->
 
-# 設定
-
-基本は[公式](https://asdf-vm.com/#/core-manage-asdf)を見て欲しいが、ここでは本ブログ作成日におけるMac環境へのインストールについて記載する。
+# 環境構築
 
 ## インストール
 
+```bash
+$ brew install coreutils curl git
+$ brew install asdf
+$ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.bash_profile
+$ exec $SHELL -l
 ```
-brew install coreutils curl git
-brew install asdf
-echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshenv
-```
+
+上記は `.bash_profile` に設定を追記しているが、 環境・好みに応じて `.zshenv` などへの追記でもよい。  
+なお、環境により差分があるので、基本は `brew install asdf` 実行後の Homebrew の指示に従う。  
+Homebrew 以外の場合は [こちら](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) を参照。
 
 ## アップデート
 
+```bash
+$ brew upgrade asdf
 ```
-brew upgrade asdf
-```
+
+Homebrew 以外の場合は [こちら](https://asdf-vm.com/manage/core.html#update) を参照。
 
 ## アンインストール
 
-```
-rm -rf ${ASDF_DATA_DIR:-$HOME/.asdf} ~/.tool-versions
+`.bash_profile` などインストール時に設定したファイルから以下の行を削除。
+
+```bash
+. $(brew --prefix asdf)/libexec/asdf.sh
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 ```
 
-プロファイルに設定した asdf へのパス削除を忘れずに。
+上記実施後に以下のコマンドを実行。
+
+```bash
+$ brew uninstall asdf --force
+$ rm -rf $HOME/.tool-versions $HOME/.asdf
+```
+
+Homebrew 以外の場合は [こちら](https://asdf-vm.com/manage/core.html#uninstall) を参照。
 
 # 使い方
 
@@ -65,53 +82,53 @@ rm -rf ${ASDF_DATA_DIR:-$HOME/.asdf} ~/.tool-versions
 
 helm で一連の流れをやってみる。
 
-```
-% asdf plugin list all | grep helm
+```bash
+$ asdf plugin list all | grep helm
 helm                          https://github.com/Antiarchitect/asdf-helm.git
 helm-cr                       https://github.com/Antiarchitect/asdf-helm-cr.git
 helm-ct                       https://github.com/tablexi/asdf-helm-ct.git
 helm-docs                     https://github.com/sudermanjr/asdf-helm-docs.git
 helmfile                      https://github.com/feniix/asdf-helmfile.git
 
-% asdf plugin add helm
+$ asdf plugin add helm
 
-% asdf plugin list
+$ asdf plugin list
 helm
 
-% asdf list-all helm
+$ asdf list-all helm
 3.4.1
 
-% asdf install helm 3.4.1
+$ asdf install helm 3.4.1
 
-% asdf global helm 3.4.1
+$ asdf global helm 3.4.1
 
-% asdf current helm
+$ asdf current helm
 helm            3.4.1           /Users/xxxx/.tool-versions
 
-% helm version
+$ helm version
 version.BuildInfo{Version:"v3.4.1", GitCommit:"c4e74854886b2efe3321e185578e6db9be0a6e29", GitTreeState:"clean", GoVersion:"go1.14.11"}
 ```
 
 ## プラグインのアップデート
 
-```
-asdf plugin update --all
+```bash
+$ asdf plugin update --all
 ```
 
 ## ツールのアンインストール
 
-```
-asdf uninstall <name> <version>
+```bash
+$ asdf uninstall <name> <version>
 ```
 
 ## プラグインのアンインストール
 
-```
-asdf plugin remove <name>
+```bash
+$ asdf plugin remove <name>
 ```
 
 ## 困ったときは
 
-```
-asdf help
+```bash
+$ asdf help
 ```

@@ -3,6 +3,7 @@ title:       "SDKMAN入門"
 URL:         "sdkman-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-12-15
 author:      "ぺーぺーSE"
 image:       ""

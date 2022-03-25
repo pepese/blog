@@ -3,6 +3,7 @@ title:       "Goで文字列操作"
 URL:         "golang-string"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-02-11
 author:      "ぺーぺーSE"
 image:       ""

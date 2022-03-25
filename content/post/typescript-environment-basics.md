@@ -3,6 +3,7 @@ title:       "TypeScript環境入門"
 URL:         "typescript-environment-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-14
 author:      "ぺーぺーSE"
 image:       ""

@@ -3,6 +3,7 @@ title:       "Heroku入門"
 URL:         "heroku-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-12-07
 author:      "ぺーぺーSE"
 image:       ""

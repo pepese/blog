@@ -3,6 +3,7 @@ title:       "Cognitoを使ってAngularアプリからユーザ認証する"
 URL:         "angular-cognito"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-20
 author:      "ぺーぺーSE"
 image:       ""

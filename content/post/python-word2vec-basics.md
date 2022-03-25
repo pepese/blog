@@ -3,6 +3,7 @@ title:       "Word2vec入門"
 URL:         "python-word2vec-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2018-02-04
 author:      "ぺーぺーSE"
 image:       ""

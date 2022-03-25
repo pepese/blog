@@ -3,6 +3,7 @@ title:       "DyanamoDB入門"
 URL:         "aws-dynamodb-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2022-03-23
 author:      "ぺーぺーSE"
 image:       ""

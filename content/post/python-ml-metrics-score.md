@@ -3,6 +3,7 @@ title:       "Pythonで機械学習 精度評価編"
 URL:         "python-ml-metrics-score"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-08-07
 author:      "ぺーぺーSE"
 image:       ""

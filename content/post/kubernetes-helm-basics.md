@@ -3,6 +3,7 @@ title:       "Helm入門"
 URL:         "kubernetes-helm-basics"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-05-28
 author:      "ぺーぺーSE"
 image:       ""

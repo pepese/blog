@@ -3,6 +3,7 @@ title:       "Node.jsでDynamoDBへアクセスする"
 URL:         "nodejs-dynamodb"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-08-29
 author:      "ぺーぺーSE"
 image:       ""

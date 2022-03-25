@@ -3,6 +3,7 @@ title:       "Goでファイル入出力"
 URL:         "golang-file-io"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2019-02-08
 author:      "ぺーぺーSE"
 image:       ""

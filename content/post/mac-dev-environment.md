@@ -3,6 +3,7 @@ title:       "Macで開発環境を作る"
 URL:         "mac-dev-environment"
 subtitle:    ""
 description: ""
+keyword:     ""
 date:        2017-05-10
 author:      "ぺーぺーSE"
 image:       ""
