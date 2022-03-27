@@ -18,7 +18,7 @@ Macにanyenvが導入されていること前提。
 
 ## python
 
-```sh
+```bash
 $ anyenv install pyenv
 $ exec $SHELL -l
 $ which pyenv
@@ -47,19 +47,19 @@ pip 9.0.1 from /Users/xxxx/.anyenv/envs/pyenv/versions/3.6.1/lib/python3.6/site-
 
 pip/pip3 のバージョンが 8.1 以上である必要がある。
 
-```sh
+```bash
 $ pip3 install --upgrade tensorflow
 ```
 
 もしエラーがでたら以下を実行。
 
-```sh
+```bash
 $ pip3 install --upgrade tfBinaryURL
 ```
 
 正しくインストールできているか確認。
 
-```sh
+```bash
 $ python
 >>> import tensorflow as tf
 ```
@@ -173,7 +173,7 @@ sess = tf.Session()
 ```
 
 > TensorFlow は CPU の拡張命令を使用可能なのだが、これが有効になっていない場合、下記のような警告がでる。
-> ```sh
+> ```bash
 > 2017-06-20 16:32:03.465042: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
 > 2017-06-20 16:32:03.465069: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
 > 2017-06-20 16:32:03.465078: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speedup CPU computations.
@@ -319,7 +319,7 @@ if __name__ == '__main__':
 
 TensorFlow と一緒にインストールされている。
 
-```sh
+```bash
 $ which tensorboard
 /Users/xxxx/.anyenv/envs/pyenv/shims/tensorboard
 ```
@@ -328,7 +328,7 @@ $ which tensorboard
 
 コード中に `writer = tf.summary.FileWriter('cnn', sess.graph)` のような感じで表示対象を出力しておき、下記のコマンドで TensorBoard を起動する。
 
-```sh
+```bash
 $ tensorboard --logdir=./cnn
 ```
 

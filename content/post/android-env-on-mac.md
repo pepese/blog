@@ -28,7 +28,7 @@ Java 1.8 はインストール済みな前提。
 
 ## インストール
 
-```sh
+```bash
 $ brew update
 $ brew cask install android-studio
 ```
@@ -69,7 +69,7 @@ export PATH
 
 ## アンインストール
 
-```sh
+```bash
 $ brew cask uninstall android-studio
 $ rm -Rf ~/Library/Preferences/AndroidStudio*
 $ rm -Rf ~/Library/Logs/AndroidStudio*

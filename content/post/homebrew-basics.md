@@ -2,9 +2,9 @@
 title:       "Homebrew入門"
 URL:         "mac-homebrew-basics"
 subtitle:    ""
-description: ""
-keyword:     ""
-date:        2017-05-09
+description: "HomebrewはMacで利用できるソフトウェアパッケージマネージャ。"
+keyword:     "Mac, Homebrew, brew"
+date:        2022-03-27
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -24,8 +24,8 @@ HomebrewはMac用のaptやyumのようなパッケージマネージャ。ソフ
 
 ## インストール
 
-```sh
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”
+```bash
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ==> This script will install:
 /usr/local/bin/brew
 /usr/local/share/doc/homebrew
@@ -48,8 +48,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 上記を実行後、 `brew doctor` で問題がないことを確認。  
 もしWarningが出たらメッセージに従って対処する。  
-筆者の場合はXcodeをインストールしてCommand Line Toolsをアップデートしたら解決した。  
-変更があるかもしれないので[公式](http://brew.sh/index_ja.html)を確認のこと。
+筆者の場合はXcodeをインストールしてCommand Line Toolsをアップデートしたら解決した。
 
 - `/usr/local/Cellar/`
     - Homebrewでインストールしたソフトウェアはここに配備される
@@ -58,45 +57,49 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 ## Homebrew のアップデート
 
-```sh
+```bash
 $ brew update
 ```
 
 ## ソフトウェアのインストール
 
-```sh
+```bash
 $ brew install <software>
 ```
 
 ## ソフトウェアの更新
 
-```sh
+```bash
+# 特定のソフトウェア
 $ brew upgrade <software>
+# Homebrew で導入した全てのソフトウェア
+$ brew upgrade
 ```
 
 ## キャッシュされている古いソフトウェアの削除
 
-```sh
+```bash
 $ brew cleanup
 ```
 
 # brew tap
 
-brew tap は、公式以外の formula を追加することのできる Homebrew のサブコマンド。  
+`brew tap` は、公式以外の formula を追加することのできる Homebrew のサブコマンド。  
 Homebrewをインストールした際に標準で組み込まれている。
 
-```sh
+```bash
 $ brew tap <userName>/<repository>
 ```
 
-上記コマンドを実行すると、GitHub 公開リポジトリ (https://github.com/<userName>/homebrew-<repository>) が参照され、/usr/local/Library/Taps以下にインストールされる。  
-`brew tap` コマンドでこれまでにインストールされたソフトウェアの一覧が見れる。  
+上記コマンドを実行すると、GitHub 公開リポジトリ (https://github.com/<userName>/homebrew-<repository>) が参照され、 `/usr/local/Library/Taps` 以下にインストールされる。  
+`brew tap` コマンドでこれまでにインストールされたリポジトリの一覧が表示される。  
 また、 `brew tap <url>` コマンドでGitHub以外のソフトウェアもインストール可能。
 
 # brew cask
 
-brewやbrew tapでソフトウェアをインストールする際、目的のソフトウェアを動かすには依存するその他のソフトウェアをインストールする必要がある場合がある。  
-そんなときbrew caskを使用すると目的のソフトウェアをインストールするだけで依存するソフトウェアもインストールしてくれる。  
+Homebrew 本体に統合され、インストール不要になった。 `--cask` オプションで `brew cask` コマンドは代替可能になっている。  
+`brew` や `brew tap` でソフトウェアをインストールする際、目的のソフトウェアを動かすには依存するその他のソフトウェアをインストールする必要がある場合がある。  
+そんなとき Cask を使用すると目的のソフトウェアをインストールするだけで依存するソフトウェアもインストールしてくれる。  
 さらにGoogle ChromeやAtomといったソフトのインストールも可能となる。
 
 - `/usr/local/Caskroom/`
@@ -104,28 +107,12 @@ brewやbrew tapでソフトウェアをインストールする際、目的の�
 - `/usr/local/bin/`
     - インストールしたソフトウェアのコマンドのシンボリックリンクはここに配備される
 
-## インストール
+# おすすめのソフトウェア
 
-brew tapでインストールする。
-
-```sh
-$ brew tap caskroom/cask
-```
-
-caskで扱えるソフトウェアのバージョンを増やすために下記も導入しておく。
-
-```sh
-$ brew tap caskroom/versions
-```
-
-変更があるかもしれないので[cask公式](https://caskroom.github.io)、[versions公式](https://github.com/caskroom/homebrew-versions)を参照。
-
-## 使い方
-
-```sh
-$ brew cask search <software>
-$ brew cask install <software>
-$ brew cask uninstall <software>
-```
-
-その他のコマンドは[ここ](https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md)。
+- `brew install iterm2 --cask`
+- `brew install visual-studio-code --cask`
+- `brew install google-chrome --cask`
+- `brew install zoom`
+- `brew install microsoft-teams --cask`
+- `brew install mattermost --cask`
+- `brew install hugo`

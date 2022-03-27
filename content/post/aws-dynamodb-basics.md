@@ -240,7 +240,7 @@ DynamoDB の API は大きく以下がある。
 
 **pip** が導入されている前提で書く。
 
-```sh
+```bash
 $ pip install awscli
 $ aws configure
 # アクセスキー、シークレットキーなどを入力する
@@ -259,7 +259,7 @@ $ aws configure
 
 ## CreateTable
 
-```sh
+```bash
 $ aws dynamodb create-table \
   --attribute-definitions '[{"AttributeName":"test_hash","AttributeType":"S"},{"AttributeName":"test_range","AttributeType":"S"}]' \
   --table-name 'test_table' \
@@ -269,20 +269,20 @@ $ aws dynamodb create-table \
 
 ## DeleteTable
 
-```sh
+```bash
 $ aws dynamodb delete-table \
   --table-name 'test_table'
 ```
 
 ## ListTables
 
-```sh
+```bash
 $ aws dynamodb list-tables
 ```
 
 ## PutItem
 
-```sh
+```bash
 $ aws dynamodb put-item \
   --table-name 'test_table' \
   --item '{"test_hash":{"S":"xxxxx"},"test_range":{"S":"yyyyy"},"test_value":{"S":"zzzzz"}}'
@@ -290,7 +290,7 @@ $ aws dynamodb put-item \
 
 ## GetItem
 
-```sh
+```bash
 $ aws dynamodb get-item \
   --table-name 'test_table' \
   --key '{"test_hash":{"S":"xxxxx"},"test_range":{"S":"yyyyy"}}'

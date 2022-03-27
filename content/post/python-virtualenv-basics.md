@@ -45,14 +45,14 @@ categories:
 
 ## pip の更新と確認
 
-```sh
+```bash
 $ pip install --upgrade pip
 $ pip list --format=columns
 ```
 
 ## Virtualenv のインストールと使い方
 
-```sh
+```bash
 $ pip install virtualenv
 $ cd /path/to/project
 $ virtualenv .virtualenv # .virtualenv という名前でディレクトリができる
@@ -73,7 +73,7 @@ Virtualenv など Python エコシステムを利用するとバージョン管�
 
 `requirements.txt` というファイル（名前は任意）に現在の `pip` でのインストール状況を出力する方法。
 
-```sh
+```bash
 $ pip freeze > requirements.txt
 $ cat requirements.txt
 aniso8601==1.3.0
@@ -85,7 +85,7 @@ certifi==2017.7.27.1
 
 残された `requirements.txt` を使って以下のようにインストールする。
 
-```sh
+```bash
 $  pip install -r requieremnts.txt
 ```
 

@@ -23,7 +23,7 @@ categories:
 
 # Hexoのインストールから起動まで
 
-```sh
+```bash
 $ npm install -g hexo-cli --no-optional // インストール
 $ ndenv rehash
 $ hexo -version                         // 確認
@@ -52,7 +52,7 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 
 筆者がインストールした時（2017/05/02）は、 **--no-optional** オプション無しだと **Error: Cannot find module ./build/default/DTraceProviderBindings** というエラーがでた。
 
-```sh
+```bash
 $ tree
 .
 ├── _config.yml
@@ -91,7 +91,7 @@ permalink_defaults:
 
 ## 記事の作成
 
-```sh
+```bash
 $ hexo new [layout] <title>
 ```
 
@@ -133,7 +133,7 @@ permalink: :year/:month/:day/:id/
 記事の削除は、 `rm source/_post/title.md` などのコマンドで直接削除する。  
 ドラフトで作成していた記事は以下のコマンドで公開（つまりpostへ移動）される。
 
-```sh
+```bash
 $ hexo publish [layout] <title>
 ```
 
@@ -146,7 +146,7 @@ $ hexo publish [layout] <title>
 
 ## 静的ファイルの生成
 
-```sh
+```bash
 $ hexo generate
 ```
 
@@ -160,7 +160,7 @@ $ hexo generate
 `themes/` ディレクトリ配下にテーマを配置する。  
 Githubで公開されているCasperを使用する場合は以下のように取得・配置する。
 
-```sh
+```bash
 $ git clone https://github.com/cgmartin/hexo-theme-bootstrap-blog.git themes/bootstrap-blog
 
 # USAGE
@@ -185,7 +185,7 @@ theme: bootstrap-blog
 
 `themes/[テーマ名]/layout` 配下を編集することでタイトル、サイドバーメニュー等の編集が可能。  
 
-```sh
+```bash
 .
 └── themeName
     ├── _config.yml
@@ -211,7 +211,7 @@ theme: bootstrap-blog
 
 ページヘッダやサイドバーなどに変更を加える場合、その際 `themes/[テーマ名]/layout/` 配下のファイルの変更を保持する必要があるので `.git/` を削除する。
 
-```sh
+```bash
 $ rm -fR themes/bootstrap-blog/.git
 ```
 
@@ -221,7 +221,7 @@ $ rm -fR themes/bootstrap-blog/.git
 
 以下のライブラリを導入する。
 
-```sh
+```bash
 $ npm install hexo-deployer-git --save --no-optional
 ```
 
@@ -240,7 +240,7 @@ deploy:
 なお、対応するGithubリポジトリは事前に作成しておくこと。  
 `$ hexo deploy` コマンドでGithubリポジトリに反映される。
 
-```sh
+```bash
 $ hexo clean
 $ hexo generate
 $ hexo deploy # これがデプロイコマンド
@@ -303,7 +303,7 @@ Sign upのリンクからメアドとパスワードを渡してアカウント�
 
 以下のようにCNAMEファイルを作成する。
 
-```sh
+```bash
 $ echo 'techblog.pepese.net' > source/CNAME
 ```
 
@@ -324,7 +324,7 @@ permalink_defaults:
 
 **(7)** Github Pagesの更新
 
-```sh
+```bash
 $ rm -r public/
 $ hexo generate
 $ hexo deploy
@@ -347,7 +347,7 @@ $ hexo deploy
 
 ## sitemapの作成
 
-```sh
+```bash
 $ npm install hexo-generator-sitemap --save --no-optional
 ```
 
@@ -360,7 +360,7 @@ sitemap:
 
 ## robots.txtの作成
 
-```sh
+```bash
 $ npm install hexo-generator-robotstxt --save --no-optional
 ```
 
@@ -377,7 +377,7 @@ robotstxt:
 
 ## 404ページの作成
 
-```sh
+```bash
 $ touch source/404.md
 ```
 
@@ -397,7 +397,7 @@ title: Not Found
 
 テーマディレクトリ配下に手を加えていく。
 
-```sh
+```bash
 $ mkdir theme/[テーマ名]/layout/_custome_ad
 $ touch themes/[テーマ名]/layout/_custom_ad/google_adsense.ejs
 ```
@@ -432,7 +432,7 @@ google_analytics: UA-xxxxxxxx-x
 
 ## Amazonアソシエイトの設置
 
-```sh
+```bash
 $ touch themes/[テーマ名]/layout/_custom_ad/amazon_affiliate.ejs
 ```
 
@@ -477,7 +477,7 @@ twitter_id: '@PeePeeSE'
 
 ### フォロー・シェアボタンの設置
 
-```sh
+```bash
 $ mkdir theme/[テーマ名]/layout/_custome_sns
 $ touch themes/[テーマ名]/layout/_custom_sns/twitter_follow.ejs
 $ touch themes/[テーマ名]/layout/_custom_sns/twitter_share.ejs
@@ -513,7 +513,7 @@ $ touch themes/[テーマ名]/layout/_custom_sns/twitter_share.ejs
 
 ## 画像の配置
 
-```sh
+```bash
 $ mkdir source/images
 ```
 
@@ -528,7 +528,7 @@ $ mkdir source/images
 
 ## RSS Feedの設置
 
-```sh
+```bash
 $ npm install hexo-generator-feed --save --no-optional
 ```
 
@@ -571,7 +571,7 @@ ogp_image: /images/xxx.gif
 
 以下を実施することにより **Tex** による数式を表示できるようになる。
 
-```sh
+```bash
 $ brew install pandoc
 $ npm install hexo-renderer-pandoc --save --no-optional
 $ npm install hexo-renderer-mathjax --save --no-optional

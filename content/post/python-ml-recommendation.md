@@ -146,7 +146,7 @@ scikit-surprise ベースで実装する。
 
 環境設定は以下。
 
-```sh
+```bash
 $ python -V
 Python 3.6.1
 $ pip -V
@@ -160,7 +160,7 @@ scikit-surprise==1.0.5
 
 データセットには [SUSHI Preference Data Sets](http://www.kamishima.net/sushi/) を使用する。
 
-```sh
+```bash
 $ wget http://www.kamishima.net/asset/sushi3-2016.zip
 $ unzip sushi3-2016.zip
 $ rm sushi3-2016.zip

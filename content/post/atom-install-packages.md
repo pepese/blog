@@ -27,7 +27,7 @@ Githubが開発したエディタ[Atom](https://atom.io/)のインストール�
 
 brew caskが使える人は以下でもよい。
 
-```sh
+```bash
 $ brew cask install atom
 ```
 
@@ -39,13 +39,13 @@ $ brew cask install atom
 
 アイコンクリックでもいいがコマンドラインで起動できる。
 
-```sh
+```bash
 $ atom file
 ```
 
 プロジェクト（カレントディレクトリ）で起動したい場合は以下。
 
-```sh
+```bash
 $ atom .
 ```
 
@@ -70,7 +70,7 @@ $ atom .
 
 アップデートできない人は以下を実行。
 
-```sh
+```bash
 $ sudo chown -R $(whoami) /Applications/Atom.app/
 ```
 

@@ -27,7 +27,7 @@ categories:
 
 ## Yarnインストール
 
-```sh
+```bash
 $ npm install -g yarn
 $ ndenv rehash
 $ yarn --version
@@ -38,7 +38,7 @@ $ yarn --version
 Angular CLI のインストール。  
 パッケージ管理ツールを `npm` から `yarn` へ変更。
 
-```sh
+```bash
 $ yarn global add @angular/cli
 $ ndenv rehash
 $ ng set --global packageManager=yarn
@@ -58,7 +58,7 @@ os: darwin x64
 
 ## プロジェクト作成と起動
 
-```sh
+```bash
 $ ng new angular-sample
 installing ng
   create .editorconfig
@@ -99,7 +99,7 @@ Project 'angular-sample' successfully created.
 `yarn` で作成されていることを確認する。  
 また、下記の通りプロジェクトディレクトリに移動して、導入されている Angular のバージョンを確認する。
 
-```sh
+```bash
 $ cd angular-sample
 $ ng version
 _                      _                 ____ _     ___
@@ -127,7 +127,7 @@ os: darwin x64
 
 以下で起動。
 
-```sh
+```bash
 $ ng serve
 ```
 
@@ -241,7 +241,7 @@ e2e（エンドツーエンド）テストは **protractor** 。
 
 グローバルでは以下。
 
-```sh
+```bash
 $ yarn global remove @angular/cli
 $ yarn cache clean
 $ yarn global add @angular/cli@latest
@@ -250,7 +250,7 @@ $ ndenv rehash
 
 ローカルプロジェクトでは以下。
 
-```sh
+```bash
 $ rm -rf node_modules dist # use rmdir on Windows
 $ yarn add @angular/cli@latest --dev
 $ yarn install
@@ -497,7 +497,7 @@ DIを使用してコンポーネントや他サービスクラスにサービス
 
 ### 作成例
 
-```sh
+```bash
 $ ng generate service sample/sample
 installing service
   create src/app/sample/sample.service.spec.ts

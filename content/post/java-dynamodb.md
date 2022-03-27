@@ -46,7 +46,7 @@ AWS SDK for Java には以下のインターフェースがある。
 
 # 環境構築
 
-```sh
+```bash
 $ mvn archetype:generate \
   -DgroupId=com.pepese.sample \
   -DartifactId=dynamodb-sample \

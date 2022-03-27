@@ -25,7 +25,7 @@ Heroku で公開したい場合は以下参照。
 
 # セットアップ
 
-```sh
+```bash
 $ pip install Flask gunicorn line-bot-sdk
 $ brew cask install ngrok
 ```
@@ -98,7 +98,7 @@ python-3.6.2
 
 ## ローカルでAP起動
 
-```sh
+```bash
 $ FLASK_APP=app.py flask run
  * Serving Flask app "app"
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
@@ -106,7 +106,7 @@ $ FLASK_APP=app.py flask run
 
 ## ngrokで公開
 
-```sh
+```bash
 $ ngrok http 5000
 ngrok by @inconshreveable                                       (Ctrl+C to quit)
 

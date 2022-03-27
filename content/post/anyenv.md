@@ -4,7 +4,7 @@ URL:         "anyenv"
 subtitle:    ""
 description: "anyenvはスクリプト言語のバージョン管理を行うツール。"
 keyword:     "anyenv,プログラミング言語,バージョン管理"
-date:        2017-07-05
+date:        2022-03-27
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -20,17 +20,14 @@ categories:
 ---
 
 [anyenv](https://github.com/riywo/anyenv)は、renvやpyenvなどスクリプト言語のバージョン管理を行うツール類（所謂、 \*\*env）を管理するツール。  
-「すべて」は言い過ぎた。  
-以降、anyenv、\*\*env のインストールから簡単な使い方まで記載する。
+「すべて」は言い過ぎかも。  
+インストールから簡単な使い方まで記載する。
 
 <!--more-->
 
-# anyenv のインストール・アップデート・アンインストール
+# 環境設定
 
-基本は[公式](https://github.com/riywo/anyenv)を見て欲しいが、ここでは本ブログ作成日におけるMac環境へのインストールについて記載する。  
-以下、anyenvのインストール方法。
-
-## Homebrew
+## Homebrew でインストール
 
 Homebrew にも対応した模様。
 
@@ -40,13 +37,14 @@ $ anyenv init
 $ echo 'eval "$(anyenv init -)"' >> ~/.bash_profile
 ```
 
-## Manual git checkout
+## マニュアルインストール
 
-```sh
+```bash
 $ git clone https://github.com/riywo/anyenv ~/.anyenv
 $ echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.bash_profile
 $ echo 'eval "$(anyenv init -)"' >> ~/.bash_profile
 $ exec $SHELL -l
+$ anyenv init
 ```
 
 anyenv自身のアップデートは上記の通りGithubからcloneしているだけなので、 `git pull origin master` すればいいだけだと思う。  
@@ -65,7 +63,7 @@ anyenv自身のアップデートは上記の通りGithubからcloneしている
 
 ## anyenv-updateのインストール
 
-```sh
+```bash
 $ mkdir -p $(anyenv root)/plugins
 $ git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 ```
@@ -74,7 +72,7 @@ $ git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anye
 
 ## anyenv-gitのインストール
 
-```sh
+```bash
 $ git clone https://github.com/znz/anyenv-git.git $(anyenv root)/plugins/anyenv-git
 ```
 
@@ -84,7 +82,7 @@ $ git clone https://github.com/znz/anyenv-git.git $(anyenv root)/plugins/anyenv-
 
 ## \*\*envのインストール
 
-```sh
+```bash
 $ anyenv install rbenv
 $ anyenv install plenv
 $ anyenv install pyenv
@@ -101,13 +99,13 @@ $ exec $SHELL -l
 
 以下でインストールしてある \*\*env がすべてアップデートされる。
 
-```sh
+```bash
 $ anyenv update
 ```
 
 ## 各 \*\*env の現在のバージョンを確認
 
-```sh
+```bash
 $ anyenv global
 ndenv: v7.6.0
 plenv: 5.25.7
@@ -127,31 +125,31 @@ rbenv: 2.3.0 (set by /Users/xxxx/.anyenv/envs/rbenv/version)
 
 ### 現在のバージョンを確認
 
-```sh
+```bash
 $ ndenv version
 ```
 
 ### インストール済みのバージョン一覧確認
 
-```sh
+```bash
 $ ndenv versions
 ```
 
 ### インストール可能なバージョン一覧の確認
 
-```sh
+```bash
 $ ndenv install --list
 ```
 
 ### インストール
 
-```sh
+```bash
 $ ndenv install v8.1.3
 ```
 
 ### バージョンの切り替え
 
-```sh
+```bash
 $ ndenv global v8.1.3
 $ node -v
 v8.1.3
@@ -159,7 +157,7 @@ v8.1.3
 
 ### npm をアップデート
 
-```sh
+```bash
 $ npm update -g npm
 ```
 
@@ -167,31 +165,31 @@ $ npm update -g npm
 
 ### 現在のバージョンを確認
 
-```sh
+```bash
 $ pyenv version
 ```
 
 ### インストール済みのバージョン一覧確認
 
-```sh
+```bash
 $ pyenv versions
 ```
 
 ### インストール可能なバージョン一覧の確認
 
-```sh
+```bash
 $ pyenv install --list
 ```
 
 ### インストール
 
-```sh
+```bash
 $ pyenv install 3.6.1
 ```
 
 ### バージョンの切り替え
 
-```sh
+```bash
 $ pyenv global 3.6.1
 $ python -V
 Python 3.6.1
@@ -199,7 +197,7 @@ Python 3.6.1
 
 ### pipをアップデート
 
-```sh
+```bash
 $ pip install -U pip
 ```
 
@@ -207,19 +205,19 @@ $ pip install -U pip
 
 #### インストール
 
-```sh
+```bash
 $ pip install pip-review
 ```
 
 #### 更新があるパッケージを表示
 
-```sh
+```bash
 $ pip-review
 ```
 
 #### 一括アップデート
 
-```sh
+```bash
 $ pip-review --auto
 ```
 
@@ -227,31 +225,31 @@ $ pip-review --auto
 
 ### 現在のバージョンを確認
 
-```sh
+```bash
 $ rbenv version
 ```
 
 ### インストール済みのバージョン一覧確認
 
-```sh
+```bash
 $ rbenv versions
 ```
 
 ### インストール可能なバージョン一覧の確認
 
-```sh
+```bash
 $ rbenv install --list
 ```
 
 ### インストール
 
-```sh
+```bash
 $ rbenv install 2.4.1
 ```
 
 ### バージョンの切り替え
 
-```sh
+```bash
 $ rbenv global 2.4.1
 $ rbenv rehashr
 $ ruby -v
@@ -260,7 +258,7 @@ ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-darwin16]
 
 ### gemの確認とbundlerの導入
 
-```sh
+```bash
 $ which gem
 /Users/xxx/.anyenv/envs/rbenv/shims/gem
 $ gem install bunlder
@@ -272,7 +270,7 @@ $ which bundle
 
 「rbenv-gem-rehash」を導入することで「rbenv rehash」（~/.rbenv/versions/2.x.y/bin/ 以下に置いてあるコマンド群を ~/.rbenv/shims/以下に置いて使えるようにする）を実行する必要が無くなる。
 
-```sh
+```bash
 $ git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.anyenv/envs/rbenv/plugins/rbenv-gem-rehash
 $ exec $SHELL -l
 $ rbenv install 2.4.1

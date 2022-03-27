@@ -36,7 +36,7 @@ SVMを使用した2クラス分類問題は以下。
 
 このブログにある Python コードを実行するためのパッケージをインストールする。
 
-```sh
+```bash
 $ pip install jupyter scikit-learn matplotlib scipy
 ```
 

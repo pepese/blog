@@ -26,7 +26,7 @@ Heroku の Web ページで各種設定できるが、ここでは CLI ベース
 
 ## インストール
 
-```sh
+```bash
 $ brew install heroku/brew/heroku
 ```
 
@@ -39,7 +39,7 @@ $ brew install heroku/brew/heroku
 なお、 `/path/to/myApp` は Heroku が対応している言語で実装されたローカルのアプリケーションプロジェクトをさす。  
 また、 Heroku へのアプリケーションのデプロイは Git 経由で行われる。
 
-```sh
+```bash
 $ heroku login # Heroku にログイン
 $ cd /path/to/myApp
 $ heroku create # Heroku 上に新しいアプリケーションを作成
@@ -59,19 +59,19 @@ $ heroku apps help # apps の USAGE
 
 アドオンを CLI から適用する方法は以下。
 
-```sh
+```bash
 $ heroku addons:create xxxx
 ```
 
 ## プロセスの確認、停止
 
-```sh
+```bash
 $ heroku apps:info # アプリケーションの情報を見る
 $ heroku ps # プロセスを見る
 $ heroku logs # ログを見る
 ```
 
-```sh
+```bash
 $ heroku ps:scale web=0 # 停止
 $ heroku ps:scale web=1 # 起動
 ```
@@ -91,7 +91,7 @@ Heroku ではアプリケーションの起動方法に各プログラミング�
 
 ## １つのアプリケーションを複数のHeroku環境へデプロイ
 
-```sh
+```bash
 $ heroku create アプリ名 --remote 新環境名
 $ git push 新環境名 master
 ```

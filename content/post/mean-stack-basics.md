@@ -29,7 +29,7 @@ Angular（所謂Angular4）でMEANスタックのアプリを作成してみる�
 Angular CLI のインストール。  
 パッケージ管理ツールを `npm` から `yarn` へ変更。
 
-```sh
+```bash
 $ npm install -g @angular/cli
 $ ndenv rehash
 $ ng set --global packageManager=yarn
@@ -67,7 +67,7 @@ os: darwin x64
 
 SCSSベースで `mean-sample` というプロジェクト名で作成。
 
-```sh
+```bash
 $ ng new mean-sample --style=scss
 installing ng
   create .editorconfig
@@ -108,7 +108,7 @@ Project 'mean-sample' successfully created.
 `yarn` で作成されていることを確認する。  
 また、下記の通りプロジェクトディレクトリに移動して、導入されている Angular のバージョンを確認する。
 
-```sh
+```bash
 $ cd mean-sample
 $ ng version
 _                      _                 ____ _     ___
@@ -138,7 +138,7 @@ os: darwin x64
 以下で Bootstrap を導入する。  
 なお、 Bootstrap4-beta は jquery と popper.js に依存する。
 
-```sh
+```bash
 $ yarn add ngx-bootstrap bootstrap@4.0.0-beta jquery@3.2.1 popper.js@1.11.1 --save
 ```
 

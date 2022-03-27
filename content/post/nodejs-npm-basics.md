@@ -37,7 +37,7 @@ Node.jsのインストール方法は以下の「anyenv」を参照。
 
 上記の手順でNode.jsを導入した場合、Node.jsのバージョンを `ndenv` でコントロールする。
 
-```sh
+```bash
 $ ndenv install -l # インストールできるNode.jsのバージョン確認
 $ ndenv install v8.3.0 # バージョンを指定してインストール
 $ ndenv versions # インストールされたことを確認
@@ -53,7 +53,7 @@ $ npm -v # 確認
 公式ドキュメントは[ここ](https://docs.npmjs.com)。  
 プロキシの設定が必要な場合は以下。
 
-```sh
+```bash
 $ npm config set proxy http://<username>:<password>@<proxy-host>:<proxy-port>
 $ npm config set https-proxy http://<username>:<password>@<proxy-host>:<proxy-port>
 ```
@@ -63,7 +63,7 @@ $ npm config set https-proxy http://<username>:<password>@<proxy-host>:<proxy-po
 任意のディレクトリを作成して `npm init` を実行すると `package.json` が作成され、プロジェクトとなる。  
 いろいろ聞かれるが、全部Enterで問題無い。あとで変更可能。
 
-```sh
+```bash
 $ mkdir nodejs-sample
 $ cd nodejs-sample
 $ npm init
@@ -192,7 +192,7 @@ console.log(hello.sayHello());
 
 上記JSファイルを作成して下記を実行。
 
-```sh
+```bash
 $ node main.js
 Hello World !
 ```
@@ -216,7 +216,7 @@ console.log('Server running at http://127.0.0.1:1337/');
 
 下記を実行してブラウザで `http://127.0.0.1:1337/` へアクセスすると「Hello World !」と表示される。
 
-```sh
+```bash
 $ node app.js
 ```
 
@@ -226,7 +226,7 @@ $ node app.js
 
 ■foreverのインストール、起動、停止
 
-```sh
+```bash
 $ npm install -g forever
 $ forever start app.js
 $ forever stop app.js

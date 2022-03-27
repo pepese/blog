@@ -279,7 +279,7 @@ service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   10h
 
 ### クライアント、サーバのバージョンを確認
 
-```sh
+```bash
 $ kubectl version
 Client Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.3", GitCommit:"2bba0127d85d5a46ab4b778548be28623b32d0b0", GitTreeState:"clean", BuildDate:"2018-05-21T09:17:39Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"darwin/amd64"}
 Server Version: version.Info{Major:"1", Minor:"10", GitVersion:"v1.10.3", GitCommit:"2bba0127d85d5a46ab4b778548be28623b32d0b0", GitTreeState:"clean", BuildDate:"2018-05-21T09:05:37Z", GoVersion:"go1.9.3", Compiler:"gc", Platform:"linux/amd64"}
@@ -303,7 +303,7 @@ $ kubectl config use-context docker-for-desktop
 
 ### Node の一覧を取得
 
-```sh
+```bash
 $ kubectl get nodes
 NAME                 STATUS    ROLES     AGE       VERSION
 docker-for-desktop   Ready     master    57m       v1.10.3
@@ -313,7 +313,7 @@ docker-for-desktop   Ready     master    57m       v1.10.3
 
 サンプルのコンテナをデプロイして、コンテナ、 Pod の一覧を取得する。
 
-```sh
+```bash
 $ kubectl run kubernetes-bootcamp --image=docker.io/jocatalin/kubernetes-bootcamp:v1 --port=8080
 deployment "kubernetes-bootcamp" created
 $
@@ -329,7 +329,7 @@ kubernetes-bootcamp-6db74b9f76-fwqf6   1/1       Running   0          10m
 デフォルトでは、 Kubernetes Cluster 内でのみ通信可能で、外部から Master の apiserver へのアクセスができない。  
 そのため、 `kubectl proxy` コマンドで外部から apiserver へアクセス可能なプロキシを作成する。
 
-```sh
+```bash
 $ kubectl proxy
 Starting to serve on 127.0.0.1:8001
 ```
@@ -338,7 +338,7 @@ Starting to serve on 127.0.0.1:8001
 終了しない状態で、別ターミナルで `curl` などを実行してアクセスを確認する。  
 以下で apisever のバージョンを確認する。
 
-```sh
+```bash
 $ curl http://127.0.0.1:8001/version
 {
   "major": "1",
@@ -356,14 +356,14 @@ $ curl http://127.0.0.1:8001/version
 また、 apiserver に対して Pod 名を指定することによって、 Pod を経由してデプロイしたアプリケーションにアクセスできる。  
 Pod 名は `kubectl get pods` で取得できる。
 
-```sh
+```bash
 $ curl http://localhost:8001/api/v1/proxy/namespaces/default/pods/kubernetes-bootcamp-6db74b9f76-fwqf6/
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-6db74b9f76-fwqf6 | v=1
 ```
 
 Pod 内のコンテナ上でコマンドを実行してみる。
 
-```sh
+```bash
 $ kubectl exec kubernetes-bootcamp-6db74b9f76-5c4p4 env
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 HOSTNAME=kubernetes-bootcamp-6db74b9f76-5c4p4
@@ -385,7 +385,7 @@ HOME=/root
 bash セッションを作成してコンテナへアクセスする。  
 `exit` でぬける。
 
-```sh
+```bash
 $ kubectl exec -ti kubernetes-bootcamp-6db74b9f76-5c4p4 bash
 root@kubernetes-bootcamp-6db74b9f76-5c4p4:/#
 root@kubernetes-bootcamp-6db74b9f76-5c4p4:/# curl localhost:8080
@@ -416,7 +416,7 @@ Service には以下の種類（ **type** という）がある。
 
 あるService へ所属する Pod はラベル（ **LabelSelector** ）によって決定される。
 
-```sh
+```bash
 $ kubectl get services
 NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   43m
@@ -425,7 +425,7 @@ kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   43m
 上記の kubernetes は master から node に通信する用の Service 。  
 新しく Service を作成してみる。
 
-```sh
+```bash
 $ kubectl expose deployment kubernetes-bootcamp --type="NodePort" --port 8080
 service "kubernetes-bootcamp" exposed
 $
@@ -457,7 +457,7 @@ kubernetes-bootcamp   NodePort   10.102.125.240   <none>        8080:31130/TCP  
 
 `-l` オプションを使用して、ラベルを指定してリソースを取得可能。
 
-```sh
+```bash
 $ kubectl get pods -l run=kubernetes-bootcamp
 NAME                                   READY     STATUS    RESTARTS   AGE
 kubernetes-bootcamp-6db74b9f76-5c4p4   1/1       Running   0          54m
@@ -468,7 +468,7 @@ kubernetes-bootcamp   NodePort   10.102.125.240   <none>        8080:31130/TCP  
 
 ラベルは以下のように付与する。
 
-```sh
+```bash
 $ kubectl label pod kubernetes-bootcamp-6db74b9f76-5c4p4 app=v1
 pod "kubernetes-bootcamp-6db74b9f76-5c4p4" labeled
 $
@@ -489,7 +489,7 @@ kubernetes-bootcamp-6db74b9f76-5c4p4   1/1       Running   0          57m
 
 削除は以下。
 
-```sh
+```bash
 $ kubectl delete service -l run=kubernetes-bootcamp
 service "kubernetes-bootcamp" deleted
 $ kubectl get services
@@ -501,7 +501,7 @@ kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   1h
 
 スケーリングの設定を行うことで Pod がスケールする。
 
-```sh
+```bash
 $ kubectl get deployments
 NAME                  DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 kubernetes-bootcamp   1         1         1            1           1h
@@ -514,7 +514,7 @@ kubernetes-bootcamp   1         1         1            1           1h
 
 Pod を 4 つまでスケールさせてみる。
 
-```sh
+```bash
 $ kubectl scale deployments/kubernetes-bootcamp --replicas=4
 deployment "kubernetes-bootcamp" scaled
 $
@@ -532,14 +532,14 @@ kubernetes-bootcamp-6db74b9f76-vkhbl   1/1       Running   0          10m       
 
 ### コンテナをローリングアップデート
 
-```sh
+```bash
 $ kubectl describe pods
 ```
 
 現状は `v1` の Pod が 4 つあるのがわかる。  
 `kubectl set image` コマンドでコンテナイメージを更新する。
 
-```sh
+```bash
 $ kubectl get pods
 NAME                                   READY     STATUS    RESTARTS   AGE
 kubernetes-bootcamp-6db74b9f76-2ppvx   1/1       Running   0          23m
@@ -560,6 +560,6 @@ deployment "kubernetes-bootcamp" successfully rolled out
 `kubectl rollout status` でローリングアップデートが成功したか確認する。  
 なお、なんらかが原因で失敗している場合、以下のコマンドで UNDO できる。
 
-```sh
+```bash
 $ kubectl rollout undo deployments/kubernetes-bootcamp
 ```

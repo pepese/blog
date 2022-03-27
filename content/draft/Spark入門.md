@@ -39,7 +39,7 @@ Data Source は Hadoop HDFS 以外のものにも対応している。
 
 # インストール
 
-```sh
+```bash
 $ brew install apache-spark
 ```
 

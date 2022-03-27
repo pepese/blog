@@ -129,7 +129,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 
 # docker コマンドの使い方・概要
 
-```sh
+```bash
 $ docker [OPTIONS] COMMAND [arg...]
 ```
 

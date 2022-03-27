@@ -16,7 +16,7 @@ categories:
 - tech
 ---
 
-Java 系の anyenv 、 [SDKMAN](http://sdkman.io/index.html) をさわってみる。
+Java 系の バージョン管理ツール [SDKMAN](http://sdkman.io/index.html) をさわってみる。
 
 <!--more-->
 
@@ -55,7 +55,7 @@ SDKMAN を導入することで、以下のツールのバージョン管理が�
 
 ## SDKMAN
 
-```sh
+```bash
 $ curl -s "https://get.sdkman.io" | bash
 $ source "$HOME/.sdkman/bin/sdkman-init.sh"
 ```
@@ -71,7 +71,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 USAGE は以下。  
 ツール名を「 xxxx 」とする。
 
-```sh
+```bash
 $ sdk help                     # help を表示
 $ sdk version                  # SDKMAN 自体のバージョン
 $ sdk selfupdate force         # SDKMAN 自体のバージョンアップ
@@ -88,7 +88,7 @@ $ sdk current xxxx             # xxxx の現在の version を表示
 
 ## Java
 
-```sh
+```bash
 $ sdk install java
 $ sdk list java
 ==========================
@@ -117,7 +117,7 @@ $ sdk default java 8u151-oracle
 
 ## Maven
 
-```sh
+```bash
 $ sdk install maven 3.5.2
 $ sdk list maven
 ```

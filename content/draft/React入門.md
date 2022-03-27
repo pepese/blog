@@ -51,14 +51,14 @@ Facebookが開発、OSSとして公開しているJavaScriptライブラリ。
 
 ## create-react-app の導入
 
-```sh
+```bash
 $ brew install yarn
 $ yarn global add create-react-app
 ```
 
 ## プロジェクトの作成
 
-```sh
+```bash
 $ create-react-app react-sample
 Inside that directory, you can run several commands:
 

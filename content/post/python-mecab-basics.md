@@ -28,7 +28,7 @@ categories:
 
 ## インストール
 
-```sh
+```bash
 $ brew install mecab
 $ mecab --version
 mecab of 0.996
@@ -41,7 +41,7 @@ mecab of 0.996
 
 ### mecab-ipadic-neologd のインストール
 
-```sh
+```bash
 $ git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
 $ cd mecab-ipadic-neologd/
 $ ./bin/install-mecab-ipadic-neologd -n -p /usr/local/lib/mecab/dic/neologd
@@ -50,7 +50,7 @@ $ ./bin/install-mecab-ipadic-neologd -n -p /usr/local/lib/mecab/dic/neologd
 最後に本当にインストールするか聞かれるから `yes` or `no` をタイプする。  
 なお、筆者の環境では足りなかった以下のコマンドを追加した。
 
-```sh
+```bash
 $ brew install xz
 ```
 
@@ -69,7 +69,7 @@ dicdir =  /usr/local/lib/mecab/dic/neologd
 
 インタラクティブモードは以下。（そのままコマンドを打つ）
 
-```sh
+```bash
 $ mecab
 おはよう
 おはよう	感動詞,*,*,*,*,*,おはよう,オハヨウ,オハヨー
@@ -96,7 +96,7 @@ $ mecab [入力ファイル] -o [出力ファイル]
 MeCabには未知語を推定する機能があり、デフォルトでは有効。  
 未知語を抽出したい場合は `-x` （ `--unk-feature` ）で未知語の表示形式を指定して実行する。
 
-```sh
+```bash
 $ mecab -x "undef"
 にゃほにゃほたまくろー
 に      助詞,格助詞,一般,*,*,*,に,ニ,ニ
@@ -135,7 +135,7 @@ csv ファイルに 1 行 1 単語で以下の形式で作成する。
 
 以下のコマンドを実行する。
 
-```sh
+```bash
 $ /usr/local/Cellar/mecab/0.996/libexec/mecab/mecab-dict-index -d /usr/local/lib/mecab/dic/neologd -u user-dic.dic -f utf8 -t utf8 user-dic.csv
 ```
 
@@ -167,7 +167,7 @@ $ mecab -Owakati input.txt > output_wakati.txt
 
 上記の手順で MeCab をセットアップしていることが前提。
 
-```sh
+```bash
 $ yarn add mecab-async
 ```
 
@@ -183,7 +183,7 @@ mecab.parse(input,(err,result)=>{
 });
 ```
 
-```sh
+```bash
 $ node app.js "にゃほにゃほたまくろー"
 [ [ 'にゃほにゃほたまくろー',
     '名詞',
@@ -200,7 +200,7 @@ $ node app.js "にゃほにゃほたまくろー"
 
 # Python3 から MeCab を使う
 
-```sh
+```bash
 $ pip install mecab-python3
 ```
 

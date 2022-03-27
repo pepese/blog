@@ -89,6 +89,26 @@
     <script src="{{ . | absURL }}"></script>
     {{ end }}
 
+    <!-- Global site tag (gtag.js) - Google Analytics 旧GA ユニバーサルアナリティクス -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42388425-3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-42388425-3');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-35HHNQCPDF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-35HHNQCPDF');
+    </script>
+
     <!-- Google Adsense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0116602540349648"
      crossorigin="anonymous"></script>

@@ -27,7 +27,7 @@ Node.js から DynamoDB にアクセスしてみる。
 
 # 環境構築
 
-```sh
+```bash
 $ mkdir dynamodb-js
 $ cd dynamodb-js
 $ yarn init
@@ -158,7 +158,7 @@ dynamodb.deleteItem(params, (err, data) => {
 
 # 実行
 
-```sh
+```bash
 $ node app/putItem.js
 $ node app/getItem.js
 $ node app/deleteItem.js

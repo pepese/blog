@@ -2,9 +2,9 @@
 title:       "Visual Studio Code入門"
 URL:         "vscode-basics"
 subtitle:    ""
-description: ""
-keyword:     ""
-date:        2018-01-31
+description: "Visual Studio Codeのインストールからおすすめの拡張機能までを説明。"
+keyword:     "Visual Studio Code, vscode"
+date:        2022-03-27
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -19,21 +19,21 @@ Microsoft が開発したエディタ[Visual Studio Code](https://code.visualstu
 
 # インストール（Mac）
 
-```sh
-$ brew cask install visual-studio-code
+```bash
+$ brew install --cask visual-studio-code
 ```
 
 # 起動方法
 
 アイコンクリックでもいいがコマンドラインで起動できる。
 
-```sh
+```bash
 $ code
 ```
 
 プロジェクト（カレントディレクトリ）で起動したい場合は以下。
 
-```sh
+```bash
 $ code .
 ```
 
@@ -160,3 +160,8 @@ indent_size = 2
     - Dark Monokai がよい
 - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)
     - 全角や余計なスペースをハイライトしてくれる拡張機能
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle vscode --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B09TDNXKL4&linkId=e48b4111e28e59cbf4875a2d00a94452"></iframe>

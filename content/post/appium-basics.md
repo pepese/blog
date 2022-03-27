@@ -31,7 +31,7 @@ Homebrew 、 Java 1.8 の導入は省略している。
 
 ## Appium
 
-```sh
+```bash
 $ brew update
 $ brew install node
 $ npm install --global appium appium-doctor wd
@@ -40,7 +40,7 @@ $ npm install --global appium appium-doctor wd
 Appium は以下で起動。  
 後述の appium-desktop を使用せず、 Appium のテストコードだけ実行する場合はこれ。
 
-```sh
+```bash
 $ appium &
 ```
 
@@ -50,7 +50,7 @@ Xcode を App Store でインストールしてから以下を実行。
 また、 `brew install carthage` を実行する際、権限不足で `/usr/local/Frameworks` ディレクトリ作成に失敗する。  
 そのため、 `brew link carthage` に失敗するので、あらかじめディレクトリを作ってあげてからインストールする。
 
-```sh
+```bash
 $ sudo mkdir /usr/local/Frameworks
 $ sudo chown -R $(whoami):admin /usr/local/Frameworks
 $ brew install carthage
@@ -85,7 +85,7 @@ iOS の場合は、「実機＋アプリ」は `.ipa` ファイル、「エミ�
 iOS 実機へ WebDriver をインストールするコマンドは以下。  
 （なお、筆者は実機で試していない、、、）
 
-```sh
+```bash
 $ xcodebuild build test -project /usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent/WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination id=xxxx -configuration Debug
 ```
 
@@ -94,7 +94,7 @@ $ xcodebuild build test -project /usr/local/lib/node_modules/appium/node_modules
 Android 開発環境の構築方法については [Androidアプリ入門 Macで環境構築編](https://blog.pepese.com/android-env-on-mac/) を参照。  
 以下のコマンドで正しく環境構築されたか確認する。
 
-```sh
+```bash
 $ appium-doctor --android
 ```
 
@@ -121,7 +121,7 @@ Android エミュレータは iOS シミュレータと異なり、エミュレ�
 かつては `android` コマンドであったが、 `sdkmanager` と `avdmanager` に移行された。  
 以下はメモ程度。
 
-```sh
+```bash
 $ sdkmanager --list
 $ sdkmanager "system-images;android-25;google_apis;armeabi-v7a"
 $ avdmanager create avd -n test -k "system-images;android-25;google_apis;armeabi-v7a"
@@ -238,7 +238,7 @@ Android エミュレータの場合は、あらかじめエミュレータを起
 
 コマンドラインの iOS ビルドツールの準備。
 
-```sh
+```bash
 $ xcode-select --install
 $ sudo xcode-select --switch /Applications/Xcode.app
 $ xcodebuild -version
@@ -248,7 +248,7 @@ Build version 9C40b
 
 サンプルアプリとテストコードを取得してセットアップ。
 
-```sh
+```bash
 $ git clone https://github.com/appium/sample-code
 $ git clone https://github.com/appium/ios-test-app
 $ cd ios-test-app
@@ -261,7 +261,7 @@ $ cd sample-code/sample-code/examples/python
 `xcodebuild -version -sdk` コマンドで `PlatformVersion` を確認し、 `ios_simple.py` ファイルの 20 行目あたりの `PlatformVersion` を書き直す。  
 別ターミナルを起動し `appium &` コマンドで Appium を起動してから以下を実行。
 
-```sh
+```bash
 $ py.test ios_simple.py
 ```
 
@@ -284,7 +284,7 @@ $ py.test ios_simple.py
 エミュレータは起動しておく。  
 iOS のテストを実行した後のテイで書く。
 
-```sh
+```bash
 $ py.test android_simple.py
 ```
 

@@ -2,22 +2,25 @@
 title:       "Macで開発環境を作る"
 URL:         "mac-dev-environment"
 subtitle:    ""
-description: ""
-keyword:     ""
-date:        2017-05-10
+description: "Macbookに開発環境を作成する際にやること。"
+keyword:     "Mac, Homebrew, Git, SDKMAN, anyenv, asdf, Java, Maven"
+date:        2022-03-27
 author:      "ぺーぺーSE"
 image:       ""
 tags:
 - mac
 - homebrew
+- git
+- sdkman
 - anyenv
+- asdf
 - java
 - maven
 categories:
 - tech
 ---
 
-2016年下期にMacbook Proを買ったので開発環境の設定をまとめてみた。
+Mac で開発環境を作成する際に概ね実施することをまとめてみた。
 
 <!--more-->
 
@@ -48,15 +51,15 @@ categories:
 
 タイピング中に勝手に変換される、あれ。
 
-- http://sbapp.net/appnews/osxelcapitan-33422
+- デスクトップ画面右上の「A」とか「あ」をクリック
+- 比較的上の方に「ライブ変換」とあるのでチェックがついていればそれをクリックして無効化
 
 ## Finderで隠しファイルを表示
 
-```sh
+```bash
 $ defaults write com.apple.finder AppleShowAllFiles TRUE
 $ killall Finder
 ```
-
 
 # 開発環境作成
 
@@ -77,29 +80,31 @@ $ xcode-select --install
 
 ## iTerm2をインストール
 
-```sh
-$ brew cask search iterm2
-==> Exact match
+```bash
+# インストール
+$ brew install iterm2
+# 確認
+$ brew list | grep iterm2
 iterm2
-$ brew cask install iterm2
-==> Moving App 'iTerm.app' to '/Applications/iTerm.app'
 ```
 
 Macデフォルトのターミナルより便利。  
 `Command + D` でウィンドウ分割できたりする。
 
-## cURLをインストール
-
-- ターミナルで`brew install curl`
-- `brew list` でcURLが含まれているか確認
-
 ## Gitをインストール
 
-- ターミナルで `brew install git`
-- `brew list` でgitが含まれているか確認
-- `git --version` で確認
+```bash
+# インストール
+$ brew install git
+# 確認
+$ brew list | grep git
+git
+# 確認
+$ git --version
+git version 2.35.1
+```
 
-Gitの使い方は以下。
+Gitの使い方は以下を参照。
 
 - [Git入門](https://blog.pepese.com/git-basics/)
 
@@ -109,7 +114,7 @@ Gitの使い方は以下。
 以下を参照。
 
 - [すべての\*\*envを管理するanyenv](https://blog.pepese.com/anyenv/)
-- [asdfでバージョン管理](https://blog.pepese.com/asdf/)
+- [マルチランタイムバージョン管理ツールasdf](https://blog.pepese.com/asdf-basics/)
     - こっちのがおすすめ
 
 ## SDKMAN をインストール
@@ -125,8 +130,8 @@ anyenv・asdf がお好みでない方はこちら。
 
 asdf・SDKMAN が好みじゃないひとはこっち。
 
-```sh
-$ brew cask install java
+```bash
+$ brew install java
 ```
 
 インストールされたJavaの確認は以下。
@@ -141,14 +146,14 @@ Matching Java Virtual Machines (1):
 
 PATHが通ってなかったら `~/.bash_profile` に以下を加筆して `source ~/.bash_profile` 。
 
-```sh
+```bash
 export JAVA_HOME=`/usr/libexec/java_home -v "11"`
 ```
 
 `11` の部分を `1.8` にするとJava8を使用できる。（もちろんインストールしてから）  
 消す時は以下。
 
-```sh
+```bash
 $ rm -rf /Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home
 ```
 
@@ -156,13 +161,7 @@ $ rm -rf /Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home
 
 asdf・SDKMAN が好みじゃないひとはこっち。
 
-```sh
-$ brew search maven
-==> Formulae
-maven ✔                  maven-completion         maven-shell              maven@3.2                maven@3.3                maven@3.5
-
-==> Casks
-mavensmate                                                                  homebrew/cask-fonts/font-maven-pro
+```bash
 $ brew install maven
 $ mvn -v
 Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-25T03:41:47+09:00)
@@ -182,8 +181,8 @@ OS name: "mac os x", version: "10.14.1", arch: "x86_64", family: "mac"
 
 ## STS (Spring Tool Suite)
 
-```sh
-$ brew cask install sts
+```bash
+$ brew install --cask springtoolsuite
 ```
 
 # その他ツール
@@ -192,14 +191,14 @@ $ brew cask install sts
 
 Mac 用の Rest Client ツール [Cocoa Rest Client](https://mmattozzi.github.io/cocoa-rest-client/)。
 
-```sh
-brew cask install cocoarestclient
+```bash
+$ brew install cocoarestclient
 ```
 
 ## FileZilla
 
 FTP、FTPS、SFTPのGUIクライアント。
 
-```sh
-$ brew cask install filezilla
+```bash
+$ brew install filezilla
 ```

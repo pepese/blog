@@ -51,7 +51,7 @@ Node.js/Expressアプリケーションのテストをしてみる。
 
 ## グローバルインストール
 
-```sh
+```bash
 $ yarn global add nyc
 $ ndenv rehash
 ```
@@ -60,7 +60,7 @@ $ ndenv rehash
 
 [Express入門](https://blog.pepese.com/nodejs-express-basics/)で作成したプロジェクトにて以下を導入する。
 
-```sh
+```bash
 $ yarn add mocha chai sinon nyc rimraf --dev
 ```
 
@@ -69,7 +69,7 @@ $ yarn add mocha chai sinon nyc rimraf --dev
 先に紹介した記事の通り、Expressアプリケーションのソースディレクトリは `app/` だけで完結するようにする。  
 以下のようにテストスクリプト用のディレクトリを作成する。
 
-```sh
+```bash
 $ mkdir app/spec
 $ mkdir app/spec/controllers
 ```
@@ -178,7 +178,7 @@ describe('/users', () => {
 
 npmスクリプトで以下のようにテストを実行する。
 
-```sh
+```bash
 $ npm test
 
   /
@@ -193,7 +193,7 @@ $ npm test
 
 カバレッジレポートは `nyc` を用いて以下のように出力する。
 
-```sh
+```bash
 $ nyc npm test
 
   /

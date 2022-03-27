@@ -1,10 +1,10 @@
 ---
-title:       "Git Flowとコンフリクトの解消"
+title:       "git-flowとコンフリクトの解消"
 URL:         "git-flow-fix-conflict"
 subtitle:    ""
-description: ""
-keyword:     ""
-date:        2017-05-24
+description: "git-flowとコンフリクトが発生した際の解消方法について説明。"
+keyword:     "Git, git-flow"
+date:        2022-03-27
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -18,7 +18,7 @@ git-flowの概要とマージ時のコンフリクトの解消についてまと
 
 <!--more-->
 
-gitについては以下を参照。
+Git の基本的なことについては以下を参照。
 
 - [Git入門](https://blog.pepese.com/git-basics/)
 - [Gitコマンド整理](https://blog.pepese.com/git-commands/)
@@ -111,7 +111,7 @@ gitについては以下を参照。
 ここでは、「 https://github.com/pepese/test.git 」とする。  
 master ブランチに対して以下のREADME.mdファイルを作成してpushしておく。
 
-```sh
+```bash
 $ git clone https://github.com/pepese/test.git
 $ cd test
 $ vi README.md # 後述お通りファイルを編集する
@@ -135,7 +135,7 @@ $ git push origin feature
 ターミナル1では develop ブランチ、ターミナル2では feature ブランチで作業する。  
 ターミナル1で以下を実行する。
 
-```sh
+```bash
 $ git clone https://github.com/pepese/test.git develop
 $ cd develop
 $ git checkout develop
@@ -152,7 +152,7 @@ $ git push origin develop
 
 ターミナル2で以下を実行する。
 
-```sh
+```bash
 $ git clone https://github.com/pepese/test.git feature
 $ cd feature
 $ git checkout feature
@@ -182,7 +182,7 @@ $ git push origin feature
 
 上記に沿って具体的な手順を後述する。
 
-```sh
+```bash
 $ git fetch
 $ git merge origin/feature
 Auto-merging README.md
@@ -218,7 +218,7 @@ Gitではコンフリクトを **手動で修正** する必要がある。
 
 修正が完了したら以下のように反映させる。
 
-```sh
+```bash
 $ git add README.md
 $ git commit -m "merge and fix conflict"
 $ git push origin develop
@@ -227,7 +227,7 @@ $ git push origin develop
 `git log` で確認すると以下のように develop ブランチから分岐した feature ブランチがマージされていることがわかる。  
 （時系列は下から上）
 
-```sh
+```bash
 $ git log --graph --oneline
 *   9480427 merge and fix conflict
 |\  
@@ -249,7 +249,12 @@ $ git log --graph --oneline --decorate=full
 
 最後に feature ブランチを削除して完了する。
 
-```sh
+```bash
 $ git branch -d feature # ローカルの feature ブランチを削除、ターミナル1では不要
 $ git push -d origin feature # リモートの feature ブランチを削除
 ```
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle git --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B09DPKYHK9&linkId=7f63835d3ad6c9cb3c701a2dfdc826a1"></iframe>

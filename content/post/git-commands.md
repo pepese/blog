@@ -2,9 +2,9 @@
 title:       "Gitコマンド整理"
 URL:         "git-commands"
 subtitle:    ""
-description: ""
-keyword:     ""
-date:        2017-05-11
+description: "Gitの理解に必要な概念とコマンドの使い方について。"
+keyword:     "Git"
+date:        2022-03-27
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -13,7 +13,7 @@ categories:
 - tech
 ---
 
-Gitコマンド、概念を整理する。
+Gitコマンドの整理と必要な概念について記載する。
 
 <!--more-->
 
@@ -24,7 +24,7 @@ Gitコマンド、概念を整理する。
 - `git config`
     - Gitクライアントの設定
     - `--global` で全体に反映される設定、 `--local` で個別プロジェクトに反映される設定
-        - `--local` の方が強い
+    - `--global` と `--local` でどう項目で設定値が異なる場合、 `--local` が優先される
 - `git remote`
     - `git init` した後にリモートリポジトリの設定を行う
 
@@ -98,7 +98,7 @@ Gitの以下の保存領域がある。
     - ファイルの中身の差分まで確認することができる。
 - `git diff <branch_name> <branch_name>`
     - ブランチ間の差分を確認することができる
-    - `git fetch` してマージしていない状態で `git diff master origin/master` を実行すると、「現在のローカルリポジトリのmaster」と「リモートリポジトリの最新のmaster」の状態を比較することができる
+    - `git fetch` してマージしていない状態で `git diff main origin/main` を実行すると、「現在のローカルリポジトリのmain」と「リモートリポジトリの最新のmain」の状態を比較することができる
 - `git log`
     - コミットによるローカルリポジトリの変更履歴を表示する
     - コミットID、編集者、変更内容などが表示される
@@ -153,22 +153,22 @@ resetには「 **soft** 」、「 **mixed** 」（デフォルト）、「 **har
     - `git fetch` で取得したリモートリポジトリの変更（ `<repository>/<branch_name>` ）をローカルリポジトリの現在のブランチへ反映する
 - `git pull`
     - リモートリポジトリから変更を取得する（マージまで行う）
-    - 「 `git fetch` + `git merge origin/master` 」に同じ
+    - 「 `git fetch` + `git merge origin/main` 」に同じ
 
-> ## *master* と *origin/master* の違い
->
-> *master* はローカルリポジトリのmasterブランチを指し、 *origin/master* はリモートリポジトリのmasterブランチを指す。  
-> ただし、 *origin/master* はリモートリポジトリと結びついているブランチであって、ローカルに存在する。  
-> `git fetch` することによって、ローカルの *origin/master* が更新される。  
-> つまり、 `git fetch` した後に `git merge origin/master` すると、「ローカルの *master* ブランチに最新状態に更新した *origin/master* の変更をマージする」ということになる。
+## *main* と *origin/main* の違い
 
-> ## cherry-pick
->
-> 現在何らかのブランチで作業していて、「あのブランチのあのコミットだけほしい。。。」と思ったとする。  
-> こんなとき **cherry-pick** という方法がある。  
-> リモートリポジトリから情報を取得し、欲しいコミットのコミットIDを指定して現在のブランチに取り込む。
->
-> ```sh
+*main* はローカルリポジトリのmainブランチを指し、 *origin/main* はリモートリポジトリのmainブランチを指す。  
+ただし、 *origin/main* はリモートリポジトリと結びついているブランチであって、ローカルに存在する。  
+`git fetch` することによって、ローカルの *origin/main* が更新される。  
+つまり、 `git fetch` した後に `git merge origin/main` すると、「ローカルの *main* ブランチに最新状態に更新した *origin/main* の変更をマージする」ということになる。
+
+## cherry-pick
+
+現在何らかのブランチで作業していて、「あのブランチのあのコミットだけほしい。。。」と思ったとする。  
+こんなとき **cherry-pick** という方法がある。  
+リモートリポジトリから情報を取得し、欲しいコミットのコミットIDを指定して現在のブランチに取り込む。
+
+```bash
 $ git fetch
 $ git cherry-pick <commit_id>
 ```
@@ -204,7 +204,7 @@ $ git cherry-pick <commit_id>
 
 ## マージ
 
-```sh
+```bash
 $ git merge <branch_name>
 ```
 
@@ -216,34 +216,34 @@ $ git merge <branch_name>
 
 #### Fast-forwardマージ
 
-masterブランチの開発に対してバグが見つかり、このmasterブランチのHEADからbugfixブランチを作成して修正用のコミットを実行したとする。  
-さらにこの時、bugfixブランチにはコミットを実施したが、masterブランチにはコミットを実行していなかったとする。  
-この状況で `git checkout master` の後 `git merge bugfix` を実行すると「masterブランチのHEAD」は単に「bugfixブランチのHEAD」に移動する。masterブランチとbugfixブランチは枝分かれしておらず、コミットログは1本でbugfixブランチが存在した歴史が残らない。  
+mainブランチの開発に対してバグが見つかり、このmainブランチのHEADからbugfixブランチを作成して修正用のコミットを実行したとする。  
+さらにこの時、bugfixブランチにはコミットを実施したが、mainブランチにはコミットを実行していなかったとする。  
+この状況で `git checkout main` の後 `git merge bugfix` を実行すると「mainブランチのHEAD」は単に「bugfixブランチのHEAD」に移動する。mainブランチとbugfixブランチは枝分かれしておらず、コミットログは1本でbugfixブランチが存在した歴史が残らない。  
 これを **Fast-forwardマージ** という。  
 デフォルトではこのマージ方法となっており、オプションで明記する場合は `--ff` 。
 
 #### non Fast-forwardマージ
 
-上記と同じ状況で、masterブランチに対して「bugfixブランヂに加えられた変更」のコミットを追加する方法を **non Fast-forwardマージ** といい `git merge --no-ff bugfix` を実行することで実現される。  
-masterブランチとbugfixブランチは枝分かれしており、コミットログもまた分岐していて、bugfixブランチが存在した歴史が残る。  
+上記と同じ状況で、mainブランチに対して「bugfixブランヂに加えられた変更」のコミットを追加する方法を **non Fast-forwardマージ** といい `git merge --no-ff bugfix` を実行することで実現される。  
+mainブランチとbugfixブランチは枝分かれしており、コミットログもまた分岐していて、bugfixブランチが存在した歴史が残る。  
 マージはこちらが推奨される。オプションで指定せず、デフォルトを変更する方法は以下。
 
-```sh
+```bash
 $ git config --global --add merge.ff false
 $ git config --global --add pull.ff only # pullの時は --no-ff を除外
 ```
 
 #### Recursiveマージ
 
-masterブランチの開発に対してバグが見つかり、このmasterブランチのHEADからbugfixブランチを作成して修正用のコミットを実行したとする。  
-さらにこの時、masterブランチには別のコミットが実行されていたとする。  
-この状況で `git checkout master` の後 `git merge bugfix` を実行すると、masterブランチに対して「bugfixブランチに加えられた変更」が追加され、masterブランチのHEADはマージで加えられた変更の状態まで移動する。  
-masterブランチとbugfixブランチは枝分かれして、合流する。  
+mainブランチの開発に対してバグが見つかり、このmainブランチのHEADからbugfixブランチを作成して修正用のコミットを実行したとする。  
+さらにこの時、mainブランチには別のコミットが実行されていたとする。  
+この状況で `git checkout main` の後 `git merge bugfix` を実行すると、mainブランチに対して「bugfixブランチに加えられた変更」が追加され、mainブランチのHEADはマージで加えられた変更の状態まで移動する。  
+mainブランチとbugfixブランチは枝分かれして、合流する。  
 これを **Recursiveマージ** という。
 
 ## リベース
 
-```sh
+```bash
 $ git rebase <branch_name>
 ```
 
@@ -303,3 +303,8 @@ $ git rebase <branch_name>
     - `HEAD^3` は違うので注意！
 - `@`
     - git v1.8.5 から `HEAD` のエイリアス
+
+# おすすめ書籍
+
+<!-- amazon affiliate kindle git --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B09DPKYHK9&linkId=7f63835d3ad6c9cb3c701a2dfdc826a1"></iframe>

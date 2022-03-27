@@ -36,7 +36,7 @@ categories:
 
 以下のコマンドでプロジェクトおよび必要なファイルを作成する。
 
-```sh
+```bash
 $ ng new cognito-js --style=scss
 $ cd cognito-js
 $ npm install amazon-cognito-identity-js --save

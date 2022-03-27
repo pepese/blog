@@ -25,7 +25,7 @@ categories:
 
 # 環境構築
 
-```sh
+```bash
 $ npm install -g typescript@latest
 $ ndenv rehash$ tsc -v
 Version 2.3.2
@@ -49,7 +49,7 @@ console.log(greeter(user));
 
 以下のコマンドでコンパイル〜実行まで。
 
-```sh
+```bash
 $ tsc greeter.ts
 $ node greeter.js
 Hello, pepese

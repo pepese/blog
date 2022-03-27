@@ -30,7 +30,7 @@ Node.jsのWebフレームワーク `Express` 触ってみた。
 
 プロジェクト作成は以下。
 
-```sh
+```bash
 $ mkdir express-sample          // プロジェクトディレクトリの作成
 $ cd express-sample
 $ npm init
@@ -38,7 +38,7 @@ $ npm init
 
 Angular CLI 等で既にプロジェクトを作成している場合は、上記は行わず以下から実行。
 
-```sh
+```bash
 $ npm i -S express@5.0.0-alpha.6 body-parser cookie-parser debug morgan pug serve-favicon request fs file-stream-rotator node-sass-middleware
 $ touch .gitignore
 $ mkdir app                     // サーバサイドExpressアプリ用のソースディレクトリ作成
@@ -58,7 +58,7 @@ $ touch app/spec/.gitkeep
 Expressアプリケーションのソースディレクトリは `app/` だけで完結するようにする。  
 また、 forever を導入しておく。
 
-```sh
+```bash
 $ npm install -g forever
 $ ndenv rehash
 ```
@@ -82,7 +82,7 @@ Thumbs.db
 
 この場合、以下のようにディレクトリを作成する。
 
-```sh
+```bash
 $ mkdir app/api           // REST API用のコントローラディレクトリ作成
 $ touch app/api/.gitkeep
 ```
@@ -95,7 +95,7 @@ $ touch app/api/.gitkeep
 この場合、以下のようにディレクトリを作成する。  
 なお、 SCSS を使用する。
 
-```sh
+```bash
 $ mkdir app/controllers                  // VIEW用のコントローラディレクトリ作成
 $ touch app/controllers/.gitkeep
 $ mkdir app/views                        // 画面・テンプレート（Pugなど）用のディレクトリ作成

@@ -34,7 +34,7 @@ Node.js/ExpressアプリケーションからRDBへ接続してみる。
 
 先の記事で紹介したプロジェクトにて以下を実行する。
 
-```sh
+```bash
 $ yarn add sequelize sqlite3 morgan
 $ mkdir app/db
 ```
@@ -143,7 +143,7 @@ module.exports = get_clients;
 
 以下で起動。
 
-```sh
+```bash
 $ node app/app.js
 ```
 

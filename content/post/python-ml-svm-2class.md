@@ -32,7 +32,7 @@ categories:
 
 このブログにある Python コードを実行するためのパッケージをインストールする。
 
-```sh
+```bash
 $ pip install jupyter scikit-learn matplotlib scipy
 ```
 

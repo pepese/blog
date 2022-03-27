@@ -27,7 +27,7 @@ Mecab については以下を参考。
 
 Macでの導入方法。
 
-```sh
+```bash
 $ git clone https://github.com/svn2github/word2vec.git
 $ cd word2vec/
 $ make
@@ -44,7 +44,7 @@ make: *** [distance] Error 1
 Mac では上記の通りエラーが発生する。  
 Mac では `<malloc.h>` ではなく `<stdlib.h>` を使用するので以下を実行してから make する。
 
-```sh
+```bash
 $ sed -ie 's/#include <malloc.h>/#include <stdlib.h>/g' *.c
 ```
 
@@ -54,7 +54,7 @@ $ sed -ie 's/#include <malloc.h>/#include <stdlib.h>/g' *.c
 
 動作確認用の `./demo-word.sh` を実行する。
 
-```sh
+```bash
 $ brew install wget
 $ brew install gzip
 $ ./demo-word.sh
@@ -90,7 +90,7 @@ Enter word or sentence (EXIT to break):
 
 ## 日本語学習済みモデル
 
-```sh
+```bash
 $ wget http://www.cl.ecei.tohoku.ac.jp/~m-suzuki/jawiki_vector/data/20170201.tar.bz2
 $ tar xf 20170201.tar.bz2
 $ ./distance 20170201
@@ -100,7 +100,7 @@ $ ./distance 20170201
 
 青空文庫
 
-```sh
+```bash
 $ brew install nkf
 $ wget http://www.aozora.gr.jp/cards/001847/files/57347_ruby_57225.zip
 $ unzip 57347_ruby_57225.zip
@@ -130,7 +130,7 @@ Word: 老人  Position in vocabulary: 22
 コーパスとして Wikipedia のデータを使用する。  
 word2vec へのインプットとして上記のコーパスが分かち書きされた 1つのテキストデータを作成する必要がある。
 
-```sh
+```bash
 $ nohup wget https://dumps.wikimedia.org/jawiki/latest/jawiki-latest-pages-articles.xml.bz2 &
 $ less nohup.out
 Redirecting output to ‘wget-log’.
@@ -141,13 +141,13 @@ $ tail -f wget-log
 `wp2txt` という Ruby 系のツールを使用する。  
 インストールは以下。
 
-```sh
+```bash
 $ gem install wp2txt
 ```
 
 実行。
 
-```sh
+```bash
 $ mkdir jawiki-latest-pages-articles
 $ cd jawiki-latest-pages-articles
 $ wp2txt --input-file ../jawiki-latest-pages-articles.xml.bz2
@@ -155,14 +155,14 @@ $ wp2txt --input-file ../jawiki-latest-pages-articles.xml.bz2
 
 出力されたファイルを結合して分かち書きファイルを作成する。
 
-```sh
+```bash
 $ cd ..
 $ cat jawiki-latest-pages-articles/*.txt | mecab -Owakati > jawiki-latest-pages-articles-wakati-ipadic.txt
 ```
 
 コーパスを使って学習する。
 
-```sh
+```bash
 $ time ./word2vec -train jawiki-latest-pages-articles-wakati-ipadic.txt -output jawiki-latest-pages-articles-wakati-ipadic.bin -size 200 -window 5 -sample 1e-3 -negative 5 -hs 0 -binary 1
 ```
 
@@ -208,14 +208,14 @@ $ time ./word2vec -train jawiki-latest-pages-articles-wakati-ipadic.txt -output 
 
 以下で学習データを使って実行。
 
-```sh
+```bash
 $ ./distance jawiki-latest-pages-articles-wakati-ipadic.bin
 Enter word or sentence (EXIT to break):
 ```
 
 # Pythonで word2vec
 
-```sh
+```bash
 $ pip install gensim
 ```
 
@@ -251,7 +251,7 @@ argvs = sys.argv
 print model.similarity(argvs[1], argvs[2])
 ```
 
-```sh
+```bash
 $ python similarity.py 日本 フィリピン
 ```
 

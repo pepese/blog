@@ -41,7 +41,7 @@ Node.js/ExpressアプリケーションからHTTP(S)を発行してみる。
 
 先の記事で紹介したプロジェクトにて以下を実行する。
 
-```sh
+```bash
 $ yarn add request
 ```
 
@@ -103,7 +103,7 @@ module.exports = get_ip;
 
 ## 導入
 
-```sh
+```bash
 $ yarn add request-promise
 ```
 

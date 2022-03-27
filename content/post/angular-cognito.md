@@ -72,7 +72,7 @@ Pool details 画面の **Pool Id** と、 App clients 画面の **App client id*
 
 # Cognito で認証するAngularアプリを作成する
 
-```sh
+```bash
 $ npm upgrade -g @angular/cli
 $ ndenv rehash
 $ ng new cognito-js --style=scss

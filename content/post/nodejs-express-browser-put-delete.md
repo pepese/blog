@@ -31,7 +31,7 @@ Node.js/Expressアプリケーションに対してブラウザからPUT/DELETE�
 
 先の記事で紹介したプロジェクトにて以下を実行する。
 
-```sh
+```bash
 $ yarn add method-override
 ```
 
