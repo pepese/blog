@@ -155,9 +155,7 @@ $ hugo new entry/my-first-post.md
 
 ```
 User-agent: *
-Disallow : /img/
-Disallow : /css/
-Disallow : /js/
+
 Sitemap : {{ $.Site.BaseURL }}sitemap.xml
 ```
 
