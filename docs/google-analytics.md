@@ -8,6 +8,9 @@
 
 ## UA での分析
 
-- https://wacul-ai.com/blog/access-analysis/google-analytics-method/viewpoint-of-ga/
+- 基本的な値の確認
+  - https://wacul-ai.com/blog/access-analysis/google-analytics-method/viewpoint-of-ga/
+- Adsense収益の確認
+  - https://info-con.co.jp/tips/google-09-adsense-analytics-alignment/
 
 ## GA4 での分析
