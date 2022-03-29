@@ -58,7 +58,7 @@ $ git push origin master
 
 ```bash
 $ hugo new site blog
-Congratulations! Your new Hugo site is created in /Users/tanakakns/workspace/github/pepese/blog.
+Congratulations! Your new Hugo site is created in /Users/xxxxx/workspace/github/pepese/blog.
 
 Just a few more steps and you're ready to go:
 

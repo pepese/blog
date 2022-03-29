@@ -146,11 +146,11 @@ genesisブロックの初期化を行う。
 ```
 $ geth --datadir ./eth_private_net init ./eth_private_net/myGenesis.json
 INFO [06-02|20:15:17.591] Maximum peer count                       ETH=50 LES=0 total=50
-INFO [06-02|20:15:17.630] Allocated cache and file handles         database=/Users/tanakakns/workspace/eth_private_net/geth/chaindata cache=16.00MiB handles=16
+INFO [06-02|20:15:17.630] Allocated cache and file handles         database=/Users/xxxxx/workspace/eth_private_net/geth/chaindata cache=16.00MiB handles=16
 INFO [06-02|20:15:17.671] Writing custom genesis block 
 INFO [06-02|20:15:17.671] Persisted trie from memory database      nodes=0 size=0.00B time="47.273µs" gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
 INFO [06-02|20:15:17.673] Successfully wrote genesis state         database=chaindata hash="7b2e8b…7e0432"
-INFO [06-02|20:15:17.673] Allocated cache and file handles         database=/Users/tanakakns/workspace/eth_private_net/geth/lightchaindata cache=16.00MiB handles=16
+INFO [06-02|20:15:17.673] Allocated cache and file handles         database=/Users/xxxxx/workspace/eth_private_net/geth/lightchaindata cache=16.00MiB handles=16
 INFO [06-02|20:15:17.697] Writing custom genesis block 
 INFO [06-02|20:15:17.697] Persisted trie from memory database      nodes=0 size=0.00B time="41.042µs" gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
 INFO [06-02|20:15:17.698] Successfully wrote genesis state         database=lightchaindata hash="7b2e8b…7e0432"
