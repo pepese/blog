@@ -1,6 +1,6 @@
 ---
 title:       "Google Cloud と AWS の比較"
-URL:         "googlecloud-aws-omparison"
+URL:         "googlecloud-aws-comparison"
 subtitle:    ""
 description: "Google Cloud と AWS それぞれの特徴と比較について整理する。"
 keyword:     "Google Cloud, GCP, AWS, 比較"
