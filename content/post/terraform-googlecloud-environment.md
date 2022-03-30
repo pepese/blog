@@ -4,7 +4,7 @@ URL:         "terraform-googlecloud-environment"
 subtitle:    ""
 description: "Terraform を使って Google Cloud の IaC (Infrastructure as Code) 環境を構築する。"
 keyword:     "Terraform, Google Cloud, GCP, 環境構築"
-date:        2022-03-29
+date:        2022-03-30
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -44,27 +44,64 @@ $ gcloud projects add-iam-policy-binding <project_id> \
   --role=roles/resourcemanager.projectIamAdmin
 ```
 
+# tfstate ファイル保存用の　Cloud Storage バケットの作成
+
+Google Cloud コンソールにて Terraform の tfstate ファイル配置用 Cloud Storage バケットを公開アクセス禁止で作成する。
+
 # ローカル環境の設定
 
-Google Cloud コンソールにて上記で作成したサービスアカウントから JSON 形式で秘密鍵を作成しファイルをダウンロードする。  
+Google Cloud コンソールにて「サービスアカウントの作成」にて作成したサービスアカウントから JSON 形式で秘密鍵を作成しファイルをダウンロードする。  
 ダウンロードしたファイルをローカルマシンの任意の場所に配置し、 以下のように環境変数 `GOOGLE_APPLICATION_CREDENTIALS` の設定を行う。
 
 ```bash
 $ export GOOGLE_APPLICATION_CREDENTIALS=<path to downloaded json file>
 ```
 
-Google Cloud コンソールにて Terraform の state ファイル配置用 Cloud Storage バケットを公開アクセス禁止で作成し、以下のように `backend.tf` を作成する。
+# .tf ファイルの作成
+
+.tf ファイルの分割については好みではあるが、ここでは以下を作成する。  
+なお、ここでは Modules などは使用せずにフラットにファイルを配置する前提で記載する。
+
+- `backend.tf`
+  - tfstate ファイルの保存に関する設定
+- `provider.tf`
+  - Google Cloud の Provider に関する設定
+- `versions.tf`
+  - Terraform のバージョンに関する設定
+- `variables.tf`
+  - Terraform の変数定義（ファイル内容例については省略）
+- その他 .tf ファイル
+  - 作成したいリソース定義など（ファイル内容例については省略）
+
+
+## `backend.tf` 
 
 ```terraform:backend.tf
 terraform {
   backend "gcs" {
-    bucket = "<任意のバケット名>"
-    prefix = "<任意のプレフィックス>"
+    bucket = "<tfstate ファイル保存用の　Cloud Storage バケット名>"
+    prefix = "<任意のプレフィックス、環境名などがいいかも>"
   }
 }
 ```
 
-あとはその他 Terraform で必要ファイルを作成して、いつも通り `terraform init` から始める。
+## `provider.tf`
+
+```terraform:provider.tf
+provider "google" {
+  project = "<project_id>"
+  region  = "<region_id>"
+  zone    = "<zone_id>"
+}
+```
+
+## `versions.tf`
+
+```terraform:versions.tf
+terraform {
+  required_version = "~> 1.0.0"
+}
+```
 
 # おすすめ書籍
 
