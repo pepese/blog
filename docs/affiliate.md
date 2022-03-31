@@ -2,7 +2,7 @@
 
 - Google Adsense
 - Amazonアソシエイト：本
-- A8
+- A8、バリューコマース
 - Rakutenアフェリエイト
 - Udemy Affiliates Program
 
@@ -100,7 +100,7 @@
 <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B09TDNXKL4&linkId=e48b4111e28e59cbf4875a2d00a94452"></iframe>
 ```
 
-## A8
+## A8、バリューコマース
 
 ### プログラミングスクール
 
@@ -109,6 +109,29 @@
 <a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" rel="nofollow">
 <img border="0" width="250" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=220330149304&wid=001&eno=01&mid=s00000018311002014000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" alt="">
+
+<!-- A8 affiliate programing school levtech college -->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+5BPLKI+2JK4+3N25E9" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=220330149322&wid=001&eno=01&mid=s00000011866022013000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3N6FTX+5BPLKI+2JK4+3N25E9" alt="">
+```
+
+### 転職サイト
+
+```
+<!-- Value Commerce affiliate job change site bizreach -->
+<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743566"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743566" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743566" border="0"></a></noscript>
+
+<!-- A8 affiliate programing job change site levtech career -->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6GM3+BPIX2Q+2JK4+ZRXQP" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=220331163708&wid=001&eno=01&mid=s00000011866006009000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6GM3+BPIX2Q+2JK4+ZRXQP" alt="">
+
+<!-- Value Commerce affiliate job change site doda -->
+<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743626"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743626" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743626" border="0"></a></noscript>
+
+<!-- Value Commerce affiliate job change site RECRUIT AGENT -->
+<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743631"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743631" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743631" border="0"></a></noscript>
 ```
 
 ## Rakutenアフェリエイト

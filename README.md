@@ -214,3 +214,27 @@ googleAnalytics = "UA-xxxxxxxx-x"
 ```
 
 なお、上記の設定方法は現在のテーマが利用している `_internal/` 以下のファイルを利用するもので標準の [Internal Template](https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates) の仕様に従っている。
+
+### ブログカード
+
+以下で作成。
+
+- [ブログカード風の紹介リンクタグ作成](https://matsmoto.jp/tool/link-001/)
+  - 以下の設定を入れる
+    - 画像リンク： https://blog.pepese.com/img/yaruwo.gif
+    - 色設定：背景： FFFAEB
+    - 囲み枠設定：線色： FBE599
+    - 囲み枠設定：太さ： 3
+
+URL が `https://blog.pepese.com/mac-homebrew-basics/` の場合、以下のようになる。
+
+```html
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/mac-homebrew-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">Homebrew入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">HomebrewはMacで利用できるソフトウェアパッケージマネージャ。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+```
+
+汎化すると以下の通り。  
+「【URL】」「【Title】」「【Description】」の 3 箇所を埋めて使う。
+
+```html
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="【URL】" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">【Title】</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">【Description】</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+```

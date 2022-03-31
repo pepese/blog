@@ -79,21 +79,22 @@ ITエンジニアの転職活動の意義について筆者の思っているこ
 
 ハイクラス向け転職サイトで次の 2 つは外せません。圧倒的です。
 
-- 株式会社ビズリーチ
-- 株式会社リクルートキャリア：RECRUIT DIRECT SCOUT(リクルートダイレクトスカウト)
+- 株式会社ビズリーチ：※Value Commerce で取得中
+- 株式会社リクルートキャリア：RECRUIT DIRECT SCOUT(リクルートダイレクトスカウト)※A8 で取得中
 
 ## IT　特化転職サイト
 
 次に紹介する転職サイトは、IT 求人特化しており、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">現場社員とのカジュアル面談がやりやすかったり、自分から応募するのではなく企業からアプローチ</span> を受けることができます。
 
-- 転職ドラフト
-- Green
-- Wantedly
+- 転職ドラフト：※A8 で取得中
+- Green： ※見つからない、、、
+- Wantedly： ※見つからない、、、
+- レバテックキャリア：※A8 で取得中
 
 ## 幅広い転職サイト
 
 次に紹介する転職サイトは <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">とにかく求人数が多く、20代や第二新卒の方にとっても使いやすい</span> です。
 
-- パーソルキャリア株式会社：doda
-- リクルート：リクルートエージェント
-- 株式会社マイナビ：マイナビエージェント
+- パーソルキャリア株式会社：doda ※Value Commerce で取得中
+- リクルート：リクルートエージェント ※Value Commerce で取得中
+- 株式会社マイナビ：マイナビエージェント※A8 で取得中

@@ -134,7 +134,10 @@ Web検索を駆使して自力で学習を進められる段階までいくた�
 
 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">新卒でITエンジニアになりたい大学生/大学院生のための就職活動サポートまである就活支援型プログラミングスクール</span> です。
 
-- [レバテックカレッジ](https://rookie.levtech.jp/college/)
+<!-- A8 affiliate programing school levtech college -->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+5BPLKI+2JK4+3N25E9" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=220330149322&wid=001&eno=01&mid=s00000011866022013000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3N6FTX+5BPLKI+2JK4+3N25E9" alt="">
 
 ## 転職希望者向け： 『DMM WEBCAMP』
 
