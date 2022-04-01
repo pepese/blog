@@ -4,7 +4,7 @@ URL:         "article-job-changing"
 subtitle:    ""
 description: "ITエンジニアの転職活動の意義について説明します。"
 keyword:     "転職, IT, エンジニア, ITエンジニア, 転職サイト"
-date:        2022-03-30
+date:        2022-04-01
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -79,22 +79,42 @@ ITエンジニアの転職活動の意義について筆者の思っているこ
 
 ハイクラス向け転職サイトで次の 2 つは外せません。圧倒的です。
 
-- 株式会社ビズリーチ：※Value Commerce で取得中
-- 株式会社リクルートキャリア：RECRUIT DIRECT SCOUT(リクルートダイレクトスカウト)※A8 で取得中
+### ビズリーチ
 
-## IT　特化転職サイト
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://www.bizreach.jp/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:www.bizreach.jp/img/logo/c_ogimage-cm_v6.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">選ばれた人だけのハイクラス転職サイト【ビズリーチ】</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">ビズリーチは、管理職や専門職、次世代リーダー、グローバル人材などの即戦力・ハイクラス人材に特化した、国内最大級のハイクラス転職サイトです。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
-次に紹介する転職サイトは、IT 求人特化しており、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">現場社員とのカジュアル面談がやりやすかったり、自分から応募するのではなく企業からアプローチ</span> を受けることができます。
+### リクルートダイレクトスカウト
 
-- 転職ドラフト：※A8 で取得中
-- Green： ※見つからない、、、
-- Wantedly： ※見つからない、、、
-- レバテックキャリア：※A8 で取得中
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://directscout.recruit.co.jp/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:directscout.recruit.co.jp/img/ogp_cc_fix.jpg" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">リクルートダイレクトスカウト（旧キャリアカーバー）</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">【リクルートダイレクトスカウト】RECRUIT DIRECT SCOUT（旧キャリアカーバー）は、リクルートが運営するハイクラス・エグゼクティブ限定の会員制転職スカウトサービスです。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+
+## IT特化転職サイト
+
+次に紹介する転職サイトは、IT 求人特化しています。  
+特に転職ドラフトについては、<span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">現場社員とのカジュアル面談がやりやすかったり、自分から応募するのではなく企業からアプローチ</span> を受けるなど特徴的です。
+
+### 転職ドラフト
+
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://job-draft.jp/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:job-draft.jp/images/home_facebook.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">転職ドラフト｜ITエンジニアを年収・仕事内容つきで競争入札</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">ITエンジニアを企業が年収付きで競争入札する転職サイト。通常、内定段階までわからない年収が最初に提示されるため、金額を見た上で選考に進むかを判断でき、リアルな市場価値もわかります。毎月開催中。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+
+### レバテックキャリア
+
+<!-- A8 affiliate programing job change site levtech career -->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6GM3+BPIX2Q+2JK4+ZRXQP" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=220331163708&wid=001&eno=01&mid=s00000011866006009000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6GM3+BPIX2Q+2JK4+ZRXQP" alt="">
 
 ## 幅広い転職サイト
 
 次に紹介する転職サイトは <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">とにかく求人数が多く、20代や第二新卒の方にとっても使いやすい</span> です。
 
-- パーソルキャリア株式会社：doda ※Value Commerce で取得中
-- リクルート：リクルートエージェント ※Value Commerce で取得中
-- 株式会社マイナビ：マイナビエージェント※A8 で取得中
+### doda
+
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://doda.jp/engineer/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:doda.jp/guide/img/icon_fb_001.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">IT・Webエンジニアの転職・求人ならdodaエンジニアIT</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">求人掲載数約30,000件。ITエンジニア転職・業界最大級の求人サイトならdoda（デューダ）。スキルアップしたい、柔軟に働きたい、など希望をかなえる転職先が見つかります。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+
+### リクルートエージェント
+
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://www.r-agent.com/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://capture.heartrails.com/100x100?https://www.r-agent.com/" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">転職エージェントならリクルートエージェント</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">転職エージェントならリクルートエージェント。実績豊富な転職エージェントが、業界最多の非公開求人からご希望に沿った求人をご紹介、あなたの転職を成功に導きます。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+
+### マイナビITエージェント
+
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://mynavi-agent.jp/it/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:mynavi-agent.jp/resource/it/img/ogp_it_agent.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">マイナビITエージェント【公式】IT・Webエンジニアの求人・転職エージェント</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">IT・Webエンジニアに特化した転職エージェントです。システムエンジニア、プログラマー、社内SEをはじめとしたITエンジニアの豊富な求人情報と、IT業界専任のアドバイザーが無料であなたの転職をサポートします。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>

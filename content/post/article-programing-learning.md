@@ -4,7 +4,7 @@ URL:         "article-programing-learning"
 subtitle:    ""
 description: "プログラミングスキルを上げたい人向けに学習方法について説明します。"
 keyword:     "プログラミング, 学習, プログラミングスクール"
-date:        2022-03-30
+date:        2022-04-01
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -154,11 +154,11 @@ Web検索を駆使して自力で学習を進められる段階までいくた�
 転職はもちろんですが、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">副業やフリーランスになりたい方もターゲットにしているのが特徴</span> です。  
 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">現役エンジニアによるサポートやメンタリング</span> などもあり挫折せず続けられます。
 
-- [tech boost(テックブースト)](https://be.tech-boost.jp/)
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://be.tech-boost.jp/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:be.tech-boost.jp/assets/og_image_lp-0a7578135361c4eb8d83ddca8319ad79ff73266cdb652730bfe7cbc6c6f65694.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">tech boost(テックブースト)｜キャリアの幅を広げるテクノロジーコミュニティ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">キャリアの幅を広げるテクノロジーコミュニティ「tech boost(テックブースト)」。エンジニアのキャリアサービスを展開しているBranding Engineerが運営するプログラミングスクール。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 ## Python・AI 学習者向け： 『Aidemy Premium』
 
 データ分析、機械学習、ディープラーニング、AI のスキルを習得したい方は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">ほぼ Python 一択</span> と言っても過言ではありません。  
 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">データサイエンティスト、AIエンジニアのコースに強み</span> のあるプログライングスクールです。
 
-- [Aidemy Premium](https://aidemy.net/grit/premium/lp-engineer/)
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://aidemy.net/grit/premium/lp-engineer/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:aidemy.net/wp-content/uploads/2021/11/OGP-min.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">Aidemy Premium | AIプログラミングを基礎から学ぶAI特化型プログラミングスクール</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">プログラミング未経験からでもAIを基礎から学べるプログラミングスクールAidemy Premiumの公式ページです。AI特化だからこそ講師の層も厚く、オンラインAI人材育成サービス受講者数No.1。画像認識や自然言語処理など、機械学習について学ぶならアイデミーで！</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
