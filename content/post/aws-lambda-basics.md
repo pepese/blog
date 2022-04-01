@@ -4,7 +4,7 @@ URL:         "aws-lambda-basics"
 subtitle:    ""
 description: ""
 keyword:     ""
-date:        2022-04-01
+date:        2022-03-31
 author:      "ぺーぺーSE"
 image:       ""
 tags:
