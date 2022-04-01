@@ -113,7 +113,8 @@ ITエンジニアの転職活動の意義について筆者の思っているこ
 
 ### リクルートエージェント
 
-<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://www.r-agent.com/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://capture.heartrails.com/100x100?https://www.r-agent.com/" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">転職エージェントならリクルートエージェント</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">転職エージェントならリクルートエージェント。実績豊富な転職エージェントが、業界最多の非公開求人からご希望に沿った求人をご紹介、あなたの転職を成功に導きます。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+<!-- Value Commerce affiliate job change site RECRUIT AGENT -->
+<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743631"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743631" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743631" border="0"></a></noscript>
 
 ### マイナビITエージェント
 
