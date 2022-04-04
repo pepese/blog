@@ -100,6 +100,20 @@
 <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B09TDNXKL4&linkId=e48b4111e28e59cbf4875a2d00a94452"></iframe>
 ```
 
+### 仮想通貨：ブロックチェーン
+
+```
+<!-- amazon affiliate kindle blockchain --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07XDM9WVP&linkId=0acfeeddd965a225ec4c8def5fecda33"></iframe>
+```
+
+### 仮想通貨：Ethereum
+
+```
+<!-- amazon affiliate kindle ethereum --->
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=tanakakns-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07NNFLQ4D&linkId=3115e2822dba130a5e9a10d1d262f003"></iframe>
+```
+
 ## A8、バリューコマース
 
 ### プログラミングスクール
@@ -115,6 +129,10 @@
 <img border="0" width="250" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=220330149304&wid=001&eno=01&mid=s00000018311002014000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" alt="">
 ```
+
+- 待ち
+  - Aidemy Premium: A8
+  - tech boost: A8
 
 ### 転職サイト
 
@@ -133,6 +151,14 @@
 <!-- Value Commerce affiliate job change site RECRUIT AGENT -->
 <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743631"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743631" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743631" border="0"></a></noscript>
 ```
+
+- 待ち
+  - マイナビIT AGENT: A8
+  - 転職ドラフト: A8
+  - リクルートダイレクトスカウト: A8
+- 落ちたリスト
+  - doda: value commerce
+  - biz reach: valude commerce
 
 ## Rakutenアフェリエイト
 
