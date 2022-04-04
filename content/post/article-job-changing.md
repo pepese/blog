@@ -2,7 +2,7 @@
 title:       "転職活動のすすめ"
 URL:         "article-job-changing"
 subtitle:    ""
-description: "ITエンジニアの転職活動の意義について説明します。"
+description: "ITエンジニアの転職活動のメリットと意義について筆者の意見をご紹介します。"
 keyword:     "転職, IT, エンジニア, ITエンジニア, 転職サイト"
 date:        2022-04-01
 author:      "ぺーぺーSE"
@@ -12,7 +12,7 @@ categories:
 - article
 ---
 
-ITエンジニアの転職活動の意義について筆者の思っていることを記載します。
+ITエンジニアの転職活動のメリットと意義について筆者の意見をご紹介します。
 
 <!--more-->
 
@@ -119,3 +119,8 @@ ITエンジニアの転職活動の意義について筆者の思っているこ
 ### マイナビITエージェント
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://mynavi-agent.jp/it/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:mynavi-agent.jp/resource/it/img/ogp_it_agent.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">マイナビITエージェント【公式】IT・Webエンジニアの求人・転職エージェント</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">IT・Webエンジニアに特化した転職エージェントです。システムエンジニア、プログラマー、社内SEをはじめとしたITエンジニアの豊富な求人情報と、IT業界専任のアドバイザーが無料であなたの転職をサポートします。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+
+# おすすめ記事
+
+<!-- プログラミング学習のすすめ -->
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/article-programing-learning" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">プログラミング学習のすすめ | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">プログラミングスキルを上げたい人向けに学習方法について説明します。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>

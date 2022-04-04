@@ -2,7 +2,7 @@
 title:       "プログラミング学習のすすめ"
 URL:         "article-programing-learning"
 subtitle:    ""
-description: "プログラミングスキルを上げたい人向けに学習方法について説明します。"
+description: "プログラミング未経験者・初心者の方で、プログラミングスキルを上げるメリット、上げたいけど何をしていいか分からない、どうすれば上達するのか？と考えている人向けの記事です。"
 keyword:     "プログラミング, 学習, プログラミングスクール"
 date:        2022-04-01
 author:      "ぺーぺーSE"
@@ -12,7 +12,7 @@ categories:
 - article
 ---
 
-プログラミング未経験者・初心者の方で、プログラミングスキルを上げたいけど何をしていいか分からない、どうすれば上達するのか？と考えている人向けの記事です。
+プログラミング未経験者・初心者の方で、プログラミングスキルを上げるメリット、上げたいけど何をしていいか分からない、どうすれば上達するのか？と考えている人向けの記事です。
 
 <!--more-->
 
@@ -162,3 +162,8 @@ Web検索を駆使して自力で学習を進められる段階までいくた�
 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">データサイエンティスト、AIエンジニアのコースに強み</span> のあるプログライングスクールです。
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://aidemy.net/grit/premium/lp-engineer/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:aidemy.net/wp-content/uploads/2021/11/OGP-min.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">Aidemy Premium | AIプログラミングを基礎から学ぶAI特化型プログラミングスクール</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">プログラミング未経験からでもAIを基礎から学べるプログラミングスクールAidemy Premiumの公式ページです。AI特化だからこそ講師の層も厚く、オンラインAI人材育成サービス受講者数No.1。画像認識や自然言語処理など、機械学習について学ぶならアイデミーで！</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+
+# おすすめ記事
+
+<!-- 転職活動のすすめ -->
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/article-job-changing" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">転職活動のすすめ | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">ITエンジニアの転職活動の意義について説明します。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
