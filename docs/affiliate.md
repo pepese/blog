@@ -128,10 +128,14 @@
 <a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" rel="nofollow">
 <img border="0" width="250" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=220330149304&wid=001&eno=01&mid=s00000018311002014000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" alt="">
+
+<!-- A8 affiliate programing school aidemy premium -->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTY+3257OY+4HUE+60OXD" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=220330150185&wid=001&eno=01&mid=s00000020975001011000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=3N6FTY+3257OY+4HUE+60OXD" alt="">
 ```
 
 - 待ち
-  - Aidemy Premium: A8
   - tech boost: A8
 
 ### 転職サイト
@@ -150,13 +154,17 @@
 
 <!-- Value Commerce affiliate job change site RECRUIT AGENT -->
 <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743631"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743631" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743631" border="0"></a></noscript>
+
+<!-- A8 affiliate programing job change site 転職ドラフト -->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6GM2+EC6U9E+2OTA+HWI5T" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=220331162867&wid=001&eno=01&mid=s00000012547003007000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=3N6GM2+EC6U9E+2OTA+HWI5T" alt="">
 ```
 
 - 待ち
-  - マイナビIT AGENT: A8
-  - 転職ドラフト: A8
   - リクルートダイレクトスカウト: A8
 - 落ちたリスト
+  - マイナビIT AGENT: A8
   - doda: value commerce
   - biz reach: valude commerce
 
