@@ -2,8 +2,8 @@
 title:       "AWS IAM入門"
 URL:         "aws-iam-basics"
 subtitle:    ""
-description: "AWS IAM （Identity and Access Management）は、 AWS サービスで「認証」と「認可」の設定を行うことができるサービスです。この記事では、AWS IAM をざっくり理解できるよう概要を記載します。"
-keyword:     "AWS, IAM"
+description: "AWS IAM （Identity and Access Management）は、 AWS サービスで「認証」と「認可」の設定を行うことができるサービスです。この記事では、AWS IAM をざっくり理解できるよう概要を記載します。（強制 MFA についても記載しています。）"
+keyword:     "AWS, IAM, MFA"
 date:        2022-04-07
 author:      "ぺーぺーSE"
 image:       ""
@@ -15,7 +15,7 @@ categories:
 ---
 
 AWS IAM （Identity and Access Management）は、 AWS サービスで「認証」と「認可」の設定を行うことができるサービスです。  
-この記事では、AWS IAM をざっくり理解できるよう概要を記載します。
+この記事では、AWS IAM をざっくり理解できるよう概要を記載します。（強制 MFA についても記載しています。）
 
 <!--more-->
 
@@ -216,6 +216,43 @@ IAM ユーザーは複数の IAM グループ（最大 10 ）へ所属するこ�
 その IAM ロールに対して信頼ポリシー（誰を信頼するのか？）と権限を与えるポリシー（何が出来るのか？）を付与します。  
 （厳密には Permissions boundary といったポリシーもありますが、ここでは割愛します。）  
 以上のように作成した IAM ロールを対象に付与します。
+
+# IAM ユーザーに MFA を強制する
+
+セキュリティを上げるために MFA （多要素認証）を導入するケースが多くあります。  
+ここでは MFA を強制するためのポリシーについて紹介します。
+
+```javascript
+{
+    "Effect": "Deny",
+    "NotAction": [
+        "iam:CreateVirtualMFADevice",
+        "iam:EnableMFADevice",
+        "iam:GetUser",
+        "iam:ListUsers",
+        "iam:ListMFADevices",
+        "iam:ListVirtualMFADevices",
+        "iam:ResyncMFADevice",
+        "sts:GetSessionToken",
+        "iam:ChangePassword" // 初回ログイン時にパスワード変更が必要な場合には記載
+    ],
+    "Resource": "*",
+    "Condition": {
+        "BoolIfExists": {
+            "aws:MultiFactorAuthPresent": "false"
+        }
+    }
+}
+```
+
+上記のポリシーを IAM ユーザーもしくは IAM グループに適用することで、 MFA 認証していない場合にあらゆる権限がなくなります。  
+「 MFA 認証していない場合、 NotAction 以外の操作は全て拒否」という意味になります。  
+なお、上記の例では `NotAction` に `iam:ChangePassword` を記載しているので、 MFA 認証無しでもパスワード変更が可能ということになります。  
+`iam:ChangePassword` を削除した上で、初回ログイン後に MFA デバイスを登録し、ログインし直してパスワード変更するオペレーションのほうが好ましいかもしれません。
+
+なお、 AWS CLI での MFA 認証は以下を参照してください。
+
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/aws-cli-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">AWS CLI入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">AWS CLI は AWS リソースの操作を行う Command Line Interface (CLI) ツールです。AWS のマネージメントコンソールをボチボチする代わりにコマンドを叩くイメージです。この記事では、AWS CLI のインストールと設定で役立つ情報（MFA・多要素認証など）を紹介します。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 # おすすめ書籍
 
