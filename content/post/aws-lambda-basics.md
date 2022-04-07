@@ -2,9 +2,9 @@
 title:       "AWS Lambda入門"
 URL:         "aws-lambda-basics"
 subtitle:    ""
-description: ""
-keyword:     ""
-date:        2022-03-31
+description: "AWS Lambda は、 サーバレスコンピューティングを提供するサービスです。この記事では、AWS Lambda をざっくり理解できる概要と使い方を記載します。"
+keyword:     "AWS, Lambda, サーバーレス"
+date:        2022-04-07
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -14,26 +14,28 @@ categories:
 - tech
 ---
 
-[AWS Lambda](https://docs.aws.amazon.com/ja_jp/lambda/) について入門する。
+AWS Lambda は、 サーバレスコンピューティングを提供するサービスです。  
+この記事では、AWS Lambda をざっくり理解できる概要と使い方を記載します。
 
 <!--more-->
 
-# AWS Lambda の基本
+# AWS Lambda の概要
 
 ## 処理の流れ
 
-AWS Lambda は **イベントソース** から **Lambda 関数** が呼び出され **ダウンストリーム** へアクセスする構成。  
-「イベントソース -> Lambda 関数 -> ダウンストリーム」という流れ。
+AWS Lambda は **イベントソース** から **Lambda 関数** が呼び出され **ダウンストリーム** へアクセスする構成です。  
+「イベントソース -> Lambda 関数 -> ダウンストリーム」という流れをイメージしてください。  
 
-**イベントソース** は、イベントの発生元となる AWS サービスやユーザが開発したアプリケーション。  
-Lambda 関数が呼び出されるきっかけ。  
+**イベントソース** は、イベントの発生元となる AWS サービスやユーザが開発したアプリケーションです。  
+Lambda 関数が呼び出されるきっかけと考えてください。  
 
-**ダウンストリーム** は、 Lambda 関数がアクセスする AWS サービスやユーザが開発したアプリケーション。
+**ダウンストリーム** は、 Lambda 関数がアクセスする AWS サービスやユーザが開発したアプリケーションです。  
+データベースアクセスなども含まれます。
 
 ## イベントソース
 
-イベントソースは、イベントの発生元となる AWS サービスやユーザが開発したアプリケーション。  
-Lambda 関数がイベントを検知するパターンとして以下の 3 つある。
+イベントソースは、イベントの発生元となる AWS サービスやユーザが開発したアプリケーションです。  
+Lambda 関数がイベントを検知するパターンとして以下があります。
 
 - ポーリング 且 ストリーム
   - Lambda関数自体がイベントを検知（ Kinesis、DynamoDBなど）
@@ -42,13 +44,13 @@ Lambda 関数がイベントを検知するパターンとして以下の 3 つ�
 - プッシュ
   - Lambda関数にイベントを通知
 
-Lambda 関数の処理タイプとして以下の 2 つある。
+Lambda 関数の処理タイプとして以下があります。
 
 - 同期：リクエストの処理結果含め返却
 - 非同期：リクエストが正常に受信できたかのみ返却
 
-イベントソースとなる AWS サービスは、上記のイベント検知パターンと処理タイプの組み合わせで分類することができる。  
-また、以下のパターンによってリトライの動きが異なる。
+イベントソースとなる AWS サービスは、上記のイベント検知パターンと処理タイプの組み合わせで分類することができます。  
+また、以下のパターンによってリトライの動きが異なる点に注意してください。
 
 - 同期 ＋ ポーリング 且 ストリーム
   - AWS サービス：Amazon DynamoDB、Amazon Kinesis Data Streams
@@ -73,8 +75,7 @@ Lambda 関数の処理タイプとして以下の 2 つある。
 
 ## Lambda 関数
 
-Lambda ファンクションと呼ばれることもある。  
-以下の特徴を持つ。
+Lambda ファンクションと呼ばれることもあり、以下の特徴があります。
 
 - 標準もしくは [カスタムラインタイム](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/runtimes-custom.html) でサポートされている言語で記述（ [ランタイムサポートポリシー](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/runtime-support-policy.html) ）
 - それぞれが隔離されたコンテナ内で実行され、「 1 コンテナ＝ 1 イベント」を処理する
@@ -89,13 +90,13 @@ Lambda ファンクションと呼ばれることもある。
 
 ## 実行環境
 
-Lambda 関数が実行される環境は Amazon Linux 2 なので、OS のネイティブライブラリを利用する場合はその前提で実装すること。  
-また、 [Lambda 命令セットアーキテクチャ](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/foundation-arch.html) も参照のこと。  
-なお、 [ランタイムサポートポリシー](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/runtime-support-policy.html) でサポートされる標準以外の実行環境が必要な場合は [カスタムラインタイム](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/runtimes-custom.html) を利用のこと。
+Lambda 関数が実行される環境は Amazon Linux 2 なので、OS のネイティブライブラリを利用する場合はその前提で実装する必要があります。  
+また、 [Lambda 命令セットアーキテクチャ](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/foundation-arch.html) も参照ください。  
+なお、 [ランタイムサポートポリシー](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/runtime-support-policy.html) でサポートされる標準以外の実行環境が必要な場合は [カスタムラインタイム](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/runtimes-custom.html) を利用してください。
 
 ## デプロイパッケージ
 
-Lambda 関数コードのデプロイパッケージには以下の 2 種類ある。
+Lambda 関数コードのデプロイパッケージには以下の 2 種類あります。
 
 - 関数コードとその依存関係を含む .zip ファイルアーカイブ
 - 関数コードとその依存関係を含む コンテナーイメージ
@@ -103,26 +104,30 @@ Lambda 関数コードのデプロイパッケージには以下の 2 種類あ�
 
 ## VPC アクセス
 
-Lambda 関数は指定の VPC 内で起動することにより、インターネットを介さず VPC 内のリソースへアクセスすることができる。  
+Lambda 関数は指定の VPC 内で起動することにより、インターネットを介さず VPC 内のリソースへアクセスすることができます。  
 
-内部的には ENI がフェッチされるので、 VPC サブネットやセキュリティグループを設定する。  
-Lambda 関数がコールドスタートする際は、この ENI フェッチにレイテンシ（10〜30秒）が発生するが、ENI は複数の Lambda 関数から共有される構成になっているため、都度レイテンシが発生するわけではない。  
-この ENI にはパブリック IP が付与されないため、インターネットアクセスが必要な場合は VPC に NAT Gateway の設定が必要になる。  
-なお、 VPC の制限により ENI のサブネット IP が確保できない場合は起動に失敗する。（非同期呼び出しの場合は CloudWatch Logs に記録されないので注意）
+内部的には ENI がフェッチされるので、 VPC サブネットやセキュリティグループを設定します。  
+Lambda 関数がコールドスタートする際は、この ENI フェッチにレイテンシ（10〜30秒）が発生しますが、ENI は複数の Lambda 関数から共有される構成になっているため、都度レイテンシが発生するわけではありません。  
+この ENI にはパブリック IP が付与されないため、インターネットアクセスが必要な場合は VPC に NAT Gateway の設定が必要になります。  
+なお、 VPC の制限により ENI のサブネット IP が確保できない場合は起動に失敗します。（非同期呼び出しの場合は CloudWatch Logs に記録されないので注意）
 
 ## 実行ロール
 
-IAM ロールで指定して、各種 AWS サービスへのアクセスコントロールを行うことができる。  
-最低でも CloudWatch Logs へのアクセス許可が必要。
+IAM ロールで指定して、各種 AWS サービスへのアクセスコントロールを行うことができます。  
+最低でも CloudWatch Logs へのアクセス許可が必要です。  
+
+IAM ロールに関しては、以下の記事を参照してください。
+
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/aws-iam-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">AWS IAM入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">AWS IAM （Identity and Access Management）は、 AWS サービスで「認証」と「認可」の設定を行うことができるサービスです。この記事では、AWS IAM をざっくり理解できるよう概要を記載します。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 ## 同時実行数
 
-デフォルトは 1000 で、超えるとスロットリングエラーとなる。（最新情報要確認 -> [Lambda クォータ](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-limits.html) ）  
-`ConcurrentExecutions` と `UnreservedConcurrentExecutions` メトリクスで確認できる。
+デフォルトは 1000 で、超えるとスロットリングエラーとなります。（最新情報要確認 -> [Lambda クォータ](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-limits.html) ）  
+`ConcurrentExecutions` と `UnreservedConcurrentExecutions` メトリクスで確認できます。
 
 ## ライフサイクル
 
-Lambda 関数の起動から停止までのライフサイクルは以下の通り。
+Lambda 関数の起動から停止までのライフサイクルは以下の通りです。
 
 1. ENI の作成（ VPC 利用時、且つコールドスタートの時だけ 10 〜 30 秒）
 2. コンテナの作成
@@ -132,30 +137,30 @@ Lambda 関数の起動から停止までのライフサイクルは以下の通�
 6. 関数の実行
 7. コンテナの破棄
 
-上記の 1 〜 6 がコールドスタート時の動きで、 6 のみがウォームタート時の動きとなる。  
-間隔をあまり開けずに定期的に Lambda が実行されていればコールドスタートは発生しない。
+上記の 1 〜 6 がコールドスタート時の動きで、 6 のみがウォームタート時の動きとなります。  
+間隔をあまり開けずに定期的に Lambda が実行されていればコールドスタートは発生しません。
 
 # AWS Lambda の使い方
 
 ## プログラミングモデル
 
 - ハンドラー
-  - 言語の関数もしくはメソッドで、実行時のエントリーポイントとなる
-  - 1 つ目のパラメータとして JSON 形式のイベントデータが渡される
+  - 言語の関数もしくはメソッドで、実行時のエントリーポイントとなります
+  - 1 つ目のパラメータとして JSON 形式のイベントデータが渡されます
 - コンテキスト
-  - ラインタイムに関する情報が含まれる
-  - 2 つ目のパラメータとして渡される
+  - ラインタイムに関する情報が含まれます
+  - 2 つ目のパラメータとして渡されます
 - ロギング
-  - 標準出力が CloudWatch Logs に書き込まれる
-  - CloudWatch Logs の制限を受けるため、スロットリングによって失われる可能性あり
+  - 標準出力が CloudWatch Logs に書き込まれます
+  - CloudWatch Logs の制限を受けるため、スロットリングによって失われる可能性があります
 - 例外処理
-  - 言語仕様によりことなる
-  - 同期呼び出しの場合はレスポンスされる
+  - 言語仕様により異なります
+  - 同期呼び出しの場合はレスポンスされます
 - 注意点
-  - ステートレスな処理モデルにする必要がある
-  - 同じインスタンスで実行されるとは限らない
-  - ローカルリソースの利用・アクセスは処理実行中のみ有効
-  - データは他の永続化サービスへ保存すること
+  - ステートレスな処理モデルにする必要があります
+  - 同じインスタンスで実行されるとは限りません
+  - ローカルリソースの利用・アクセスは処理実行中のみ有効です
+  - データは他の永続化サービスへ保存しましょう
 
 ## Lambda 関数の設定
 
