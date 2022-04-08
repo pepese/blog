@@ -4,7 +4,7 @@ URL:         "aws-vpc-basics"
 subtitle:    ""
 description: "Amazon VPC は、 AWS が提供する仮想ネットワークサービスです。この記事では、Amazon VPC をざっくり理解できる概要と作成例について記載します。"
 keyword:     "AWS, VPC"
-date:        2022-04-07
+date:        2022-04-08
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -28,6 +28,12 @@ VPC は AWS アカウント内に作成する仮想的なネットワークで�
 - ネットマスクは Classless Inter-Domain Routing (CIDR) ブロック「**/16**」～「**/28**」の範囲です
    - 基本は「**/16**」で大丈夫です
 - 一度作成したVPCはサイズ変更不可能です
+
+IP アドレスの範囲指定に迷ったときは、 [RFC 1918](http://www.faqs.org/rfcs/rfc1918.html) に準拠することをお勧めします。
+
+- `10.0.0.0` - `10.255.255.255` : 10/8 prefix
+- `172.16.0.0` - `172.31.255.255` : 172.16/12 prefix
+- `192.168.0.0` - `192.168.255.255` : 192.168/16 prefix
 
 ## テナンシー
 
