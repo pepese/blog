@@ -1,10 +1,10 @@
 ---
-title:       "Go入門"
+title:       "Go言語入門"
 URL:         "golang-basics"
 subtitle:    ""
-description: ""
+description: "Go言語はGoogleが開発・公開しているプログラミング言語の 1 つです。コード記述の簡潔さ・理解しやすさと、プログラム実行速度やリソース効率の両立を目指しています。この記事ではGo開発環境の設定から使い方までを記載します。"
 keyword:     ""
-date:        2019-01-03
+date:        2022-04-09
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -14,23 +14,34 @@ categories:
 - tech
 ---
 
-golang の基本的なところをまとめる。  
-さらっとまとめるつもりがどえらい量になったので注意。
+Go言語はGoogleが開発・公開しているプログラミング言語の 1 つです。  
+コード記述の簡潔さ・理解しやすさと、プログラム実行速度やリソース効率の両立を目指しています。  
+この記事ではGo開発環境の設定から使い方までを記載します。
 
 <!--more-->
 
-# 環境構築
+# Goのインストール・設定
 
-```zsh
-% xcode-select --install # Mac の場合はとりあえずやっておく
-% brew install go
-% go version
-go version go1.12.5 darwin/amd64
+asdf を利用します。  
+asdf については以下の記事を参照してください。
+
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/asdf-basics" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">マルチランタイムバージョン管理ツールasdf | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツール。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+
+```bash
+$ xcode-select --install # Mac の場合はとりあえずやっておく
+$ asdf plugin add golang
+$ asdf list-all golang
+...
+1.17.8
+$ asdf install golang 1.17.8
+$ asdf global golang 1.17.8
+$ go version
+go version go1.17.8 darwin/amd64
 ```
 
 ## 環境変数の設定
 
-https://golang.org/doc/install/source#environment
+Go 言語の環境変数には以下があります。
 
 - `GOROOT`
     - go のバイナリのホームまでのパス
@@ -45,124 +56,40 @@ https://golang.org/doc/install/source#environment
 - `GOARCH`
     - コンパイルして作成するバイナリの対象 CPU を指定する
 
-`.zshenv` （ bash の場合は `.bash_profile` ）に以下を追記。
+お好みのプロファイル（ zsh の場合は `.zshenv` 、 bash の場合は `.bash_profile` など ）に以下を追記します。
 
-```zsh
+```bash
 export GOPATH=`go env GOPATH`
 export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=on
 ```
 
->教科書敵には以下。
->```zsh
-export GOROOT=`go env GOROOT` # 個人的にはこれは不要
+個人的には不要ですが、 GOROOT を含める場合は以下です。
+
+```bash
+export GOROOT=`go env GOROOT`
 export GOPATH=`go env GOPATH`
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 
-[anyenv](https://github.com/anyenv/anyenv) および [goenv](https://github.com/syndbg/goenv) を利用する場合の `.zshenv` は以下。
+以下のコマンドでプロファイルの変更を反映させましょう。
 
-```zsh
-export GOENV_DISABLE_GOPATH=1 # これがポイント？
-export PATH="$HOME/.anyenv/bin:$PATH"
-
-export GOPATH=`go env GOPATH`
-export PATH=$PATH:$GOPATH/bin
-export GO111MODULE=on
-```
-
-反映。
-
-```zsh
-% exec $SHELL -l
+```bash
+$ exec $SHELL -l
 ```
 
 また、 `$GOPATH` 以下のディレクトリ構造は以下のようになる。
 
-```zsh
-$GOPATH
-├─bin/ # Goツール類の実行ファイルが格納されるディレクトリ
-├─pkg/ # ビルドしたパッケージオブジェクトが格納されるディレクトリ
-│  ├─darwin_amd64/
-│  │ ├─github.com/
-│  │ │  └─GitHubアカウント名
-│  │ │    ├─`*.a`ファイル[^1]
-│  │ │    └─GitHubレポジトリ名/`*.a`ファイル[^2]
-│  │ └─pkg.in/
-│  │   ├─パッケージ名/
-│  │   └─`*.a`ファイル
-│  └─mod/ # Go Modules で取得したモジュール類が格納されるディレクトリ
-│    ├─cache/ # download したモジュール類のメタ情報や実態のzipなどのキャッシュ
-│    ├─github.com/ # リポジトリから取得したモジュール
-│    └─gopkg.in/ # リポジトリから取得したモジュール
-└─src/ # パッケージごとのソースコードを配置するディレクトリ
-  ├─gopkg.in/
-  │  └─パッケージ名/
-  │    └─LICENSEとか`*.go`とかREADMEとか
-  └─github.com/
-    ├─GitHubアカウント名
-    │  └─GitHubレポジトリ名/
-    │    └─LICENSEとか`*.go`とかREADMEとか
-    └─<あなたのGitHubユーザ名>
-      └─GitHubレポジトリ名/ # プロジェクトディレクトリ（複数）
-        ├─go.mod
-        ├─go.sum
-        ├─main.go
-        └─その他、あなたが開発中のソフトウェアのコード
-```
-
 ## 依存関係管理ツール Go Modules
 
-かつてここには `dep` の設定について書いていたが、 Go v1.11 から導入 Go v1.12 から正式リリースされる **Go Modules** （旧名 vgo）に関する内容に書き換えた。  
-Go Modules の概要は以下。
+Go Modules については以下の記事を参照してください。
 
-- Minimal Version Selection
-    - Go Modulesは [Semantic Versioning](https://semver.org/) に基づいてモジュールの管理を行なう
-- Go Modulesは **GOPATH mode** と **module-aware mode** という２つのモードがあり、環境変数 `GO111MODULE` で切り替える
-    - **GOPATH mode**
-	    - `$GOPATH/src` 配下で `go get` コマンドを利用した依存性管理（ go v1.10 以前と同じ）
-	    - 標準 pkg 以外を全部 `$GOPATH/src` 以下のディレクトリで管理する
-		- `$GOPATH/src/github.com` 配下に普通に `git clone` した状態のモジュールを参照する
-		    - `go get` で `go1` タグ・ブランチもしくは最新の `master` ブランチを取得したもの
-    - **module-aware mode**
-	    - `go mod` コマンド・ `go.mod` ファイルを利用した依存性管理（ `go.sum` ：依存モジュールのチェックサムの管理）
-	    - 標準 pkg 以外の全てのパッケージをモジュールとして管理する
-		- GOPATH mode とは異なり、 `$GOPATH/pkg/mod` 配下に同じモジュールでも Semantic Versioning された単位で管理され `go.mod` に記載されたバージョンを参照する
-	- 環境変数 `GO111MODULE`
-		- `GO111MODULE=off` ： **GOPATH mode**
-		- `GO111MODULE=on` ： **module-aware mode**
-		- `GO111MODULE=auto` ： `$GOPATH/src` 配下では GOPATH mode 、それ以外では module-aware mode で動作する
-
-従来通り `$GOPATH` 配下でプロジェクトを作成・開発し且つ module-aware mode を利用したい場合には `GO111MODULE=on` とする必要がある。  
-また、 `$GOPATH` 配下以外でプロジェクトを作成する場合であっても module-aware mode を利用すれば `$GOPATH/pkg/mod` 配下で依存モジュールが管理される。
-
-## プロジェクトの作成
-
-`$GOPATH` 配下で github および Go Modules を利用したプロジェクトの初回作成は以下のような感じ。
-
-```zsh
-% mkdir -p $GOPATH/src/github.com/<あなたのGithubアカウント名>
-% cd $GOPATH/src/github.com/<あなたのGithubアカウント名>
-% mkdir <golangプロジェクト> # プロジェクトディレクトリの作成
-% cd <golangプロジェクト>
-% export GO111MODULE=on
-% go mod init              # `GO111MODULE=on go mod init` のように一行でも
-go: creating new go.mod: module github.com/<あなたのGithubアカウント名>/<golangプロジェクト>
-% ls
-go.mod
-% touch app.go             # 依存ライブラリ含め好きなコード書く
-% go mod tidy              # 依存ライブラリの解決
-% go run app.go            # ビルド+実行
-% go build app.go          # ビルド
-% ./app
-```
-
-基本的にはどこのディレクトリで開発しようとも **module-aware mode** で開発することになると思う。
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/golang-modules-basics" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">Go Modules入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">Go Modules は、依存関係管理ツールです。この記事では、Go Modules の概要と使い方を記載します。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 ## VS Code の設定
 
-VS Code には Go の各種ツールと連携する拡張機能があり、 VS Code 内ターミナルから以下のようにコマンドラインツールを導入することにより自動で拡張機能インストールの案内をしてくれる。  
-Go の拡張機能をインストールしてから、VSCode でコマンドパレット(Cmd+Shift+P)を開いて `GO: Install/Update tools` で検索した後、全チェックしてインストールしてもいいし、以下で 1 つずつ入れてもいい。
+VS Code には Go の各種ツールと連携する拡張機能があり、 VS Code 内ターミナルから以下のようにコマンドラインツールを導入することにより自動で拡張機能インストールの案内をしてくれます。  
+Go の拡張機能をインストールしてから、VSCode でコマンドパレット( `Cmd+Shift+P` )を開いて `GO: Install/Update tools` で検索した後、全チェックしてインストールしてもいいし、以下で 1 つずつ入れても大丈夫です。
 
 - goimports
     - 過不足のimportの自動補完
@@ -195,6 +122,8 @@ Go の拡張機能をインストールしてから、VSCode でコマンドパ�
 
 ## .editorconfig
 
+.editorconfig のおすすめの設定を記載します。
+
 ```
 root = true
 
@@ -212,36 +141,17 @@ indent_size = 4
 trim_trailing_whitespace = true
 ```
 
-## docker によるマルチステージビルド
-
-```
-FROM golang:1.13.3-alpine3.10 as build
-WORKDIR /build
-COPY go.mod .
-COPY go.sum .
-RUN go mod download
-COPY . .
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
-
-FROM alpine:3.10
-RUN apk add --no-cache tzdata
-ENV TZ Asia/Tokyo
-COPY --from=build /build/main /usr/local/bin/main
-EXPOSE 8080
-ENTRYPOINT ["/usr/local/bin/main"]
-```
-
 ## デバッグ環境作成
 
-デバッガとして **Delve** を導入する。
+デバッガとして **Delve** を導入します。
 
 - デバッガツール delve のインストール
     - `go get -u github.com/derekparker/delve/cmd/dlv`
 - VSCodeにGo言語の拡張機能をインストール
     - `Rich Go language support for Visual Studio Code`
 
-コードにブレークポイントを設定して、 VSCode の `Debug` から `Start Debugging` を実行。（ `F5` でも）  
-以下を実行可能。
+コードにブレークポイントを設定して、 VSCode の `Debug` から `Start Debugging` を実行します。（ `F5` でも大丈夫です）  
+以下を実行可能です。
 
 - 継続実行（Continue）
     - 次のブレークポイントに到達するまで処理を継続させる
@@ -256,15 +166,15 @@ ENTRYPOINT ["/usr/local/bin/main"]
 - 停止（Stop）
     - 一度終了する
 
-例えば `fmt.Println()` をステップインして細かいところを見ていこう。  
-`syscall.Write()` などでシステムコールされているのがわかる。（ Win だと別コード）  
-今回はデバッガのステップインでコードを掘っていったが、カーソルがあたっている位置の関数で `Go to Definition` （ `F12` ）しても関数の定義に飛ぶ。  
-また、カーソルがあたっている位置の関数や変数で `Find All Reference` （ `bashift+F12` ） すれば、使われている位置がリストされる。
+例えば `fmt.Println()` をステップインして細かいところを見ていきましょう。  
+`syscall.Write()` などでシステムコールされているのがわかります。（ Win だと別コード）  
+今回はデバッガのステップインでコードを掘っていきましたが、カーソルがあたっている位置の関数で `Go to Definition` （ `F12` ）しても関数の定義に飛びます。  
+また、カーソルがあたっている位置の関数や変数で `Find All Reference` （ `bashift+F12` ） すれば、使われている位置がリストされます。
 
 # 基本文法
 
-[A Tour of Go](https://go-tour-jp.appspot.com/list)を一通りやるといい。  
-とりあえず、こんにちは世界。
+[A Tour of Go](https://go-tour-jp.appspot.com/list)を一通りやるのをおすすめします。  
+こんにちは世界。
 
 ```go
 package main
@@ -281,13 +191,13 @@ func main() {
 Hello, 世界
 ```
 
-なお、[The Go Playground](https://play.golang.org/) というサービスを使うと Web でお試し実行できる。  
-[他](http://interprism.hatenablog.com/entry/2014/03/04/132551) にもいろいろあるみたい。  
-以降は、[A Tour of Go](https://go-tour-jp.appspot.com/list) を読みつつも、**自分向けに** 補足したり省略したりしてまとめたもの。
+なお、[The Go Playground](https://play.golang.org/) というサービスを使うと Web でお試し実行できます。  
+[他](http://interprism.hatenablog.com/entry/2014/03/04/132551) にもいろいろあるみたいです。  
+以降は、[A Tour of Go](https://go-tour-jp.appspot.com/list) を読みつつも、**筆者向けに** 補足したり省略したりしてまとめたものです。
 
 ## パッケージのインポート
 
-標準パッケージのインポートは以下。
+標準パッケージのインポートは以下です。
 
 ```go
 import (
@@ -301,8 +211,8 @@ import "fmt"
 import "math"
 ```
 
-インポートしたら `fmt.Println` とかインポート名で使用できる。  
-また、インポート名を変更もできる。（ `f.Println` ）
+インポートしたら `fmt.Println` とかインポート名で使用できます。  
+また、インポート名を変更もできます。（ `f.Println` ）
 
 ```go
 import (
@@ -310,7 +220,7 @@ import (
 )
 ```
 
-また、独自や OSS ライブラリのインポートは `${GOPATH}/src` からのパスを指定する。
+独自や モジュールのインポートは `${GOPATH}/src` もしくは `${GOPATH}/pkg/mod` 以下に保存されている各種 Git リポジトリの FQDN からのパスを指定します。
 
 ```go
 import (
@@ -320,9 +230,9 @@ import (
 
 ## パッケージ外からの参照
 
-Go では、最初の文字が *大文字で始まる名前* は、外部のパッケージから参照できる公開された名前( *exported name* )。  
-例えば、 `Pi` は `math` パッケージでエクスポートされている。  
-`pi` （小文字）ではないことに注意。
+Go では、最初の文字が *大文字で始まる名前* は、外部のパッケージから参照できる公開された名前( *exported name* )となります。  
+例えば、 `Pi` は `math` パッケージでエクスポートされています。  
+`pi` （小文字）ではないことに注意してください。
 
 ```go
 package main
@@ -386,8 +296,8 @@ func main() {
 
 ## return の変数名
 
-返り値となる変数に名前をつけることができる。  
-そして、 `return` と書くだけでよくなる。
+返り値となる変数に名前をつけることができます。  
+`return` と書くだけで返り値と同じ変数名が返却されます。
 
 ```go
 package main
@@ -407,8 +317,8 @@ func main() {
 
 ## クロージャ
 
-Go の関数は **クロージャ** （関数オブジェクトの一種）。  
-関数の引数として渡したり、遅延実行させたりできる。
+Go の関数は **クロージャ** （関数オブジェクトの一種）です。  
+関数の引数として渡したり、遅延実行させたりできます。
 
 ```go
 package main
@@ -440,7 +350,7 @@ func main() {
 
 ## 変数宣言
 
-`var` は **変数宣言** 。
+`var` は **変数宣言** です。
 
 ```go
 package main
@@ -455,7 +365,7 @@ func main() {
 }
 ```
 
-初期化子が与えられている場合、型を省略できる。
+初期化子が与えられている場合、型を省略できます。
 
 ```go
 package main
@@ -470,8 +380,8 @@ func main() {
 }
 ```
 
-関数の中では、 `var` 宣言の代わりに、短い `:=` の代入文を使い、暗黙的な型宣言ができる。  
-この場合、変数の型は右側の変数から型推論される。  
+関数の中では、 `var` 宣言の代わりに、短い `:=` の代入文を使い、暗黙的な型宣言ができます。  
+この場合、変数の型は代入された値から型推論されます。  
 
 ```go
 i := 42           // int
@@ -479,7 +389,7 @@ f := 3.142        // float64
 g := 0.867 + 0.5i // complex128
 ```
 
-関数の外では、キーワードではじまる宣言( `var` , `func` など)が必要で、 `:=` での暗黙的な宣言は利用できない。
+関数の外では、キーワードではじまる宣言( `var` , `func` など)が必要で、 `:=` での暗黙的な宣言は利用できません。
 
 ```go
 package main
@@ -505,8 +415,8 @@ func main() {
     - `uint8` の別名
 - `rune`
     - `int32` の別名
-    - Unicode のコードポイントを表す
-	- rune とは古代文字を表す言葉( runes )、 Go では文字そのものを表すためにruneという言葉を使う
+    - Unicode のコードポイントを表します
+	- rune とは古代文字を表す言葉( runes )、 Go では文字そのものを表すためにruneという言葉を使います
 - `float32` `float64`
 - `complex64` `complex128`
 
@@ -533,8 +443,8 @@ func main() {
 
 ## ゼロ値
 
-変数に初期値を与えずに宣言すると、ゼロ値( **zero value** )が与えられる。  
-ゼロ値は型によって以下のように与えられる。
+変数に初期値を与えずに宣言すると、ゼロ値( **zero value** )が与えられます。  
+ゼロ値は型によって以下のように与えられます。
 
 - 数値型(int,floatなど): 0
 - bool型: false
@@ -556,7 +466,7 @@ func main() {
 
 ## 型変換
 
-従来の **キャスト** とほぼ同じ。
+他言語の **キャスト** とほぼ同じです。
 
 ```go
 var i int = 42
@@ -564,18 +474,18 @@ var f float64 = float64(i)
 var u uint = uint(f)
 ```
 
-ただし、C言語とは異なり、Goでの型変換は **明示的な変換が必要** 。
+ただし、C言語とは異なり、Goでの型変換は **明示的な変換が必要** です。
 
 ## 定数型
 
-定数は、 `const` キーワードを使って変数と同じように宣言。  
-定数は、文字(character)、文字列(string)、boolean、数値(numeric)のみで使える。  
-なお、定数は `:=` を使って宣言できない。
+定数は、 `const` キーワードを使って変数と同じように宣言します。  
+定数は、文字(character)、文字列(string)、boolean、数値(numeric)のみで使えます。  
+なお、定数は `:=` を使って宣言できません。
 
 ## 繰り返し for
 
-所謂 `for` ループ。Go に `while` はない。  
-他言語とは異なり、 for ステートメントの3つの部分を括る括弧 `( )` はない。なお、中括弧 `{ }` は必要。
+所謂 `for` ループです。Go に `while` はありません。  
+他言語とは異なり、 `for` ステートメントの3つの部分を括る括弧 `( )` はありません。なお、中括弧 `{ }` は必要です。
 
 ```go
 package main
@@ -593,8 +503,8 @@ func main() {
 
 ## while っぽい for
 
-`for ` はセミコロン( `;` )を省略することもできる。  
-つまり、C言語などにある `while` は、Goでは `for` だけを使う。
+`for ` はセミコロン( `;` )を省略することもできます。  
+つまり、C言語などにある `while` は、Goでは `for` だけを使うことになります。
 
 ```go
 package main
@@ -612,9 +522,9 @@ func main() {
 
 ## 条件文 if
 
-Go 言語の `if` ステートメントは、 `for` ループと同様に、括弧 `( )` は不要で、中括弧 `{ }` は必要。  
-また、 `if` ステートメントは、 `for` のように、条件の前に、評価するための簡単なステートメントを書くことができる。  
-ここで宣言された変数は、 if のスコープ内だけで有効。
+Go 言語の `if` ステートメントは、 `for` ループと同様に、括弧 `( )` は不要で、中括弧 `{ }` が必要です。  
+また、 `if` ステートメントは、 `for` のように、条件の前に、評価するための簡単なステートメントを書くことができます。  
+ここで宣言された変数は、 `if` のスコープ内だけで有効です。
 
 ```go
 package main
@@ -639,7 +549,7 @@ func main() {
 }
 ```
 
-`if` ステートメントで宣言された変数は、 `else` ブロック内でも使うことができる。
+`if` ステートメントで宣言された変数は、 `else` ブロック内でも使うことができます。
 
 ```go
 package main
@@ -669,9 +579,9 @@ func main() {
 
 ## switch 文
 
-Go の `switch` は C や C++、Java、JavaScript、PHP の `switch` と似ているが、 Go では選択された `case` だけを実行してそれに続く全ての `case` は実行されない。   
-これらの言語の各 `case` の最後に必要な `break` ステートメントが Go では **自動的に提供される** 。   
-もう一つの重要な違いは Go の `switch` の `case` は定数である必要はなく、 関係する値は整数である必要はない。
+Go の `switch` は C や C++、Java、JavaScript、PHP の `switch` と似ていますが、 Go では選択された `case` だけを実行してそれに続く全ての `case` は実行されません。   
+これらの言語の各 `case` の最後に必要な `break` ステートメントが Go では **自動的に提供** されます。   
+もう一つの重要な違いは Go の `switch` の `case` は定数である必要はなく、 関係する値は整数である必要もありません。
 
 ```go
 package main
@@ -698,8 +608,8 @@ func main() {
 
 ## defer
 
-`defer` ステートメントは、 `defer` へ渡した関数の実行を、呼び出し元の関数の終わり( `return` 後)まで遅延させる。  
-`defer` へ渡した関数の引数は、すぐに評価されるが、その関数自体は呼び出し元の関数が `return` するまで実行されない。
+`defer` ステートメントは、 `defer` へ渡した関数の実行を、呼び出し元の関数の終わり( `return` 後)まで遅延させます。  
+`defer` へ渡した関数の引数は、すぐに評価されますが、その関数自体は呼び出し元の関数が `return` するまで実行されません。
 
 ```go
 package main
@@ -716,7 +626,7 @@ func main() {
 // と出力される
 ```
 
-`defer` が複数ある場合、その呼び出しはスタックされ、 LIFO の順番で実行される。（後から順に実行される）
+`defer` が複数ある場合、その呼び出しはスタックされ、 LIFO の順番で実行されます。（後から順に実行されます）
 
 ```go
 package main
@@ -746,7 +656,7 @@ func main() {
 // 0
 ```
 
-`defer` は `panic` の `recover` によく用いられる。（ Java で言う `try-catch` 的な）
+`defer` は `panic` の `recover` によく用いられます。（ Java で言う `try-catch` ）
 
 ```go
 package main
@@ -770,14 +680,14 @@ func main() {
 }
 ```
 
-`panic` は Java でいう `Runtime Exception` 。
-エラーハンドリングでは使っちゃダメ。 `Error` インターフェースを使おう。
+`panic` は Java でいう `Runtime Exception` です。
+**エラーハンドリングで使ってはいけません** 。 `Error` インターフェースを使いましょう。
 
 - https://qiita.com/nayuneko/items/3c0b3c0de9e8b27c9548
 
 ## ポインタ
 
-Go では **ポインタ** （値が格納されているメモリのアドレス）を扱える。
+Go では **ポインタ** （値が格納されているメモリのアドレス）を扱えます。
 
 ```go
 package main
@@ -797,8 +707,8 @@ func main() {
 
 ## 構造体 struct
 
-`type` で作成する。  
-`type` 自体は `struct` 専用ではなく、独自の型を定義できるもの。
+`type` で作成します。  
+`type` 自体は `struct` 専用ではなく、独自の型を定義できるものです。
 
 ```go
 package main
@@ -811,7 +721,7 @@ type vertex struct {
 }
 
 func main() {
-	v := vertex{1, 2} // vertex{x:1, y:2} でフィールド明記もできる
+	v := vertex{1, 2} // vertex{x:1, y:2} でフィールド明記もできます
 
 	fmt.Println(v)   // {1 2}
 	fmt.Println(v.x) // ドットでフィールドアクセス：1
@@ -820,7 +730,7 @@ func main() {
 	p := &vertex{1, 2} // いきなりポインタで作成も可能
 	
 	fmt.Println((*pv).y)// 2
-	fmt.Println(p.y) // * を省略してもコンパイラが良しなに解釈してくれる：2
+	fmt.Println(p.y) // * を省略してもコンパイラが良しなに解釈してくれます：2
 }
 ```
 
@@ -864,30 +774,30 @@ func main() {
 }
 ```
 
-多次元配列・スライスも作成可能。  
-また、スライスは要素の追加（ `s = append(s, 0)` 、複数 `s = append(s, 2, 3, 4)` ）が可能。
+多次元配列・スライスも作成可能です。  
+また、スライスは要素の追加（ `s = append(s, 0)` 、複数 `s = append(s, 2, 3, 4)` ）が可能です。
 
-> ## make と new
->
-> 変数の作成に用いる `make` と `new` の違いは以下の通り。
->
->- `make(T)`
->    - 対象の型：`slice` 、 `map` 、 `channel`
->	- 初期化：初期化する
->	- 返り値： `T`
->- `new(T)`
->    - 対象の型：任意の型
->	- 初期化：初期化しない(ゼロ値になる)
->	- 返り値： `*T`
->
-> `make` は `list := make([]int, len, cap)` のようにサイズを指定できる。  
-> `len` は長さでゼロ値が存在する値の場合は実態を作成。 `cap` （省略可）はメモリだけ確保し、各要素の実態作成は行われない。  
-> なお、 **多次元で作成する場合は注意** が必要。
->
->```go
+## make と new
+
+変数の作成に用いる `make` と `new` の違いは以下の通りです。
+
+- `make(T)`
+    - 対象の型：`slice` 、 `map` 、 `channel`
+	- 初期化：初期化します
+	- 返り値： `T`
+- `new(T)`
+    - 対象の型：任意の型
+	- 初期化：初期化しません(ゼロ値になる)
+	- 返り値： `*T`
+
+ `make` は `list := make([]int, len, cap)` のようにサイズを指定できます。  
+ `len` は長さでゼロ値が存在する値の場合は実態を作成。 `cap` （省略可）はメモリだけ確保し、各要素の実態作成は行われません。  
+ なお、 **多次元で作成する場合は注意** が必要です。
+
+```go
 # 2 次元スライス（2x2）を作成する場合
 list := make([][]int, 2)
-# 上記で [][]int は作成しても []int は作成されていない！
+# 上記で [][]int は作成しても []int は作成されていません！
 for i := 0; i < 2; i++ {
 	list[i] = make([]int, 2)
 }
@@ -895,7 +805,7 @@ for i := 0; i < 2; i++ {
 
 ## range
 
-これも Python っぽい。
+これも Python によく似ています。
 
 ```go
 package main
@@ -930,7 +840,7 @@ type vertex struct {
 
 func main() {
 	var m map[string]vertex     // mapの宣言
-	m = make(map[string]vertex) // mapはmakeで作る
+	m = make(map[string]vertex) // mapはmakeで作ります
 	m["hoge"] = vertex{
 		1, 2,
 	}
@@ -953,19 +863,19 @@ func main() {
 
 ## メソッド
 
-Go には **class** は無いが、**型に対してメソッドを定義** できる。  
-構造体だけにメソッド定義できるのではなく、型に対して定義できることに注意。  
-Go ではメソッドを定義する型を **レシーバ** と呼び、 **値レシーバ** と **ポインタレシーバ** がある。  
-レシーバは `func` と関数名の間に定義する。
+Go には **class** はありませんが、**型に対してメソッドを定義** できます。  
+構造体だけにメソッド定義できるのではなく、型に対して定義できることに注意してください。  
+Go ではメソッドを定義する型を **レシーバ** と呼び、 **値レシーバ** と **ポインタレシーバ** があります。  
+レシーバは `func` と関数名の間に定義します。
 
 - 値レシーバ
     - `(r Type)`
-	- メソッド呼び出しの度に `r` （値）が作成されるのでメモリ多用に注意
-	- 基本的にはポインタレシーバを使ってればいい。
+	- メソッド呼び出しの度に `r` （値）が作成されるのでメモリ多用に注意してください
+	- 基本的にはポインタレシーバを使えば大丈夫です
 - ポインタレシーバ
     - `(r *Type)`
-	- 値レシーバと異なり、メソッド呼び出しの度に値は作成されない（ポインタなので）
-	- ただし、 `nil` には注意（オブジェクト化されてなくても呼べちゃう）
+	- 値レシーバと異なり、メソッド呼び出しの度に値は作成されません（ポインタなので）
+	- ただし、 `nil` には注意（オブジェクト化されてなくても呼びだせてしまいます）
 
 ```go
 package main
@@ -1007,8 +917,8 @@ func main() {
 
 ## インターフェース
 
-**インタフェース** は、メソッドのシグニチャの集まりを定義する。  
-何も定義していないもの `interface{}` 型は **空のインターフェース** といい、任意の値を保持できる。
+**インタフェース** は、メソッドのシグニチャの集まりを定義します。  
+何も定義していないもの `interface{}` 型は **空のインターフェース** といい、任意の値を保持できます。
 
 ```go
 package main
@@ -1052,16 +962,16 @@ func main() {
 	fmt.Println(s.sub())
 	
 	var n interface{}              // 空のインターフェース
-	n = v1                         // 空のインターフェースは任意の値を保持できる
+	n = v1                         // 空のインターフェースは任意の値を保持できます
 	fmt.Printf("(%v, %T)\n", n, n) // ({1 2}, main.vertex)
-	n = v2                         // 空のインターフェースは任意の値を保持できる
+	n = v2                         // 空のインターフェースは任意の値を保持できます
 	fmt.Printf("(%v, %T)\n", n, n) // (&{3 4}, *main.vertex)
 }
 ```
 
-標準ライブラリには [**Stringer** インターフェース](https://go-tour-jp.appspot.com/methods/17)があり、 `String()` メソッドが定義されている。  
-例えば、 `fmt` に `String()` メソッドを実装したオブジェクトを渡すと、その定義通りに標準出力してくれる。  
-他にも以下の様なものがある。
+標準ライブラリには [**Stringer** インターフェース](https://go-tour-jp.appspot.com/methods/17)があり、 `String()` メソッドが定義されています。  
+例えば、 `fmt` に `String()` メソッドを実装したオブジェクトを渡すと、その定義通りに標準出力してくれます。  
+他にも以下のようなものがあります。
 
 - [error インターフェース](https://go-tour-jp.appspot.com/methods/19)
 - [Reader インターフェース](https://go-tour-jp.appspot.com/methods/21)
@@ -1069,7 +979,7 @@ func main() {
 
 ## 型アサーション
 
-`インターフェース.(型)` で型を確認できる。
+`インターフェース.(型)` で型を確認できます。
 
 ```go
 package main
@@ -1095,7 +1005,7 @@ func main() {
 
 ## 型 switch
 
-`インターフェース.(type)` で型が取得でき、型に応じて switch できる。
+`インターフェース.(type)` で型が取得でき、型に応じて switch できます。
 
 ```go
 package main
@@ -1122,10 +1032,10 @@ func main() {
 
 ## goroutine
 
-**goroutine** （ゴルーチン）は Go ランタイムが管理する軽量スレッド。  
-OS が管理するスレッドではなく、 Go ランタイムなのがポイント。  
-関数の前に `go` と記載すれば新しい goroutine 上でその関数が実行される。  
-main 関数自体も goroutine で実行されており、 `go` キーワードで実行する関数自体はメイン goroutine 上で評価される。
+**goroutine** （ゴルーチン）は Go ランタイムが管理する軽量スレッドです。  
+OS が管理するスレッドではなく、 Go ランタイムなのがポイントです。  
+関数の前に `go` と記載すれば新しい goroutine 上でその関数が実行されます。  
+main 関数自体も goroutine で実行されており、 `go` キーワードで実行する関数自体はメイン goroutine 上で評価されます。
 
 ```go
 package main
@@ -1155,9 +1065,9 @@ func main() {
 
 ## チャネル（ channel ）
 
-Go では **チャネル** （ **channel** ）を用いて goroutine 間のデータの送受信およびブロックを実現する。  
-チャネルは `make` で作成（ `c := make(chan int)` ）し、送受信するデータの型を指定する。  
-また、データの送信（ `c <- 0` 入れる）・受信（ `<-c` 取り出す）はアロー（？）で表現する。 **キュー** みたいなものだ。
+Go では **チャネル** （ **channel** ）を用いて goroutine 間のデータの送受信およびブロックを実現します。  
+チャネルは `make` で作成（ `c := make(chan int)` ）し、送受信するデータの型を指定します。  
+また、データの送信（ `c <- 0` 入れる）・受信（ `<-c` 取り出す）はアロー（？）で表現します。 **キュー** みたいなものえす。
 
 ```go
 package main
@@ -1171,7 +1081,7 @@ func main() {
 		c <- "hello world"
 	}(c)
 	
-	fmt.Println(<-c) // チャネルに値が入って読みだせるまでメイン goroutine はブロックされる
+	fmt.Println(<-c) // チャネルに値が入って読みだせるまでメイン goroutine はブロックされます
 }
 ```
 
@@ -1188,16 +1098,16 @@ func main() {
 	c := make(chan int) // チャネルの作成
 
 	nums := [4]int{1, 2, 3, 4}
-	go add(c, nums[0], nums[1]) // 足し算のお仕事を goroutine で分割
+	go add(c, nums[0], nums[1]) // 足し算のお仕事を goroutine で分割します
 	go add(c, nums[2], nums[3])
 	
 	r1, r2 := <-c, <-c
 	fmt.Println(r1, r2) // 7 3
-	// 終わった方から先に入るので順番に保証は無い
+	// 終わった方から先に入るので順番に保証はありません
 }
 ```
 
-チャネルには **バッファ** （チャネルに入るデータの数） を定義でき、 **バッファがいっぱいのときはチャネルへの送信をブロック** し、 **バッファが空の時はチャネルの受信をブロック** する。
+チャネルには **バッファ** （チャネルに入るデータの数） を定義でき、 **バッファがいっぱいのときはチャネルへの送信をブロック** し、 **バッファが空の時はチャネルの受信をブロック** します。
 
 ```go
 package main
@@ -1213,12 +1123,12 @@ func main() {
 }
 ```
 
-チャネルは閉じる（ **`close()`** ）ことができ、以下のように検知可能。
+チャネルは閉じる（ **`close()`** ）ことができ、以下のように検知可能です。
 
 - `v, ok := <-ch`
-    - `ok` が `false` の場合チャネルが閉じている
+    - `ok` が `false` の場合チャネルが閉じています
 - `for i := range c`
-    - チャネルが閉じられるまで値を繰り返し受信する
+    - チャネルが閉じられるまで値を繰り返し受信します
 
 ```go
 package main
@@ -1243,10 +1153,10 @@ func main() {
 }
 ```
 
-**`select`** を使用することで複数のチャネルを評価できる。  
-複数ある `case` のいずれかが準備できるようになるまでブロックし、準備ができた `case` を実行する。  
-もし、複数の `case` の準備ができている場合、 `case` は **ランダムに選択・実行** される。  
-どの `case` も準備できていない場合は `default` が実行される。
+**`select`** を使用することで複数のチャネルを評価できます。  
+複数ある `case` のいずれかが準備できるようになるまでブロックし、準備ができた `case` を実行します。  
+もし、複数の `case` の準備ができている場合、 `case` は **ランダムに選択・実行** されます。  
+どの `case` も準備できていない場合は `default` が実行されます。
 
 ```go
 package main
@@ -1259,7 +1169,7 @@ import (
 func count(c, quit chan int) {
 	x := 0
 	for {
-		select { // どちらかの case が for 内で評価され続ける
+		select { // どちらかの case が for 内で評価され続けます
 		case c <- x:
 			x += 1
 		case <-quit:
@@ -1293,8 +1203,8 @@ func main() {
 
 ## sync.Mutex
 
-チャネルは goroutine 間でデータの送受信とブロックを実現するものだが、データ送受信が不要な場合は **sync.Mutex** （排他制御・ミューテックス： mutual exclusion の略）を利用する。  
-所謂ロック機構（ `Lock` `Unlock` ）の機能を提供し、 **クリティカルセッション** （他の処理の介入抑止し、データの生合成を守る必要のある一連の一まとまりの処理）を保護する。
+チャネルは goroutine 間でデータの送受信とブロックを実現するものですが、データ送受信が不要な場合は **sync.Mutex** （排他制御・ミューテックス： mutual exclusion の略）を利用します。  
+所謂ロック機構（ `Lock` `Unlock` ）の機能を提供し、 **クリティカルセッション** （他の処理の介入抑止し、データの生合成を守る必要のある一連の一まとまりの処理）を保護します。
 
 ```go
 package main
@@ -1331,7 +1241,7 @@ func main() {
 }
 ```
 
-上記はロック機構によりきちんと 10 単位でカウントアップ・表示されている。
+上記はロック機構によりきちんと 10 単位でカウントアップ・表示されています。
 
 # 参考
 
