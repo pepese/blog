@@ -2,9 +2,9 @@
 title:       "Google Cloud のための Terraform 環境構築"
 URL:         "terraform-googlecloud-environment"
 subtitle:    ""
-description: "Terraform を使って Google Cloud の IaC (Infrastructure as Code) 環境を構築する。"
+description: "Terraformは、IaC（Infrastructure as Code）を実現するツールの 1 つです。この記事ではTerraformを使ってGoogle CloudのIaC環境構築についてご紹介します。"
 keyword:     "Terraform, Google Cloud, GCP, 環境構築"
-date:        2022-03-30
+date:        2022-04-10
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -14,9 +14,14 @@ categories:
 - tech
 ---
 
-[Terraform](https://www.terraform.io/) を使って Google Cloud の IaC (Infrastructure as Code) 環境を構築する。
+Terraformは、IaC（Infrastructure as Code）を実現するツールの 1 つです。  
+この記事ではTerraformを使ってGoogle CloudのIaC環境構築についてご紹介します。
 
 <!--more-->
+
+Terraform の入門については以下の記事をご参照ください。
+
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/terraform-basics" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">Terraform入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">Terraformは、IaC（Infrastructure as Code）を実現するツールの 1 つです。この記事では、Terraformのインストールから使い方までをご紹介します。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 # サービスアカウントの作成
 
@@ -99,7 +104,7 @@ provider "google" {
 
 ```terraform:versions.tf
 terraform {
-  required_version = "~> 1.0.0"
+  required_version = "~> 1.1.0"
 }
 ```
 
