@@ -4,7 +4,7 @@ URL:         "aws-iam-basics"
 subtitle:    ""
 description: "AWS IAM （Identity and Access Management）は、 AWS サービスで「認証」と「認可」の設定を行うことができるサービスです。この記事では、AWS IAM をざっくり理解できるよう概要を記載します。（強制 MFA についても記載しています。）"
 keyword:     "AWS, IAM, MFA"
-date:        2022-04-07
+date:        2022-04-11
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -253,6 +253,59 @@ IAM ユーザーは複数の IAM グループ（最大 10 ）へ所属するこ�
 なお、 AWS CLI での MFA 認証は以下を参照してください。
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/aws-cli-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">AWS CLI入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">AWS CLI は AWS リソースの操作を行う Command Line Interface (CLI) ツールです。AWS のマネージメントコンソールをボチボチする代わりにコマンドを叩くイメージです。この記事では、AWS CLI のインストールと設定で役立つ情報（MFA・多要素認証など）を紹介します。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+
+# Landing Zone
+
+Landing Zone は、Well-Architected Framework を始めとした「AWS のベストプラクティス」に基づいて構成したアカウントをスケーラブルに展開していくための仕組みの総称です。  
+これにより、ガバナンスを効かせた形でアカウントを自動展開することができます。  
+
+Landing Zone は、下記機能から構成されます。
+
+1. アカウントの発行
+    - 必要な初期設定の済んだアカウントを作成
+2. 管理用権限の発行
+    - 対象アカウントを管理するための権限を作成
+3. 共有サービスへのアクセス (ユーザー環境に合わせて個別に実装する)
+    - AD やファイルサーバー等の共有サービスや運用拠点への接続経路の確保
+4. AWS ログの集約
+    - 監査用ログをセキュアに一元保存
+5. ガードレールの設置　
+    - 実施してはいけない操作の禁止 (必須のガードレール)
+    - 危険な設定の監視 (強く推奨されるガードレール、推奨のガードレール)
+
+Landing Zone はマルチアカウント戦略を実現する仕組みの総称であり、AWS サービスの名称では無いということに注意してください。
+
+## Landing Zone を適用する 2 つの方法
+
+- 実装 1 : AWS Control Tower
+- 実装 2 : 独自実装の Landing Zone
+
+### 実装 1 : AWS Control Tower
+
+AWS Control Tower では、ID、フェデレーティッドアクセス、マルチアカウント構成のベストプラクティスを使用して、Landing Zone をセットアップします。
+
+- AWS Organizations を使用してマルチアカウント環境を作成する
+- AWS Single Sign-On (SSO) を使用して ID 管理を提供する
+- AWS SSO を使用してアカウントにフェデレーティッドアクセスを提供する
+- AWS CloudTrail のログや、Amazon S3 に保存される AWS Config のログを集中管理する
+- AWS IAM および AWS SSO を使用してクロスアカウントセキュリティ監査を有効化する
+
+### 実装 2 : 独自実装の Landing Zone
+
+もうひとつの手段として、Landing Zone の各機能を独自実装します。
+
+### 手順の大きな流れ
+
+流れは以下です。  
+AWSアカウントも、Organizationsの機能を使って作成します。
+
+1. rootユーザーでアクセス可能なAWSアカウントを用意する
+2. Organizationsを作成する
+3. OrganizationsからAWSアカウントを追加する
+4. 組織ユニット（OU）を作成する
+5. サービスコントロールポリシー（SCP）を作成する
+6. 組織ユニットにサービスコントロールポリシーを適用する
+7. AWSアカウントにアクセスし動作確認する
 
 # おすすめ書籍
 
