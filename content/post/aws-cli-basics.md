@@ -124,7 +124,7 @@ $ pip3 install aws-mfa
 [<プロファイル名>-long-term]
 aws_access_key_id = <あなたのIAM Userのアクセスキー>
 aws_secret_access_key = <あなたのIAM Userのシークレットキー>
-aws_mfa_device = arn:aws:iam::312574223261:mfa/<あなたのIAM User ID>
+aws_mfa_device = arn:aws:iam::<aws_account_id>:mfa/<あなたのIAM User ID>
 ```
 
 任意のプロファイル名に `-long-term` がついているのがポイントです。  
