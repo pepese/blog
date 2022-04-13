@@ -105,6 +105,8 @@ SEOは、“Search Engine Optimization” の略であり、検索エンジン�
   - Qiita で雑な記事を書き、ブログを参照する
   - Zennとかnoteも、、、？
 
+ちなみにテックブログへの流入は 「はてぶ > smartnews > google 検索」 くらいになる模様。
+
 ## 3. Googleガイドラインに則ったコーディング
 
 ### 3.1. クローラビリティ対策
