@@ -2,8 +2,7 @@
 
 - Google Adsense
 - Amazonアソシエイト：本
-- A8、バリューコマース
-- Rakutenアフェリエイト
+- アフェリエイト：A8、バリューコマース
 - Udemy Affiliates Program
 
 ## Google Adsense
@@ -317,52 +316,17 @@ msmaflink({"n":"Ethereum＋Solidity入門 Web3．0を切り拓くブロックチ
 <!-- MoshimoAffiliateEasyLink END -->
 ```
 
-## A8、バリューコマース
+## アフェリエイト：A8、バリューコマース
+
+- テキストリンクを記事の中に入れる
+- 広告タグが改行して困ったときは img タグに `style="display:inline;"` を足す
 
 ### プログラミングスクール
-
-```
-<!-- A8 affiliate programing school levtech college -->
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+5BPLKI+2JK4+3N25E9" rel="nofollow">
-<img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=220330149322&wid=001&eno=01&mid=s00000011866022013000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3N6FTX+5BPLKI+2JK4+3N25E9" alt="">
-
-<!-- A8 affiliate programing school dmm webcamp -->
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" rel="nofollow">
-<img border="0" width="250" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=220330149304&wid=001&eno=01&mid=s00000018311002014000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" alt="">
-
-<!-- A8 affiliate programing school aidemy premium -->
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTY+3257OY+4HUE+60OXD" rel="nofollow">
-<img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=220330150185&wid=001&eno=01&mid=s00000020975001011000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=3N6FTY+3257OY+4HUE+60OXD" alt="">
-```
 
 - 待ち
   - tech boost: A8
 
 ### 転職サイト
-
-```
-<!-- Value Commerce affiliate job change site bizreach -->
-<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743566"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743566" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743566" border="0"></a></noscript>
-
-<!-- A8 affiliate programing job change site levtech career -->
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6GM3+BPIX2Q+2JK4+ZRXQP" rel="nofollow">
-<img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=220331163708&wid=001&eno=01&mid=s00000011866006009000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6GM3+BPIX2Q+2JK4+ZRXQP" alt="">
-
-<!-- Value Commerce affiliate job change site doda -->
-<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743626"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743626" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743626" border="0"></a></noscript>
-
-<!-- Value Commerce affiliate job change site RECRUIT AGENT -->
-<script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743631"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743631" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743631" border="0"></a></noscript>
-
-<!-- A8 affiliate programing job change site 転職ドラフト -->
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6GM2+EC6U9E+2OTA+HWI5T" rel="nofollow">
-<img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=220331162867&wid=001&eno=01&mid=s00000012547003007000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=3N6GM2+EC6U9E+2OTA+HWI5T" alt="">
-```
 
 - 待ち
   - リクルートダイレクトスカウト: A8
@@ -370,11 +334,6 @@ msmaflink({"n":"Ethereum＋Solidity入門 Web3．0を切り拓くブロックチ
   - マイナビIT AGENT: A8
   - doda: value commerce
   - biz reach: valude commerce
-
-## Rakutenアフェリエイト
-
-要検討。  
-Amazonだけでもいいかもしれないが、セールの時期のズレなどでやる価値はある模様。
 
 ## Udemy Affiliates Program
 

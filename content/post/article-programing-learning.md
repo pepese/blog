@@ -130,49 +130,34 @@ Web検索を駆使して自力で学習を進められる段階までいくた�
 もちろん費用はかかりますが、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">効率的にプログラミング学習を進めたい</span> という方はプログラミングスクールも検討してみてください。  
 以降では、タイプ別にプログラミングスクールを紹介します。
 
-## <a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+5BPLKI+2JK4+3MZKSY" rel="nofollow"><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=3N6FTX+5BPLKI+2JK4+3MZKSY" alt="">レバテックカレッジ</a>
+## レバテックカレッジ
 
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+5BPLKI+2JK4+3MZKSY" rel="nofollow"><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=3N6FTX+5BPLKI+2JK4+3MZKSY" alt="">レバテックカレッジ</a> は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">新卒でITエンジニアになりたい大学生/大学院生のための就職活動サポートまである就活支援型プログラミングスクール</span> です。
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+5BPLKI+2JK4+3MZKSY" rel="nofollow">レバテックカレッジ</a><img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3N6FTX+5BPLKI+2JK4+3MZKSY" alt="" style="display:inline;"> は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">新卒でITエンジニアになりたい大学生/大学院生のための就職活動サポートまである就活支援型プログラミングスクール</span> です。  
+<span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">大学生/大学院生限定が故に他のプログラミングスクールに比べて安価</span> になっています。
 
-<!-- A8 affiliate programing school levtech college -->
-<!--
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+5BPLKI+2JK4+3N25E9" rel="nofollow">
-<img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=220330149322&wid=001&eno=01&mid=s00000011866022013000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=3N6FTX+5BPLKI+2JK4+3N25E9" alt="">
--->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+5BPLKI+2JK4+3MZSIQ" rel="nofollow">就活まで支援するプログラミングスクールなら【レバテックカレッジ】</a>
+<img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=3N6FTX+5BPLKI+2JK4+3MZSIQ" alt="">
 
-## <a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+50ZSOI+3XAE+BWVTE" rel="nofollow"><img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BWVTE" alt="">DMM WEBCAMP</a>
+## DMM WEBCAMP
 
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+50ZSOI+3XAE+BWVTE" rel="nofollow"><img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BWVTE" alt="">DMM WEBCAMP</a> は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">転職成功率98％、転職保証付きなどとにかく転職希望者におすすめ</span> です。  
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+50ZSOI+3XAE+BWVTE" rel="nofollow">DMM WEBCAMP</a><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BWVTE" alt="" style="display:inline;"> は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">転職成功率98％、転職保証付きなどとにかく転職希望者におすすめ</span> です。  
 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">未経験者のためのコースや就業両立コースなどもあり無理なく学習</span> できます。
 
-<!-- A8 affiliate programing school dmm webcamp -->
-<!--
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" rel="nofollow">
-<img border="0" width="250" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=220330149304&wid=001&eno=01&mid=s00000018311002014000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BZO4H" alt="">
--->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTX+50ZSOI+3XAE+BZ8OY" rel="nofollow">未経験からIT業界へ転職なら【DMM WEBCAMP】</a>
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=3N6FTX+50ZSOI+3XAE+BZ8OY" alt="">
 
-## [tech boost(テックブースト)](https://be.tech-boost.jp/)
+## tech boost(テックブースト)
 
 [tech boost(テックブースト)](https://be.tech-boost.jp/) は、転職はもちろんですが <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">副業やフリーランスになりたい方もターゲットにしているのが特徴</span> です。  
 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">現役エンジニアによるサポートやメンタリング</span> などもあり挫折せず続けられます。
 
-<!--
-<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://be.tech-boost.jp/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:be.tech-boost.jp/assets/og_image_lp-0a7578135361c4eb8d83ddca8319ad79ff73266cdb652730bfe7cbc6c6f65694.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">tech boost(テックブースト)｜キャリアの幅を広げるテクノロジーコミュニティ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">キャリアの幅を広げるテクノロジーコミュニティ「tech boost(テックブースト)」。エンジニアのキャリアサービスを展開しているBranding Engineerが運営するプログラミングスクール。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
--->
+## Aidemy Premium(アイデミープレミアム)
 
-## <a href="https://px.a8.net/svt/ejp?a8mat=3N6FTY+3257OY+4HUE+5YJRM" rel="nofollow"><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=3N6FTY+3257OY+4HUE+5YJRM" alt="">Aidemy Premium(アイデミープレミアム)</a>
-
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTY+3257OY+4HUE+5YJRM" rel="nofollow"><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=3N6FTY+3257OY+4HUE+5YJRM" alt="">アイデミープレミアム</a> は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">データサイエンティスト、AIエンジニアのコースに強み</span> のあるプログライングスクールです。  
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTY+3257OY+4HUE+5YRHE" rel="nofollow">Aidemy Premium(アイデミープレミアム)</a><img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=3N6FTY+3257OY+4HUE+5YRHE" alt="" style="display:inline;"> は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">データサイエンティスト、AIエンジニアのコースに強み</span> のあるプログライングスクールです。  
 データ分析、機械学習、ディープラーニング、AI のスキルを習得したい方は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">ほぼ Python 一択</span> と言っても過言ではありません。
 
-<!-- A8 affiliate programing school aidemy premium -->
-<!--
-<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTY+3257OY+4HUE+60OXD" rel="nofollow">
-<img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=220330150185&wid=001&eno=01&mid=s00000020975001011000&mc=1"></a>
-<img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=3N6FTY+3257OY+4HUE+60OXD" alt="">
--->
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6FTY+3257OY+4HUE+5ZMCI" rel="nofollow">【アイデミー】AIを学んで一発逆転のキャリアチェンジ！</a>
+<img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=3N6FTY+3257OY+4HUE+5ZMCI" alt="">
 
 # おすすめ記事
 
