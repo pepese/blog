@@ -4,7 +4,7 @@ URL:         "article-job-changing"
 subtitle:    ""
 description: "ITエンジニアの転職活動のメリットと意義について筆者の意見をご紹介します。"
 keyword:     "転職, IT, エンジニア, ITエンジニア, 転職サイト"
-date:        2022-04-05
+date:        2022-04-14
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -77,14 +77,16 @@ ITエンジニアの転職活動のメリットと意義について筆者の意
 
 ## ハイクラス向け転職サイト
 
-### ビズリーチ
+### [ビズリーチ](https://www.bizreach.jp/)
 
-ビズリーチは、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">登録審査ありのスカウト型</span> です。  
+[ビズリーチ](https://www.bizreach.jp/) は、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">登録審査ありのスカウト型</span> です。  
 企業やヘッドハンターがあなたの職務経歴を見て <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">ジョブマッチング度合いが高い</span> 状態で直接スカウトしてきます。  
 この仕組みのためか（個人の感覚ですが） <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">特に大企業の内定率が異様に高い</span> です。  
 しかし、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">希望と異なる求人がくることもある</span> 点については注意が必要です。
 
+<!--
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://www.bizreach.jp/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:www.bizreach.jp/img/logo/c_ogimage-cm_v6.png" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">選ばれた人だけのハイクラス転職サイト【ビズリーチ】</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">ビズリーチは、管理職や専門職、次世代リーダー、グローバル人材などの即戦力・ハイクラス人材に特化した、国内最大級のハイクラス転職サイトです。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+-->
 
 <!--
 ### リクルートダイレクトスカウト
@@ -94,27 +96,31 @@ ITエンジニアの転職活動のメリットと意義について筆者の意
 
 ## IT特化転職サイト
 
-### 転職ドラフト
+### <a href="https://px.a8.net/svt/ejp?a8mat=3N6GM2+EC6U9E+2OTA+HY06A" rel="nofollow"><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6GM2+EC6U9E+2OTA+HY06A" alt="">転職ドラフト</a>
 
-転職ドラフトは <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">企業がITエンジニアを年収付きで競争入札するスカウト型転職サイト</span> です。  
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6GM2+EC6U9E+2OTA+HY06A" rel="nofollow"><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6GM2+EC6U9E+2OTA+HY06A" alt="">転職ドラフト</a> は <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">企業がITエンジニアを年収付きで競争入札するスカウト型転職サイト</span> です。  
 年収付きということもあって、<span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">その企業がどの程度自分を評価してくれているのか分かりやすく</span> 、また、<span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">収入面での不安を早い段階で払拭</span> できます。  
 そしてこれは個人の感覚ですが、企業側は <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">人事組織主導ではなく現場社員主導</span> でスカウトしているケースが多いと感じられ、<span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">現場社員とのカジュアル面談が非常にやりやすいく印象も良い</span> です。  
 ただし、 転職ドラフトの運営チームによるレジュメのレビュー・フィードバックがありますが、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">その他のサポートがまったく無い</span> 点には注意が必要です。
 
 <!-- A8 affiliate programing job change site 転職ドラフト -->
+<!--
 <a href="https://px.a8.net/svt/ejp?a8mat=3N6GM2+EC6U9E+2OTA+HWI5T" rel="nofollow">
 <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=220331162867&wid=001&eno=01&mid=s00000012547003007000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=3N6GM2+EC6U9E+2OTA+HWI5T" alt="">
+-->
 
-### レバテックキャリア
+### <a href="https://px.a8.net/svt/ejp?a8mat=3N6GM3+BPIX2Q+2JK4+ZSSLU" rel="nofollow"><img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=3N6GM3+BPIX2Q+2JK4+ZSSLU" alt="">レバテックキャリア</a>
 
-レバテックキャリアは <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">IT職種の求人案件に特化した専門性の高い就職・転職支援サービス</span> です。  
+<a href="https://px.a8.net/svt/ejp?a8mat=3N6GM3+BPIX2Q+2JK4+ZSSLU" rel="nofollow"><img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=3N6GM3+BPIX2Q+2JK4+ZSSLU" alt="">レバテックキャリア</a> は <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">IT職種の求人案件に特化した専門性の高い就職・転職支援サービス</span> です。  
 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">大手IT・コンサルティング企業からベンチャー企業までIT・WEB業界の企業が幅広い求人</span> がありますが、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">未経験者や経験の浅い方にはまったく向きません</span> のでその点ご注意ください。
 
 <!-- A8 affiliate programing job change site levtech career -->
+<!--
 <a href="https://px.a8.net/svt/ejp?a8mat=3N6GM3+BPIX2Q+2JK4+ZRXQP" rel="nofollow">
 <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=220331163708&wid=001&eno=01&mid=s00000011866006009000&mc=1"></a>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3N6GM3+BPIX2Q+2JK4+ZRXQP" alt="">
+-->
 
 ## 幅広い転職サイト
 
@@ -124,13 +130,15 @@ ITエンジニアの転職活動のメリットと意義について筆者の意
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://doda.jp/engineer/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:doda.jp/guide/img/icon_fb_001.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">IT・Webエンジニアの転職・求人ならdodaエンジニアIT</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">求人掲載数約30,000件。ITエンジニア転職・業界最大級の求人サイトならdoda（デューダ）。スキルアップしたい、柔軟に働きたい、など希望をかなえる転職先が見つかります。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 -->
 
-### リクルートエージェント
+### <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887762323" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887762323" height="1" width="1" border="0">リクルートエージェント</a>
 
-リクルートエージェントは <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">業界トップの求人数</span> を保有しているため、選択肢を広げるのには最適です。  
+<a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887762323" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887762323" height="1" width="1" border="0">リクルートエージェント</a> は <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">業界トップの求人数</span> を保有しているため、選択肢を広げるのには最適です。  
 ただ、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">比較的若年層（25〜35歳くらい）がメインターゲット</span> となっていますので、その点ご注意ください。
 
 <!-- Value Commerce affiliate job change site RECRUIT AGENT -->
+<!--
 <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3644125&pid=887743631"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3644125&pid=887743631" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3644125&pid=887743631" border="0"></a></noscript>
+-->
 
 <!--
 ### マイナビITエージェント
