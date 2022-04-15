@@ -1,9 +1,10 @@
 ---
-title:       "新規ビジネス・サービス開発のためのアジャイル"
-URL:         "article-agile-for-new-business-development"
+title:       "新規サービス開発のためのアジャイル"
+URL:         "article-agile-for-new-service
+-development"
 subtitle:    ""
 description: ""
-keyword:     "アジャイル, agile, ビジネス開発, サービス開発"
+keyword:     "アジャイル, agile, サービス開発"
 date:        2022-04-13
 author:      "ぺーぺーSE"
 image:       ""
@@ -17,7 +18,7 @@ Description
 
 <!--more-->
 
-# 新規ビジネス・サービス開発に必要なことは？
+# 新規サービス開発に必要なことは？
 
 
 
@@ -66,7 +67,7 @@ MVP リリース後は、アジャイル開発で <span style="font-weight: bold
 
 ここまで読んでいただいた方はお気づきかもしれませんが、アジャイルのことをあまり書いていません。  
 そして以降もあまり書くつもりもありません。アジャイル開発自体について調査されている方、誠に申し訳ありません。  
-新規ビジネス・サービス開発において大切なことは、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">アジャイルか否かではない</span> ということです。
+新規サービス開発において大切なことは、 <span style="font-weight: bold;background:linear-gradient(transparent 70%, #FFFF00 0%);">アジャイルか否かではない</span> ということです。
 
 # KPIの設定
 
