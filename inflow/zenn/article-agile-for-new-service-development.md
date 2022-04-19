@@ -1,7 +1,6 @@
 ---
 title:       "新規サービス開発のためのアジャイル"
-URL:         "article-agile-for-new-service
--development"
+URL:         "article-agile-for-new-service-development"
 subtitle:    ""
 description: ""
 keyword:     "アジャイル, agile, サービス開発"
@@ -11,6 +10,7 @@ image:       ""
 tags:
 categories:
 - article
+draft:       true
 ---
 
 Description
