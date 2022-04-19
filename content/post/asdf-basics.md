@@ -2,9 +2,9 @@
 title:       "マルチランタイムバージョン管理ツールasdf"
 URL:         "asdf-basics"
 subtitle:    ""
-description: "asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツール。"
-keyword:     "asdf,プログラミング言語,ツール,バージョン管理,ランタイム"
-date:        2022-03-25
+description: "asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツールです。この記事では、インストールから使い方の概要までをご紹介します。"
+keyword:     "asdf, プログラミング言語, CLI, バージョン管理, ランタイム, ツール"
+date:        2022-04-19
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -13,8 +13,8 @@ categories:
 - tech
 ---
 
-[asdf](https://asdf-vm.com) を使えば、複数のプログラミング言語ランタイムおよびそのバージョンを `asdf` コマンドだけで管理することができる。  
-ここでは、Mac に環境構築する方法について記載する。
+asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツールです。  
+この記事では、インストールから使い方の概要までをご紹介します。
 
 <!--more-->
 
@@ -29,9 +29,9 @@ $ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.bash_profile
 $ exec $SHELL -l
 ```
 
-上記は `.bash_profile` に設定を追記しているが、 環境・好みに応じて `.zshenv` などへの追記でもよい。  
-なお、環境により差分があるので、基本は `brew install asdf` 実行後の Homebrew の指示に従う。  
-Homebrew 以外の場合は [こちら](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) を参照。
+上記は `.bash_profile` に設定を追記していますが、 お使いの環境・好みに応じて `.zshenv` などへの追記つ読み替えてください。  
+環境により差分があるので、基本は `brew install asdf` 実行後の Homebrew の指示に従ってください。  
+Homebrew 以外の場合は [こちら](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) を参照ください。
 
 ## アップデート
 
@@ -39,48 +39,54 @@ Homebrew 以外の場合は [こちら](https://asdf-vm.com/guide/getting-starte
 $ brew upgrade asdf
 ```
 
-Homebrew 以外の場合は [こちら](https://asdf-vm.com/manage/core.html#update) を参照。
+Homebrew 以外の場合は [こちら](https://asdf-vm.com/manage/core.html#update) を参照してください。  
+また、 asdf でアップデートされた際に `no such file or directory` といったエラーが発生する場合、 環境変数 `ASDF_DIR` に旧バージョンの情報が含まれる可能性があるため、以下のコマンドを試してみてください。
+
+```bash
+$ export ASDF_DIR=
+$ exec $SHELL -l
+```
 
 ## アンインストール
 
-`.bash_profile` などインストール時に設定したファイルから以下の行を削除。
+`.bash_profile` などインストール時に設定したファイルから以下の行を削除します。
 
 ```bash
 . $(brew --prefix asdf)/libexec/asdf.sh
 . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 ```
 
-上記実施後に以下のコマンドを実行。
+上記実施後に以下のコマンドなどで該当ディレクトリを削除します。
 
 ```bash
 $ brew uninstall asdf --force
 $ rm -rf $HOME/.tool-versions $HOME/.asdf
 ```
 
-Homebrew 以外の場合は [こちら](https://asdf-vm.com/manage/core.html#uninstall) を参照。
+Homebrew 以外の場合は [こちら](https://asdf-vm.com/manage/core.html#uninstall) を参照してください。
 
 # 使い方
 
 ## プラグイン・ツールのインストール
 
-1. 使いたいプログラミング言語・ツールに対応したプラグインを探す
+1. 使いたいプログラミング言語・ツールに対応したプラグインを探します
     - `asdf plugin list all`
-2. 使いたいプログラミング言語・ツールに対応したプラグインを追加する
+2. 使いたいプログラミング言語・ツールに対応したプラグインを追加します
     - `asdf plugin add <name>`
     - `asdf plugin add <name> <git-url>` # asdf で管理されていないプラグインの場合
-3. プラグインが追加されたか確認する
+3. プラグインが追加されたか確認します
     - `asdf plugin list`
-4. 使いたいプログラミング言語・ツールのバージョンを探す
+4. 使いたいプログラミング言語・ツールのバージョンを探します
     - `asdf list-all <name>`
-5. 使いたいプログラミング言語・ツールのバージョンを指定してインストールする
+5. 使いたいプログラミング言語・ツールのバージョンを指定してインストールします
     - `asdf install <name> <version>`
-6. global/local/shell のいずれかでプログラミング言語・ツールのバージョンを設定する
+6. global/local/shell のいずれかでプログラミング言語・ツールのバージョンを設定します
     - `asdf global <name> <version>`
-7. 現在のバージョンを確認する
+7. 現在のバージョンを確認します
     - `asdf current`
     - `asdf current <name>`
 
-helm で一連の流れをやってみる。
+例として helm で一連の流れを紹介します。
 
 ```bash
 $ asdf plugin list all | grep helm
