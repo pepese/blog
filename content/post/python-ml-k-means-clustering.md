@@ -22,7 +22,7 @@ categories:
 
 データセットは、以下で紹介している **iris データセット** を使用する。
 
-- [Pythonで機械学習 データセット編](https://blog.pepese.com/python-ml-dl-datasets/)
+- [Pythonで機械学習 データセット編](https://blog.pepese.com/python-ml-datasets/)
 
 # パッケージの導入
 

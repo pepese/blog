@@ -20,10 +20,6 @@ Node.jsのWebフレームワーク `Express` 触ってみた。
 
 <!--more-->
 
-下記の記事を読んだテイで書く。
-
-- [Node.js・npm入門](https://blog.pepese.com/nodejs-basics/)
-
 # 構築
 
 ## Expressプロジェクトの作成

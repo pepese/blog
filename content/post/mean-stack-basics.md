@@ -204,7 +204,7 @@ Angular CLIで作成したプロジェクトにサーバサイド、つまりExp
 サーバサイドアプリケーションを作成する方法は以下を参照。  
 「フロントエンドアプリケーションをプロジェクトに同梱する場合、REST APIアプリを作成する場合」のほうの構成。
 
-- [Express入門](https://blog.pepese.com/express-basics/)
+- [Express入門](https://blog.pepese.com/nodejs-express-basics/)
 
 ## 起動
 

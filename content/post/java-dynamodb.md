@@ -23,7 +23,7 @@ Java から DynamoDB にアクセスしてみる。
 以下の記事を読んだ前提で書く。
 
 - [Macで開発環境を作る](https://blog.pepese.com/mac-dev-environment/)
-- [DynamoDB入門](https://blog.pepese.com/dynamodb-basics/)
+- [DynamoDB入門](https://blog.pepese.com/aws-dynamodb-basics/)
 
 # API・インターフェースの種類
 

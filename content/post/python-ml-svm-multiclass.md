@@ -22,15 +22,15 @@ categories:
 
 SVMを使用した2クラス分類問題は以下。
 
-- [Pythonで機械学習 SVMで2クラス分類問題編](https://blog.pepese.com/python-ml-dl-svm-2class/)
+- [Pythonで機械学習 SVMで2クラス分類問題編](https://blog.pepese.com/python-ml-svm-2class/)
 
 データセットは、以下で紹介している **digits データセット** を使用する。
 
-- [Pythonで機械学習 データセット編](https://blog.pepese.com/python-ml-dl-datasets/)
+- [Pythonで機械学習 データセット編](https://blog.pepese.com/python-ml-datasets/)
 
 後半で実施している精度評価についての詳細は以下を参照。
 
-- [Pythonで機械学習 精度評価編](https://blog.pepese.com/python-ml-dl-metrics-scores/)
+- [Pythonで機械学習 精度評価編](https://blog.pepese.com/python-ml-metrics-scores/)
 
 # パッケージの導入
 
