@@ -30,7 +30,7 @@ SVMを使用した2クラス分類問題は以下。
 
 後半で実施している精度評価についての詳細は以下を参照。
 
-- [Pythonで機械学習 精度評価編](https://blog.pepese.com/python-ml-metrics-scores/)
+- [Pythonで機械学習 精度評価編](https://blog.pepese.com/python-ml-metrics-score/)
 
 # パッケージの導入
 

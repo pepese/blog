@@ -3,7 +3,7 @@ title:       "Visual Studio CodeでJavaの開発環境を作成する"
 URL:         "java-vscode-environment"
 subtitle:    ""
 description: "Visual Studio Code (以降 VSCode) は多くのプログラミング言語に対応した強力なコードエディターです。この記事では、Java、Maven、VSCodeのインストール・設定・使い方について記載します。"
-keyword:     "Java, vscode, Visual Studio Code, Maven"
+keyword:     "Java, vscode, Visual Studio Code, Maven, 開発環境"
 date:        2022-04-08
 author:      "ぺーぺーSE"
 image:       ""

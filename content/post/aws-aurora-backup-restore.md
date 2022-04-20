@@ -2,7 +2,7 @@
 title:       "Amazon Auroraのバックアップ・リストア"
 URL:         "aws-aurora-backup-restore"
 subtitle:    ""
-description: "Amazon AuroraはAWSが提供するMySQL・PostgreSQL互換の高性能なリレーショナルデータベースサービスです。いかに高可用とはいえ、バックアップ・リストア（復元）の方法を確立しておかなければ不安でしょうがありません。この記事では、Amazon Auroraのバックアップ・リストアの方法を Terraform の設定を交えてご紹介します。"
+description: "Amazon AuroraはAWSが提供するMySQL・PostgreSQL互換の高性能なリレーショナルデータベースサービスです。この記事では、Amazon Auroraのバックアップ・リストアの方法を Terraform の設定を交えてご紹介します。"
 keyword:     "AWS, Aurora, バックアップ, リストア, 復元, Terraform"
 date:        2022-04-20
 author:      "ぺーぺーSE"
@@ -16,7 +16,6 @@ categories:
 ---
 
 Amazon AuroraはAWSが提供するMySQL・PostgreSQL互換の高性能なリレーショナルデータベースサービスです。  
-いかに高可用とはいえ、バックアップ・リストア（復元）の方法を確立しておかなければ不安でしょうがありません。  
 この記事では、Amazon Auroraのバックアップ・リストアの方法を Terraform の設定を交えてご紹介します。
 
 <!--more-->
