@@ -2,5 +2,5 @@
 title: "アーカイブ"
 layout: archive
 type: post
-description: アーカイブページ
+description: "ぺーぺーSEのブログのアーカイブページです。年月日別にソートして表示しています。"
 ---

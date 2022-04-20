@@ -2,7 +2,7 @@
 title:       "Macで開発環境を作る"
 URL:         "mac-dev-environment"
 subtitle:    ""
-description: "Macbookに開発環境を作成する際にやること。"
+description: "ITエンジニアの方でMacを開発環境で利用されている方は多いと思います。この記事では、Macで開発環境を作成する際に筆者が実施することをご紹介します。"
 keyword:     "Mac, Homebrew, Git, SDKMAN, anyenv, asdf, Java, Maven"
 date:        2022-03-27
 author:      "ぺーぺーSE"
@@ -20,7 +20,8 @@ categories:
 - tech
 ---
 
-Mac で開発環境を作成する際に概ね実施することをまとめてみた。
+ITエンジニアの方でMacを開発環境で利用されている方は多いと思います。  
+この記事では、Macで開発環境を作成する際に筆者が実施することをご紹介します。
 
 <!--more-->
 
@@ -65,8 +66,8 @@ $ killall Finder
 
 ## Xcodeをインストール
 
-App Store から Xcode をダウンロード・インストール。  
-また、以下で Xcode の Command Line Tools をインストール。
+App Store から Xcode をダウンロード・インストールします。  
+また、以下のように Xcode の Command Line Tools をインストールします。
 
 ```bash
 $ xcode-select --install
@@ -86,8 +87,8 @@ $ brew list | grep iterm2
 iterm2
 ```
 
-Macデフォルトのターミナルより便利。  
-`Command + D` でウィンドウ分割できたりする。
+Macデフォルトのターミナルより便利です。  
+`Command + D` でウィンドウ分割できたりします。
 
 ## Gitをインストール
 
@@ -102,14 +103,14 @@ $ git --version
 git version 2.35.1
 ```
 
-Gitの使い方は以下を参照。
+Gitの使い方は以下を参照してください。
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/git-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">Git入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">Gitの環境構築およびGithubの設定・使い方を絡めて説明。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 ## anyenvかasdfをインストール
 
-プログラミング言語・コマンドラインツールのインストール・バージョン管理ができるようになる。  
-以下を参照。（ asdf がおすすめ）
+プログラミング言語・コマンドラインツールのインストール・バージョン管理ができるようになります。  
+以下を参照してください。（ asdf のほうがおすすめです）
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/anyenv/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">すべての**envを管理するanyenv | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">anyenvはスクリプト言語のバージョン管理を行うツール。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
@@ -117,21 +118,21 @@ Gitの使い方は以下を参照。
 
 ## SDKMAN をインストール
 
-Java 系ツールのインストール・バージョン管理ができるようになる。  
-anyenv・asdf がお好みでない方はこちら。  
-以下を参照。
+Java 系ツールのインストール・バージョン管理ができるようになります。  
+anyenv・asdf がお好みでない方はこちらをご利用ください。  
+以下を参照してください。
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/sdkman-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">SDKMAN入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">ぺーぺーSEがプログラミング（Go、Node.js、Python）、クラウド（AWS、Google Cloud）、Web構築などの経験・学習記録・おすすめ書籍などの情報を残すサイト。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 ## Javaをインストール
 
-asdf・SDKMAN が好みじゃないひとはこっち。
+asdf・SDKMAN がお好みじゃない方はこちらをご利用ください。
 
 ```bash
 $ brew install java
 ```
 
-インストールされたJavaの確認は以下。
+インストールされたJavaの確認は以下です。
 
 ```java
 $ /usr/libexec/java_home -V
@@ -141,14 +142,14 @@ Matching Java Virtual Machines (1):
 /Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home
 ```
 
-PATHが通ってなかったら `~/.bash_profile` に以下を加筆して `source ~/.bash_profile` 。
+PATHが通っていない場合 `~/.bash_profile` に以下を加筆して `source ~/.bash_profile` を実行してください。
 
 ```bash
 export JAVA_HOME=`/usr/libexec/java_home -v "11"`
 ```
 
-`11` の部分を `1.8` にするとJava8を使用できる。（もちろんインストールしてから）  
-消す時は以下。
+`11` の部分を `1.8` にするとJava8を使用できるようになります。（もちろんインストールしてからです）  
+消す時は以下を実行します。
 
 ```bash
 $ rm -rf /Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home
@@ -156,7 +157,7 @@ $ rm -rf /Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home
 
 ## Mavenをインストール
 
-asdf・SDKMAN が好みじゃないひとはこっち。
+asdf・SDKMAN がお好みじゃない方はこちらを利用してください。
 
 ```bash
 $ brew install maven
@@ -172,9 +173,9 @@ OS name: "mac os x", version: "10.14.1", arch: "x86_64", family: "mac"
 
 ## Visual Studio Code
 
-以下を参照。
+以下を参照してください。
 
-- [Visual Studio Code入門](https://blog.pepese.com/vscode-basics/)
+<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/vscode-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">Visual Studio Code入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">Visual Studio Codeのインストールからおすすめの拡張機能までを説明。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 ## STS (Spring Tool Suite)
 
@@ -186,7 +187,7 @@ $ brew install --cask springtoolsuite
 
 ## Rest Client
 
-Mac 用の Rest Client ツール [Cocoa Rest Client](https://mmattozzi.github.io/cocoa-rest-client/)。
+Mac 用の Rest Client ツール [Cocoa Rest Client](https://mmattozzi.github.io/cocoa-rest-client/) です。
 
 ```bash
 $ brew install cocoarestclient
@@ -194,7 +195,7 @@ $ brew install cocoarestclient
 
 ## FileZilla
 
-FTP、FTPS、SFTPのGUIクライアント。
+FTP、FTPS、SFTPのGUIクライアントです。
 
 ```bash
 $ brew install filezilla
