@@ -1,3 +1,6 @@
 [submodule "public"]
 	path = public
 	url = https://pepese@github.com/pepese/pepese.github.io.git
+[submodule "inflow/zenn"]
+	path = inflow/zenn
+	url = https://pepese@github.com/pepese/zenn.git
