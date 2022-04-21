@@ -16,7 +16,7 @@ home = ["HTML", "RSS"]
 [params]
   title = "ぺーぺーSEのブログ"
   header_image = "" # ヘッダ画像、兼、Twitter Card Image
-  thumbnail = "/img/yaruwo.gif"
+  thumbnail = "/img/yaruwo.jpg"
   SEOTitle = "ぺーぺーSEのブログ"
   description = "ぺーぺーSEがプログラミング（Go、Node.js、Python）、クラウド（AWS、Google Cloud）、Web構築などの経験・学習記録・おすすめ書籍などの情報を残すサイト。"
   keyword = "ぺーぺーSE, プログラミング, Go, Java, Node.js, Python, Kubernetes, Istio, おすすめ書籍"
@@ -27,11 +27,11 @@ home = ["HTML", "RSS"]
   omit_categories = false
 
   opengraph = true
-  images = ["img/yaruwo.gif"]
+  images = ["img/yaruwo.jpg"]
 
   # Sidebar settings
   sidebar_about_description = "某IT企業のソフトウェアアーキテクト兼クラウドエンジニア。"
-  sidebar_avatar = "img/yaruwo.gif"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  sidebar_avatar = "img/yaruwo.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
   featured_tags = true 
   featured_condition_size = 1 

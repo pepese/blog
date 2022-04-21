@@ -210,7 +210,7 @@ googleAnalytics = "UA-xxxxxxxx-x"
 
 ```toml
 [Params]
-  images = ["img/yaruwo.gif"]
+  images = ["img/yaruwo.jpg"]
 ```
 
 なお、上記の設定方法は現在のテーマが利用している `_internal/` 以下のファイルを利用するもので標準の [Internal Template](https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates) の仕様に従っている。
