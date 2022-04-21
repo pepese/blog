@@ -16,7 +16,7 @@ home = ["HTML", "RSS"]
 [params]
   title = "ぺーぺーSEのブログ"
   header_image = "" # ヘッダ画像、兼、Twitter Card Image
-  thumbnail = "img/yaruwo.gif"
+  thumbnail = "/img/yaruwo.gif"
   SEOTitle = "ぺーぺーSEのブログ"
   description = "ぺーぺーSEがプログラミング（Go、Node.js、Python）、クラウド（AWS、Google Cloud）、Web構築などの経験・学習記録・おすすめ書籍などの情報を残すサイト。"
   keyword = "ぺーぺーSE, プログラミング, Go, Java, Node.js, Python, Kubernetes, Istio, おすすめ書籍"
