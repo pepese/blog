@@ -4,7 +4,7 @@ URL:         "terraform-basics"
 subtitle:    ""
 description: "Terraformは、IaC（Infrastructure as Code）を実現するツールの 1 つです。この記事では、Terraformのインストールから使い方までをご紹介します。"
 keyword:     "Terraform, IaC"
-date:        2022-04-10
+date:        2022-04-22
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -31,7 +31,7 @@ Terraformは、IaC（Infrastructure as Code）を実現するツールの 1 つ�
 |Provider|Resource や Data Source などを作成/更新/削除するプラグイン。aws/google/azurermなど。|
 |Provisioner|リソースの作成/削除時に実行するスクリプトなどのプラグイン。local-exec/remote-exec/chefなど|
 |State|Terraform が認識しているリソースの状態。 `*.tfstate` ファイルのこと。|
-|Backend|State の保存先。local/s3/gcsなど。|
+|Backend|State ファイルの保存先。local/s3/gcsなど。|
 |Module|Resource や Data Source などを再利用可能なようにまとめた Configuration の単位。|
 
 # Terraformのインストール
@@ -66,101 +66,128 @@ Terraform v1.1.8
 3. `terraform plan` で設定に問題無いか・作成されるリソースを確認します
 4. `terraform apply` で実際に環境へ適用します
 
-## `.tf` ファイルを書く
+# `.tf` ファイルを書く
 
-以下のファイルを作成します。
+以下の構成で作成します。
 
-- `versions.tf`
-  - Terraform のバージョンに関する設定
-- `provider.tf` ※ここでは AWS を例に作成します
-  - AWS の Provider に関する設定
-- `variables.tf`
-  - Terraform の変数定義（ファイル内容例については省略）
-- `terraform.tfvars`
-  - `variables.tf` で定義した変数に値を代入
-- `backend.tf`
-  - tfstate ファイルの保存に関する設定
-- その他 .tf ファイル
-  - 作成したいリソース定義など（ファイル内容例については省略）
-
-なお、 Terraform は 1 つの任意ファイル名の `.tf` ファイルにすべての設定を記載できるので、上記のファイル分割はあくまで例です。
-
-### `versions.tf`
-
-Terraform のバージョンなどの設定に関するファイルを作成します。
-
-```terraform:versions.tf
-terraform {
-  required_version = "~> 1.1.0"
-}
+```bash
+basic-flat-env/
+├── main.tf        # Terraformバージョン、Provider、Backend、変数、locals変数、Outputsの設定
+└── sample-vpc.tf  # resource（sampleサービスのVPC） の設定を記述
 ```
 
-### `provider.tf`
+- `main.tf`
+  - Terraform のバージョンに関する設定
+  - AWS の Provider に関する設定
+  - State ファイルの保存に関する設定
+  - Terraform の変数定義
+- `sample-vpc.tf`
+  - サンプルで作成する Amazon VPC のリソース定義
 
-AWS を Provider する場合の設定ファイルを作成します。
+## `main.tf`
 
-```terraform:provider.tf
-provider "aws" {
-  region = var.region
-  default_tags {
-    tags = {
-      System    = var.system
-      Env       = var.env
-      Terraform = "true"
+```terraform:main.tf
+#####################################
+# Terraform Settings
+#####################################
+terraform {
+  required_version = "~> 1.1.0" // Terraform のバージョン
+  required_providers {          // Provider の設定
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"        // AWS Provider のバージョン
     }
   }
-}
-```
-
-上記のように `default_tags` を変数で体入する形で設定しておくと非常に便利です。
-
-### `variables.tf`
-
-変数を管理するファイルを作成します。
-
-```terraform:variables.tf
-variable "access_key" {}
-variable "secret_key" {}
-variable "region" {}
-variable "system" {}
-variable "env" {}
-```
-
-### `terraform.tfvars`
-
-変数に値を設定するファイルを作成します。
-
-```terraform:terraform.tfvars
-access_key = "access_key"
-secret_key = "secret_key"
-region = "ap-northeast-1"
-```
-
-上記は `access_key` `secret_key` 変数への値の代入は、ファイルへの記載ではなく環境変数（ `TF_VAR_access_key` , `TF_VAR_secret_key` ）や `terraform` コマンドオプション（ `-var` ）からの読み込みも可能です。  
-なお、 Terraform の変数へ環境変数から値を代入する場合は、変数名 `xxxxx` に対して環境変数 `TF_VAR_xxxxx` が対応しています。
-
-### `backend.tf`
-
-State ファイル（ `*.tfstate` ）の保存に関する設定ファイルを作成します。
-
-```terraform:backend.tf
-terraform {
-  backend "s3" {
+  backend "s3" {                 // この設定で State ファイルが S3 に保存されます
     bucket = "your-bucket-name"  // State ファイルを配置するバケット
     key    = "terraform.tfstate" // State ファイルを配置するパス・ファイル名
     region = "ap-northeast-1"    // S3のリージョン
   }
 }
+
+#####################################
+# Provider Settings
+#####################################
+provider "aws" {
+  region  = local.region
+  profile = var.profile
+  default_tags { // AWS リソースへのデフォルトタグの設定
+    tags = {
+      System    = local.system
+      Env       = local.env
+      Terraform = "true"
+    }
+  }
+}
+
+#####################################
+# Variables
+#####################################
+variable "profile" {}
+locals {
+  // Common
+  region    = "ap-northeast-1"
+  system    = "system"
+  env       = "prd"
+  base_name = "${local.system}-${local.env}"
+
+  // VPC
+  vpc_cidr_block = "10.0.0.0/16"
+}
+
+#####################################
+# Outputs
+#####################################
+output "sample_vpc" {
+  value = aws_vpc.sample
+}
 ```
 
-上記のように設定することで、State ファイル（ `*.tfstate` ）が S3 に保存されます。（ `terraform init` 実行後）
+`profile` 変数への値の代入は、ファイルへの記載ではなく環境変数（ `TF_VAR_profile`  ）や `terraform` コマンドオプション（ `-var` ）からの読み込みも可能です。  
+なお、 Terraform の変数へ環境変数から値を代入する場合は、変数名 `xxxxx` に対して環境変数 `TF_VAR_xxxxx` が対応しています。
 
-## tfstate
+## `sample-vpc.tf`
 
-tfstate は AWS への設定情報を保持し、現在の `.tf` ファイルとの差分を求めることによって AWS へ設定を反映させます。  
-先の例では `backend` （ tfstate の保存場所）に S3 を設定しましたが、通常の場合はローカル（ `.terraform` ディレクトリ）に保存されます。  
-tfstate ファイルの保存場所は `terraform init` コマンド実行時の `.tf` 設定に基づいて作成されます。  
-複数人で開発する場合、個々人の tfstate に差分があっては、同じ `*.tf` ファイルであっても実行に差分が発生するため、 S3 など共有できる場所に tfstate を保存するのがよいでしょう。
+```terraform:sample-vpc.tf
+#####################################
+# VPC
+#####################################
+resource "aws_vpc" "sample" {
+  cidr_block = local.vpc_cidr_block
+  tags       = merge(tomap({ "Service" = "sample" }), tomap({ "Name" = "${local.base_name}-sample" }))
+}
+```
+
+# Variable と Local Values
+
+Variable は `variable` で定義する変数で、外部からのインプットや環境差分が発生する場合に使用します。  
+Local Values は `locals` で定義・代入する変数で、モジュール内のローカル変数として使用します。
+
+Variable への値の代入方法は以下があります。
+
+- 実行時に指定
+  - `terraform plan` などのコマンドを実行すると、コマンドライン上で値の入力を求められます
+- コマンド引数による指定
+  - `terraform` コマンド実行時に `terraform plan -var 'profile=hogehoge'` のような形でオプションで指定します
+- 環境変数による指定
+  - 変数名 `xxxxx` に対して環境変数 `TF_VAR_xxxxx` が対応しています
+- 設定ファイルによる指定
+  - `.tfvars` ファイルを作成して `terraform` コマンド実行時に `terraform plan -var-file hogehoge.tfvars` のような形でオプションで指定します
+
+`.tfvars` ファイルは以下のように `variable` で定義された変数へ単純に値を代入します。
+
+```terraform
+profile = "hogehoge"
+region  = "ap-northeast-1"
+...
+```
+
+# State ファイル
+
+State ファイルは AWS への設定情報を保持し、現在の `.tf` ファイルとの差分を求めることによって AWS へ設定を反映させます。  
+先の例では `backend` （ State ファイルの保存場所）に S3 を設定しましたが、通常の場合はローカル（ `.terraform` ディレクトリ）に保存されます。  
+State ファイルの保存場所は `terraform init` コマンド実行時の `.tf` 設定に基づいて作成されます。  
+複数人で開発する場合、個々人の State ファイルに差分があっては、同じ `*.tf` ファイルであっても実行に差分が発生するため、 S3 など共有できる場所に保存するのがよいでしょう。
 
 `backend` を設定せずに `terraform apply` まで実行すると `terraform.tfstate` というファイルがローカルに作成されます。
 

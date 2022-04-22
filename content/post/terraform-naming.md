@@ -4,7 +4,7 @@ URL:         "terraform-naming"
 subtitle:    ""
 description: "Terraformは、IaC（Infrastructure as Code）を実現するツールの 1 つです。この記事では、筆者が利用しているTerraformの命名規則をご紹介します。"
 keyword:     "Terraform, 命名, 命名規則"
-date:        2022-04-11
+date:        2022-04-22
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -45,6 +45,17 @@ Terraform の入門内容については以下の記事を参照してくださ�
   - `resource` の `name` 属性は、 `Name tag` で名称の名称と矛盾がないように命名
     - なお `aws_db_instance` のように `identifier` を使用しなければならないケースは注意
   - [ `リソースに合わせた任意名称` ] は リソースの付随関係により `-` で繋げて多段に命名
+
+# ファイル名
+
+- 命名は『[ `Service` ]-[ `ファイル内に定義するリソースに合わせた任意名称` ]』
+- 例
+  - VPC : `[Service]-vpc`
+  - EC2 : `[Service]-web`
+  - EC2 : `[Service]-batch`
+  - RDS : `[Service]-rds`
+  - Security Group : `[Service]-web-sg`
+  - Security Group : `[Service]-rds-sg`
 
 # リソース ID
 

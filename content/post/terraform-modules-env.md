@@ -1,10 +1,10 @@
 ---
-title:       "Terraform Modulesで環境を分割する"
+title:       "Terraform Modulesで環境を分割・切り替える"
 URL:         "terraform-modules-env"
 subtitle:    ""
-description: "Terraform Modulesはソースコードをモジュール化することでテンプレートとして使うことができるようになる機能です。この記事では、Terraform Modulesを利用した本番・検証などの環境分割の方法についてご紹介します。"
-keyword:     "Terraform, Modules, Module, モジュール, 環境, 分割"
-date:        2022-04-11
+description: "Terraform Modulesはソースコードをモジュール化することでテンプレートとして使うことができるようになる機能です。この記事では、Terraform Modulesを利用した本番・検証などの環境分割・切り替えの方法についてご紹介します。"
+keyword:     "Terraform, Modules, Module, モジュール, 環境, 分割, 切り替え"
+date:        2022-04-22
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -14,7 +14,7 @@ categories:
 ---
 
 Terraform Modulesはソースコードをモジュール化することでテンプレートとして使うことができるようになる機能です。  
-この記事では、Terraform Modulesを利用した本番・検証などの環境分割の方法についてご紹介します。
+この記事では、Terraform Modulesを利用した本番・検証などの環境分割・切り替えの方法についてご紹介します。
 
 <!--more-->
 
@@ -34,7 +34,7 @@ module "リソースの名前" {
 }
 ```
 
-なお、 [Terraform Registry](https://registry.terraform.io/) で提供されているモジュールは以下のように呼び出すことができます。  
+また、自身で作成した Module ではなく [Terraform Registry](https://registry.terraform.io/) で提供されているモジュールは以下のように呼び出すことができます。  
 [AWS VPC Terraform module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest) の例です。
 
 ```terraform
@@ -43,6 +43,8 @@ module "vpc" {
   // 以降、変数へ値を代入する
 }
 ```
+
+本記事では Terraform Modules を利用した環境分割方法について記載しますが、他にも [Workspaces](https://www.terraform.io/language/state/workspaces) を利用した方法もあります。
 
 # 命名規則
 
@@ -57,93 +59,138 @@ module "vpc" {
 
 ```bash
 .
-├── env              # 環境差分用ディレクトリ（必要分だけ作成）
-│   ├── prd           # prd 環境用ディレクトリ
-│   │   ├── backend.tf # tfstate ファイルを保存する S3 bucket/key/region 情報を代入、variables.tf で定義した変数へ値を代入
-|   |   ├── main.tf
-|   |   └── outputs.tf
-│   ├── stg
-│   │   ├── backend.tf
-|   |   ├── main.tf
-|   |   └── outputs.tf
-│   └── dev
-│   │   ├── backend.tf
-|   |   ├── main.tf
-|   |   └── outputs.tf
-└── modules         # 各環境共通で利用する resources をモジュール化
-    ├── main_alb.tf  # resource（lb） の設定を記述（設定の記載が分かりやすいよう main_xxx.tf という命名）
-    ├── main_rds.tf  # resource（rds） の設定を記述
-    ├── main_vpc.tf  # resource（vpc） の設定を記述
-    ├── main_ec2.tf  # resource（ec2） の設定を記述
-    ├── ...          # resource（その他） の設定を記述
-    ├── outputs.tf   # outputし、他のリソースから tfstate ファイル経由で参照されるデータを記載
-    ├── provider.tf  # aws などの provider 情報を記載
-    ├── variables.tf # local、variables などの変数を記載
-    └── versions.tf  # terraform のバージョンを記載
+├── env         # 環境差分用ディレクトリ
+│   ├── prd       # prd 環境用ディレクトリ
+│   │   └── main.tf # 環境差分に応じたTerraformバージョン、Provider、Backend、変数、Module、Outputsの設定
+│   ├── stg       # stg 環境用ディレクトリ
+│   │   └── main.tf
+│
+└── modules     # 各環境共通で利用する resources をモジュール化
+    ├── sample-vpc.tf  # resource（sampleサービスのVPC） の設定を記述
+    ├── ...            # resource（その他） の設定を記述
+    ├── variables.tf   # Module 内で利用する変数定義
+    └── outputs.tf     # outputし、他のリソースから tfstate ファイル経由で参照されるデータを記載
 ```
 
 使い方は対応する環境をカレントディレクトリとして、 `terraform` コマンドを実行するだけです。
 
 ```bash
+# プロジェクトの初期化
+$ cd env/[環境]
+$ terraform init
+
 # ファイルフォーマット
-$ cd env/[環境名]
+$ cd env/[環境]
 $ terraform fmt ../../modules
 $ terraform fmt
 
 # 個別のリソースのterraform 初期化
-$ cd env/[環境名]
+$ cd env/[環境]
 $ terraform init
 
 # 個別のリソースの設定確認
-$ cd env/[環境名]
+$ cd env/[環境]
 $ terraform validate
 
 # 個別のリソースの差分確認
-$ cd env/[環境名]
+$ cd env/[環境]
 $ terraform plan
 
 # 個別のリソースの適用
-$ cd env/[環境名]
+$ cd env/[環境]
 $ terraform apply
 
 # 個別のリソースの削除
-$ cd env/[環境名]
+$ cd env/[環境]
 $ terraform destroy
 ```
 
 以降で個々のファイルについて説明していきます。  
 `aws_vpc` を 1 つ構築する簡易な例になっています。
 
+## `env/[環境]/main.tf`
 
-## `modules/versions.tf`
+`modules` の呼び出し元です。  
+`../../modules` でモジュールを呼び出して `modules/variables.tf` に定義した変数に値を代入します。  
+これによって環境差分を実現できます。  
+`modules` の他にも必要に応じて変数を定義してください。
 
-Terraform のバージョンなどの設定ファイルです。
+また、 `output` でリソースの設定結果を出力する対象について記載します。  
+`modules/outputs.tf` に記載した `modules` の `output` を実際に出力します。
 
-```terraform:versions.tf
+```terraform:main.tf
+#####################################
+# Terraform Settings
+#####################################
 terraform {
-  required_version = "~> 1.1.0"
+  required_version = "~> 1.1.0" // Terraform のバージョン
+  required_providers {          // Provider の設定
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"        // AWS Provider のバージョン
+    }
+  }
+  backend "s3" {                 // この設定で State ファイルが S3 に保存されます
+    bucket = "your-bucket-name"  // State ファイルを配置するバケット
+    key    = "terraform.tfstate" // State ファイルを配置するパス・ファイル名
+    region = "ap-northeast-1"    // S3のリージョン
+  }
 }
-```
 
-## `modules/provider.tf`
-
-Provider の設定ファイルです。  
-AWS を Provider する場合の設定ファイル例を下記しておきます。
-
-```terraform:provider.tf
+#####################################
+# Provider Settings
+#####################################
 provider "aws" {
-  region = var.region
-  default_tags {
+  region  = local.region
+  profile = var.profile
+  default_tags { // AWS リソースへのデフォルトタグの設定
     tags = {
-      System    = var.system
-      Env       = var.env
+      System    = local.system
+      Env       = local.env
       Terraform = "true"
     }
   }
 }
+
+#####################################
+# Variables
+#####################################
+variable "profile" {}
+locals {
+  region = "ap-northeast-1"
+  system = "system"
+  env    = "prd"
+}
+
+#####################################
+# Module
+#####################################
+module "modules" {
+  source = "../../modules"
+
+  #####################################
+  # Common Variables
+  #####################################
+  system    = local.system
+  region    = local.region
+  env       = local.env
+  base_name = "${local.system}-${local.env}"
+
+  #####################################
+  # VPC Variables
+  #####################################
+  vpc_cidr_block = "10.0.0.0/16"
+}
+
+#####################################
+# Outputs
+#####################################
+output "sample_vpc" {
+  value = module.modules.sample_vpc
+}
 ```
 
-上記のように `default_tags` を変数で体入する形で設定しておくと非常に便利です。
+Provider の設定では `default_tags` を変数で代入する形で設定しておくと非常に便利です。
 
 ## `modules/variables.tf`
 
@@ -152,13 +199,17 @@ provider "aws" {
 これによって環境差分を実現できます。
 
 ```terraform:variables.tf
-variable "account_id" {}
-variable "access_key" {}
-variable "secret_key" {}
+#####################################
+# Common Variables
+#####################################
 variable "region" {}
 variable "system" {}
 variable "env" {}
 variable "base_name" {}
+
+#####################################
+# VPC Variables
+#####################################
 variable "vpc_cidr_block" {}
 ```
 
@@ -168,100 +219,26 @@ variable "vpc_cidr_block" {}
 なお注意しなければならないのは、このファイルはあくまで `modules` からのアウトプットです。  
 `env/[環境名]/output.tf` へ `modules/outputs.tf` からのアウトプットをマッピングする必要があります。
 
-```terraform:main_vpc.tf
-output "main_vpc" {
-  value = aws_vpc.main
+```terraform:sample_vpc.tf
+#####################################
+# VPC
+#####################################
+output "sample_vpc" {
+  value = aws_vpc.sample
 }
 ```
 
-## `modules/main_xxx.tf`
+## `modules/sample-vpc.tf`
 
-AWS や Google Cloud などの Provider に対応したリソース定義を記載します。  
-ファイル名に `main_` とプレフィックスをつけているのは、単にリソース定義であることを明確にしたいのと、ソートした時に見やすいからです。  
-ここでは AWS VPC を作成する `main_vpc.tf` というファイルの例を記載します。
+Amazon VPC のリソース定義を記載します。
 
-```terraform:main_vpc.tf
-resource "aws_vpc" "main" {
+```terraform:sample-vpc.tf
+#####################################
+# VPC
+#####################################
+resource "aws_vpc" "sample" {
   cidr_block = var.vpc_cidr_block
-  tags       = merge(tomap({ "Service" = "main" }), tomap({ "Name" = "${var.base_name}-main" }))
-}
-```
-
-## `env/[環境名]/backend.tf`
-
-State ファイル（ `*.tfstate` ）の保存に関する設定ファイルを作成します。
-
-```terraform:backend.tf
-terraform {
-  backend "s3" {
-    bucket = "your-bucket-name"  // State ファイルを配置するバケット
-    key    = "terraform.tfstate" // State ファイルを配置するパス・ファイル名
-    region = "ap-northeast-1"    // S3のリージョン
-  }
-}
-```
-
-## `env/[環境名]/main.tf`
-
-`modules` の呼び出し元です。  
-`../../modules` でモジュールを呼び出して `modules/variables.tf` に定義した変数に値を代入します。  
-これによって環境差分を実現できます。  
-`modules` の他にも必要に応じて変数を定義してください。
-
-
-```terraform:main.tf
-variable "account_id" {
-  default = "xxxxxxxxxxxx"
-}
-variable "access_key" {}
-variable "secret_key" {}
-variable "system" {
-  default = "pepese"
-}
-variable "region" {
-  default = "ap-northeast-1"
-}
-variable "env" {
-  default = "tst"
-}
-
-module "modules" {
-  source     = "../../modules"
-  account_id = var.account_id
-  access_key = var.access_key
-  secret_key = var.secret_key
-
-  // 以降、 modules の variables.tf 内の変数へ値を代入
-
-  #####################################
-  # Common
-  #####################################
-  system = var.system
-  region = var.region
-  env    = var.env
-
-  #####################################
-  # Tags
-  #####################################
-  // provider.tf の default_tags にて全ての AWS リソースに共通するタグを設定
-  // System = var.system, Env = var.env, Terraform = "true"
-  base_name = "${var.system}-${var.env}"
-
-  #####################################
-  # vpc
-  #####################################
-  vpc_cidr_block = "10.0.0.0/16"
-}
-```
-
-## `env/[環境名]/outputs.tf`
-
-`output` でリソースの設定結果を出力する対象について記載したファイルです。  
-`modules/outputs.tf` に記載した `modules` の `output` を実際に出力します。
-
-```terraform:outputs.tf
-output "vpc" {
-  value = module.modules.main_vpc
+  tags       = merge(tomap({ "Service" = "sample" }), tomap({ "Name" = "${var.base_name}-sample" }))
 }
 ```
 
