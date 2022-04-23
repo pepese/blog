@@ -4,7 +4,7 @@ URL:         "java-asdf-distribution"
 subtitle:    ""
 description: "asdf は複数のプログラミング言語ランタイムおよびそのバージョンを管理することができるツールです。この記事では、 asdf で利用できる Java のディストリビューションついて記載します。"
 keyword:     "Java, ディストリビューション, asdf"
-date:        2022-04-07
+date:        2022-04-23
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -176,6 +176,10 @@ Oracle によるサポートが行われています。
 なお、下記記事でも紹介されている通り、無償利用できるようになったようです。
 
 - [オラクル、Oracle JDKを再び無料提供へ、本番環境でも利用可。昨日リリースのJava 17から](https://www.publickey1.jp/blog/21/oracle_jdkjava_17.html)
+
+**【2022年4月23日追記】** 無償範囲があるようですので以下のツイートを参考にしてください。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Oracle JDKって「無償で商用利用」というと語弊があったような？🤔<br><br>(a) running the Program for Your own personal use or internal business operations<a href="https://t.co/8klY48tf2k">https://t.co/8klY48tf2k</a><br><br>社内的に使うの限定でしたっけ<a href="https://twitter.com/yamadamn?ref_src=twsrc%5Etfw">@yamadamn</a> の解説が欲しい</p>&mdash; なぎせ ゆうき (@nagise) <a href="https://twitter.com/nagise/status/1506414770244624384?ref_src=twsrc%5Etfw">March 22, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 asdf では以下のようなバリエーションで提供されています。
 
