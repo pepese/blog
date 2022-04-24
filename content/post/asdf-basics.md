@@ -29,7 +29,7 @@ $ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.bash_profile
 $ exec $SHELL -l
 ```
 
-上記は `.bash_profile` に設定を追記していますが、 お使いの環境・好みに応じて `.zshenv` などへの追記つ読み替えてください。  
+上記は `.bash_profile` に設定を追記していますが、 お使いの環境・好みに応じて `.zshrc` などへの追記つ読み替えてください。  
 環境により差分があるので、基本は `brew install asdf` 実行後の Homebrew の指示に従ってください。  
 Homebrew 以外の場合は [こちら](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) を参照ください。
 

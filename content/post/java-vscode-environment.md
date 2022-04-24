@@ -36,7 +36,7 @@ $ asdf global java corretto-17.0.2.8.1
 ```
 
 asdf でインストールした場合、 `JAVA_HOME` の設定には専用のスクリプトが用意されています。（参考： [JAVA_HOME](https://github.com/halcyon/asdf-java#java_home) ）  
-シェルの種類に合わせて `.zshenv` などに以下を追記します。
+シェルの種類に合わせて `.zshrc` などに以下を追記します。
 
 ```bash
 # To set JAVA_HOME in your shell's initialization add the following:

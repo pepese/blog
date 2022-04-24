@@ -56,7 +56,7 @@ Go 言語の環境変数には以下があります。
 - `GOARCH`
     - コンパイルして作成するバイナリの対象 CPU を指定する
 
-お好みのプロファイル（ zsh の場合は `.zshenv` 、 bash の場合は `.bash_profile` など ）に以下を追記します。
+お好みのプロファイル（ zsh の場合は `.zshrc` 、 bash の場合は `.bash_profile` など ）に以下を追記します。
 
 ```bash
 export GOPATH=`go env GOPATH`

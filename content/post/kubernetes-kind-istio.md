@@ -199,7 +199,7 @@ $ export PATH=$PWD/bin:$PATH
 
 もしくは
 
-$ echo \\nexport PATH='$PATH':$PWD/bin >> ~/.zshenv
+$ echo \\nexport PATH='$PATH':$PWD/bin >> ~/.zshrc
 ```
 
 ## Istio のインストール by istioctl
