@@ -85,7 +85,7 @@ resource "aws_appmesh_virtual_node" "sample_blue" {
 }
 
 #####################################
-# ECS / Virtual Service
+# ECS Service
 #####################################
 resource "aws_ecs_service" "sample_blue" {
   count            = local.sample_param["blue_is_active"] ? 1 : 0
