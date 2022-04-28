@@ -301,8 +301,7 @@ FROM maven:3.8.4-amazoncorretto-17 as BUILD
 WORKDIR /build
 COPY . .
  
-RUN --mount=type=cache,target=/root/.m2 \
-     mvn clean package
+RUN mvn clean package
  
 ############
 # Executer
@@ -312,7 +311,7 @@ FROM amazoncorretto:17.0.2-alpine3.15
 RUN apk add --no-cache tzdata
 ENV TZ Asia/Tokyo
  
-COPY --from=BUILD /build/<project>/target/<project>-*.jar /home/java/app.jar
+COPY --from=BUILD /build/target/<project>-*.jar /home/java/app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/home/java/app.jar"]
 ```
