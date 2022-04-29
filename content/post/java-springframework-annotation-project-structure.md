@@ -152,12 +152,12 @@ public class LoggertTest {
 }
 ```
 
-Lombok の `@slf4j` アノテーションをクラスに付与すれば `log` というフィールドで利用可能になります。
+Lombok の `@Slf4j` アノテーションをクラスに付与すれば `log` というフィールドで利用可能になります。
 
 ```java
 import lombok.extern.slf4j.Slf4j;
 
-@slf4j
+@Slf4j
 public class LoggertTest {
 }
 ```
