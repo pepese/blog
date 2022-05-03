@@ -2,8 +2,8 @@
 title:       "REST API設計について整理してみた"
 URL:         "design-rest-api"
 subtitle:    ""
-description: ""
-keyword:     ""
+description: "REST APIはWeb APIで最も利用されるAPI設計のうちの 1 つです。この記事では、REST APIを設計する際の方針や命名などについての概要をまとめます。"
+keyword:     "REST, API, 設計"
 date:        2022-05-03
 author:      "ぺーぺーSE"
 image:       ""
