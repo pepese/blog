@@ -352,6 +352,24 @@ msmaflink({"n":"SCRUM BOOT CAMP THE BOOK【増補改訂版】 スクラムチー
 <!-- MoshimoAffiliateEasyLink END -->
 ```
 
+### 設計：API
+
+```
+<!-- ad link - amazon/rakuten books - rest api -->
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"Web　APIの設計　ユーザブルでセキュア、効率的で進化可能なWeb　APIをデザインする際に知っておくべきこと／ArnaudLauret【3000円以上送料無料】","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/booxstore\/cabinet\/01034\/bk4798167010.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/booxstore\/bk-4798167010\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"Amazonで見る","u_bc":"#ff9900","u_url":"https:\/\/amzn.to\/37c3sV0","a_id":0,"p_id":0,"pl_id":0,"pc_id":0,"s_n":"custom_1","u_so":0},{"u_tx":"楽天ブックスで見る","u_bc":"#bf0000","u_url":"https:\/\/a.r10.to\/hanTgw","s_n":"custom_3","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":3},{"id":2,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/booxstore\/bk-4798167010\/","a_id":3351919,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":2}],"eid":"wrEa9","s":"s"});
+</script>
+<div id="msmaflink-wrEa9">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->
+```
+
 ## アフェリエイト：A8、バリューコマース
 
 - テキストリンクを記事の中に入れる
