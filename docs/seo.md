@@ -184,10 +184,27 @@ SEOは、“Search Engine Optimization” の略であり、検索エンジン�
 - Google Analytics
 - Google Search Console
 
+# keywords
+
+- [ラッコキーワード](https://related-keywords.com/) で keywords 探索
+- [aramakijake.jp](https://aramakijake.jp/) で検索 volume 確認
+  - 出ない場合はキーワードプランナー -> 「1000～1万」みたいな表示
+- [SEOキーワード難易度チェックツール](https://seopack.jp/keyword/) で難易度確認
+
+|keywords|検索 volume|難易度|
+|:---|---:|---:|
+|aws|619,272|69|
+|aws 資格|7,512|6|
+|gcp|186,120|56|
+|google cloud|227,743|80|
+|googlecloud|278,503|78|
+|asdf|124,531|60|
+|asdf java|10～100|39|
+|golang|83,246|62|
+
 # キラーコンテンツへの内部リンク
 
 ```
-
 # おすすめ記事
 
 <!-- プログラミング学習のすすめ -->
