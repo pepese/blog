@@ -4,7 +4,7 @@ URL:         "design-rest-api"
 subtitle:    ""
 description: "REST APIはWeb APIで最も利用されるAPI設計のうちの 1 つです。この記事では、REST APIを設計する際の方針や命名などについての概要をまとめます。"
 keyword:     "REST, API, 設計"
-date:        2022-05-03
+date:        2022-05-12
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -163,38 +163,57 @@ API 設計の大まかな流れについてご紹介します。
     - ステータスコードを選択します
     - ステータスコードと例外をマッピングします
 
-ステータスコードは概ね下記のものを検討すればよいでしょう。
+# レスポンス内容
 
-|HTTP Status Code        |意味                                                           |発生し得る契機          |
+ステータスコードやボディは概ね下記のものを検討すればよいでしょう。
+
+## GET
+
+|HTTP Status Code|意味|ボディ|その他|
+|:---|:---|:---|:---|
+|200 OK|正常に処理が完了|取得対象データ||
+|204 No Content|コレクションは存在するが、対象IDのリソースが存在しない|空||
+
+## POST
+
+|HTTP Status Code|意味|ボディ|その他|
+|:---|:---|:---|:---|
+|200 OK|新しいリソース作成以外の処理が正常に完了|処理結果データ||
+|201 Created|正常に処理が完了|新規作成リソースデータ|Locationヘッダに作成したリソース URI |
+|204 No Content|コレクションは存在するが、対象IDのリソースが存在しない|空||
+|400 Bad Request|クライアントから無効なリソース登録要求|エラー内容そのものや URI ||
+
+## PUT/PATCH
+
+|HTTP Status Code|意味|ボディ|その他|
+|:---|:---|:---|:---|
+|200 OK or 204 No Content|リソースの更新処理が正常に完了|処理結果データ||
+|201 Created|正常に処理が完了|新規作成リソースデータ|Locationヘッダに作成したリソース URI |
+|400 Bad Request|クライアントから無効なリソース登録要求|エラー内容そのものや URI ||
+|409 Conflict|リソースの現状の状態の矛盾している||更新順序の前後等により発生|
+
+## DELETE
+
+|HTTP Status Code|意味|ボディ|その他|
+|:---|:---|:---|:---|
+|204 No Content|正常に処理が完了|空||
+
+## 共通
+
+|HTTP Status Code|意味|補足|
 |:---|:---|:---|
-|200 OK                   |正常に処理が完了                                                |GET、PUT、DELETEの結果   |
-|201 Created              |新規リソースが作成された                                        |POSTの結果               |
-|204 No Content           |正常に完了したが、特に返却するBodyが無い                        |POST、DELETEの結果       |
-|301 MovedPermanently     |アクセスしたリソースが別のURIに恒久的に移動した                 |リソースのURIが変わった時|
-|                         |Locationヘッダに移動先のURIを付与する                           |                         |
-|303 See Other            |別のURIにアクセスしてほしい                                     |アクセスURIを変えてほしい|
-|304 Not Modified         |リソースの変更をしなかった                                      |POST、PUT、DELETEの結果  |
-|307 Temporary Redirect   |一時的なリダイレクト                                            |閉塞時等                 |
-|                         |Locationヘッダにリダイレクト先のURIを付与する                   |                         |
-|400 Bad Request          |クライアントからのHTTPリクエストに誤りがありサーバで処理できない|                         |
-|401 Unauthorized         |クライアントが認証されていない                                  |                         |
-|403 Forbidden            |クライアントの権限不足                                          |                         |
-|404 Not Found            |アクセスしたURIが存在しない                                     |                         |
-|406 Not Acceptable       |リクエストのAcceptヘッダがサーバで受け入れられない              |コンテンツネゴシエーション失敗|
-|415 Unsupported MediaTYpe|リクエストのContent-Typeヘッダがサーバで受け入れられない        |サーバ側でBodyを解釈できない|
-|409 Conflict             |リソースの現状の状態の矛盾している                              |更新順序の前後等|
-|500 Internal Server Error|サーバ内でエラーが発生した                                      |上記以外のサーバエラー|
-
-ステータスコードに対応したレスポンス内容は以下のようになります。
-
-|API処理の結果            |レスポンスStatus Code   |レスポンスBody                                        |
-|:---|:---|:---|
-|リソースの取得に成功      |200 OK                   |取得対象データ                                         |
-|リソースの登録に成功      |201 Created              |追加したデータ（Locationヘッダには追加したデータのURL）|
-|リソースの更新・削除に成功|200 OK                   |空                                                     |
-|リソースが存在しない      |404 Not Found            |空                                                     |
-|リクエストに検証エラー    |400 Bad Request          |エラー情報                                             |
-|サーバ側でエラー          |500 Internal Server Error|エラー情報                                             |
+|301 MovedPermanently     |アクセスしたリソースが別のURIに恒久的に移動した|Locationヘッダに移動先のURIを付与する|
+|303 See Other            |別のURIにアクセスしてほしい|Locationヘッダに移動先のURIを付与する|
+|304 Not Modified         |リソースの変更をしなかった|POST、PUT、DELETEの結果|
+|307 Temporary Redirect   |一時的なリダイレクト|閉塞時等、Locationヘッダにリダイレクト先のURIを付与する|
+|400 Bad Request          |クライアントからのHTTPリクエストに誤りがありサーバで処理できない||
+|401 Unauthorized         |クライアントが認証されていない||
+|403 Forbidden            |クライアントの権限不足||
+|404 Not Found            |アクセスしたURI・コレクションが存在しない||
+|406 Not Acceptable       |リクエストのAcceptヘッダがサーバで受け入れられない|コンテンツネゴシエーション失敗|
+|415 Unsupported MediaTYpe|リクエストのContent-Typeヘッダがサーバで受け入れられない|サーバ側でBodyを解釈できない|
+|409 Conflict             |リソースの現状の状態の矛盾している|更新順序の前後等|
+|500 Internal Server Error|サーバ内でエラーが発生した|上記以外のサーバエラー|
 
 # APIの表し方
 
