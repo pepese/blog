@@ -253,6 +253,7 @@ API の仕様が変更して後方互換性の維持が難しくなる場合を�
 
 # 参考
 
+- [RESTful Web API の設計](https://docs.microsoft.com/ja-jp/azure/architecture/best-practices/api-design)
 - [Cloud APIs API 設計ガイド](https://cloud.google.com/apis/design/)
 - [Zalando RESTful API と イベントスキーマのガイドライン](https://restful-api-guidelines-ja.netlify.app/)
   - Original: [Zalando RESTful API and Event Guidelines](https://opensource.zalando.com/restful-api-guidelines/)
