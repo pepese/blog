@@ -298,6 +298,24 @@ msmaflink({"n":"Visual Studio Code完全入門 Webクリエイター\u0026エン
 <!-- MoshimoAffiliateEasyLink END -->
 ```
 
+### New Relic
+
+```
+<!-- ad link - amazon/rakuten books - newrelic -->
+<!-- START MoshimoAffiliateEasyLink -->
+<script type="text/javascript">
+(function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+c.getElementById(a)||(d=c.createElement(f),d.src=g,
+d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+(window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+msmaflink({"n":"New Relic実践入門 監視からオブザーバビリティへの変革 [ 松本 大樹 ]","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"","p":["\/@0_mall\/book\/cabinet\/6599\/9784798166599_1_24.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/book\/16655212\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"Amazonで見る","u_bc":"#ff9900","u_url":"https:\/\/amzn.to\/3ac5kOH","a_id":3351917,"p_id":170,"pl_id":27060,"pc_id":185,"s_n":"amazon","u_so":0},{"u_tx":"楽天ブックスで見る","u_bc":"#bf0000","u_url":"https:\/\/a.r10.to\/hNK5GW","s_n":"custom_3","u_so":1,"a_id":0,"p_id":0,"pc_id":0,"pl_id":0,"id":3},{"id":2,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/book\/16655212\/","a_id":3351919,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":2}],"eid":"njES6","s":"s"});
+</script>
+<div id="msmaflink-njES6">リンク</div>
+<!-- MoshimoAffiliateEasyLink END -->
+```
+
 ### 仮想通貨：ブロックチェーン
 
 ```
