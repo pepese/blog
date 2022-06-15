@@ -4,7 +4,7 @@ URL:         "asdf-basics"
 subtitle:    ""
 description: "asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツールです。この記事では、インストールから使い方の概要までをご紹介します。"
 keyword:     "asdf, プログラミング言語, CLI, バージョン管理, ランタイム, ツール"
-date:        2022-04-19
+date:        2022-06-15
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -40,12 +40,15 @@ $ brew upgrade asdf
 ```
 
 Homebrew 以外の場合は [こちら](https://asdf-vm.com/manage/core.html#update) を参照してください。  
-また、 asdf でアップデートされた際に `no such file or directory` といったエラーが発生する場合、 環境変数 `ASDF_DIR` に旧バージョンの情報が含まれる可能性があるため、以下のコマンドを試してみてください。
+また、 Homebrew で asdf をアップデートした際に `no such file or directory` といったエラーが発生する場合、 環境変数 `ASDF_DIR` に旧バージョンの情報が含まれる可能性があるため、以下のコマンドを試してみてください。
 
 ```bash
 $ export ASDF_DIR=
 $ exec $SHELL -l
 ```
+
+さらに、`$HOME/.asdf/shim` ディレクトリ内のスクリプトに記述された asdf のパスが古いバージョンのままになっていることもあります。  
+この場合は、 `$HOME/.asdf/shim` ディレクトリを別のディレクトリに移動後（ `mv $HOME/.asdf/shim $HOME/.asdf/shim_bk` など）、 `asdf reshim` を実行することで `$HOME/.asdf/shim` ディレクトリ内のスクリプトを再生成することができるようです。（ [参考](https://github.com/asdf-vm/asdf/issues/1147) ）
 
 ## アンインストール
 
