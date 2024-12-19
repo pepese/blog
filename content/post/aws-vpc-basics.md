@@ -248,6 +248,18 @@ AWS Transit Gateway と比較して、AWS PrivateLink を利用して VPC 間を
   - Amazon S3
   - DynamoDB
 
+AWS re:Invent 2024 の新たな AWS PraivateLink が発表されました。  
+これまでは、他の VPC のリソースへアクセスする際は、
+
+- インターフェースエンドポイント -> VPCエンドポイントサービス -> NLB or GLB(GWLB) -> リソース
+
+のように NLB あるいは GLB(GWLB) を介して VPC 内のリソースにアクセスする必要がありましたが、それを省略して接続できる **リソース型** なるものが登場しました。  
+以下のような構成になるようです。
+
+- VPCエンドポイント(リソース方) -> （Resrouce Configuration） -> Rerouce Gateway -> リソース
+
+**Resrouce Configuration** で 接続先のリソースを設定し、 **Rerouce Gateway** を介してそのリソースに接続する構成のようです。
+
 # ピアリング接続
 
 VPC ピア接続は、プライベート IP アドレスを使用して 2 つの VPC 間でトラフィックをルーティングすることを可能にするネットワーク接続です。  
