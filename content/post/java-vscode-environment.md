@@ -4,7 +4,7 @@ URL:         "java-vscode-environment"
 subtitle:    ""
 description: "Visual Studio Code (以降 VSCode) は多くのプログラミング言語に対応した強力なコードエディターです。この記事では、Java、Maven、VSCodeのインストール・設定・使い方について記載します。"
 keyword:     "Java, vscode, Visual Studio Code, Maven, 開発環境"
-date:        2022-04-08
+date:        2024-12-11
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -31,32 +31,17 @@ asdf については以下の記事を参照してください。
 
 ```bash
 $ asdf plugin add java
-$ asdf install java corretto-17.0.2.8.1
-$ asdf global java corretto-17.0.2.8.1
+$ asdf install java corretto-21.0.5.11.1
+$ asdf global java corretto-21.0.5.11.1
 ```
 
 asdf でインストールした場合、 `JAVA_HOME` の設定には専用のスクリプトが用意されています。（参考： [JAVA_HOME](https://github.com/halcyon/asdf-java#java_home) ）  
-シェルの種類に合わせて `.zshrc` などに以下を追記します。
 
 ```bash
-# To set JAVA_HOME in your shell's initialization add the following:
-. ~/.asdf/plugins/java/set-java-home.bash
-
-# For zsh shell, instead use:
-. ~/.asdf/plugins/java/set-java-home.zsh
-
-# For fish shell, instead use:
-. ~/.asdf/plugins/java/set-java-home.fish
-
-# For xonsh shell, instead use:
-source ~/.asdf/plugins/java/set-java-home.xsh
-```
-
-```bash
-$ exec $SHELL -l
 $ java --version
-openjdk 17.0.2 2022-01-18 LTS
-OpenJDK Runtime Environment Corretto-17.0.2.8.1 (build 17.0.2+8-LTS)
+openjdk version "21.0.5" 2024-10-15 LTS
+OpenJDK Runtime Environment Corretto-21.0.5.11.1 (build 21.0.5+11-LTS)
+OpenJDK 64-Bit Server VM Corretto-21.0.5.11.1 (build 21.0.5+11-LTS, mixed mode, sharing)
 ```
 
 # Mavenのインストール
@@ -65,31 +50,14 @@ OpenJDK Runtime Environment Corretto-17.0.2.8.1 (build 17.0.2+8-LTS)
 
 ```bash
 $ asdf plugin add maven
-$ asdf install maven 3.8.4
-$ asdf global maven 3.8.4
+$ asdf install maven 3.9.9
+$ asdf global maven 3.9.9
 $ mvn -v
-Apache Maven 3.8.4 (9b656c72d54e5bacbed989b64718c159fe39b537)
-Maven home: /Users/xxxxx/.asdf/installs/maven/3.8.4
-Java version: 17.0.2, vendor: Amazon.com Inc., runtime: /Users/xxxxx/.asdf/installs/java/corretto-17.0.2.8.1
+Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+Maven home: /Users/xxxxx/.asdf/installs/maven/3.9.9
+Java version: 21.0.5, vendor: Amazon.com Inc., runtime: /Users/xxxxx/.asdf/installs/java/corretto-21.0.5.11.1
 Default locale: ja_JP, platform encoding: UTF-8
-OS name: "mac os x", version: "12.1", arch: "x86_64", family: "mac"
-```
-
-# プロジェクトの作成
-
-通常の Java プロジェクトを作成する場合は以下のコマンドで作成します。
-
-```bash
-$ mvn archetype:create -DgroupId=com.example -DartifactId=sample
-```
-
-SpringBoot のプロジェクトを作成する場合は [spring initialzr](https://start.spring.io/) を使用すると便利です。  
-各種設定を入力した後に GENERATE すると SpringBoot の雛形プロジェクトをダウンロードできます。  
-最低限 Spring Web を Dependencies として追加しておけば REST API アプリケーションを作成できます。  
-作成したプロジェクトの実行は以下です。
-
-```bash
-$ mvn spring-boot:run
+OS name: "mac os x", version: "14.6.1", arch: "x86_64", family: "mac"
 ```
 
 # VSCodeのインストールと設定
@@ -116,6 +84,49 @@ VSCode のインストールは以下を参照してください。
 - インポート：（ コードのエラーの箇所を選択してから） `Command + .`
 - クラス定義に飛ぶ：（該当箇所を選択してから） `F12` （ `fn` 押しながら）
 - 参照先へ飛ぶ：（該当箇所を選択してから） `Shift + F12`
+
+# プロジェクトの作成
+
+## mvn コマンドで作成
+
+mvn コマンドで通常の Java プロジェクトを作成する場合は以下のコマンドで作成します。
+
+```bash
+$ mvn archetype:create -DgroupId=com.example -DartifactId=sample
+```
+
+SpringBoot のプロジェクトを作成する場合は [spring initialzr](https://start.spring.io/) を使用すると便利です。  
+各種設定を入力した後に GENERATE すると SpringBoot の雛形プロジェクトをダウンロードできます。  
+最低限 Spring Web を Dependencies として追加しておけば REST API アプリケーションを作成できます。  
+作成したプロジェクトの実行は以下です。
+
+```bash
+$ mvn spring-boot:run
+```
+
+## VSCode 拡張機能で作成
+
+（１）VSCode を起動して `Shift + Command + P` を実行すると、 **コマンドパレット** が起動します。
+
+（２）コマンドパレットが起動したら、 `Spring Initialzr` と途中まで打つと選択肢が現れるので、ここでは `Spring Initialzr: Create Maven Project...` を選択します。
+
+（３）SpringBoot のバージョンの選択肢が出るので選びます。
+
+（４）プログラミング言語の選択を求められるので `Java` を選択します。
+
+（５）Group ID の入力を求められるので `com.pepese.sample` のような ID を入力します。
+
+（６）Artifact ID の入力を求められるので `springboot-sample-jar` のような ID を入力します。
+
+（７）Packaging Type の選択を求められるので `Jar` を選択します。
+
+（８）Java バージョンの選択を求められるので `21` を選択します。
+
+（９）依存するライブラリの選択を求められるので、ここでは `Spring Boot DevTools` を選択します。（複数選択可能）
+
+（１０）プロジェクト作成ディレクトリの場所を求められるので指定します。
+
+以上で、VSCode 拡張機能を用いてプロジェクトを作成することができます。
 
 # おすすめ書籍
 

@@ -4,7 +4,7 @@ URL:         "aws-vpc-basics"
 subtitle:    ""
 description: "Amazon VPC は、 AWS が提供する仮想ネットワークサービスです。この記事では、Amazon VPC をざっくり理解できる概要と作成例について記載します。"
 keyword:     "AWS, VPC"
-date:        2022-04-08
+date:        2024-12-19
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -219,13 +219,13 @@ ENIには以下の属性を含めることができます。
 
 # VPCエンドポイント
 
-VPCエンドポイントは、VPC 内のインスタンスからインターネットゲートウェイ・NAT デバイス・VPN 接続・AWS Direct Connect 接続を利用することなく直接AWS サービスや VPC エンドポイントサービスにプライベート接続できる機能を提供します。  
-**ゲートウェイエンドポイント** と **インターフェースエンドポイント** （ **AWS PrivateLink** ）があり、それぞれ以下のサービスを利用できます。
+**VPCエンドポイント** は、VPC 内のインスタンスからインターネットを介することなく、また、インターネットゲートウェイ・NAT デバイス・VPN 接続・AWS Direct Connect 接続を利用することなく直接 AWS サービスや他の VPC へ接続する機能を提供します。  
+VPCエンドポイントは、接続元のポイントを指し、 **インターフェースエンドポイント** 、 **Gateway Load Balancerエンドポイント** 、 **ゲートウェイエンドポイント** の3種類あります。  
+また、接続先 VPC に設置するポイントを **VPCエンドポイントサービス** といい、VPCエンドポイントとVPCエンドポイントサービスのペアを組み合わせて **AWS PrivateLink** と呼びます。つまり、ゲートウェイエンドポイントは VPC と接続しないので AWS PrivateLink とは呼ばないことになります。  
+なお、インターフェースエンドポイントは、 他VPCのVPCエンドポイントサービス以外に、AWS サービスが公開しているエンドポイントサービスに接続することができます。（例えば、CloudWatch Logsは `com.amazonaws.ap-northeast-1.logs` というサービス名で公開されています。）  
+AWS Transit Gateway と比較して、AWS PrivateLink を利用して VPC 間を接続した場合、IPやサブネットの重複を気にしなくて良いというメリットがあります。（IPやサブネットが重複しても接続可能） 
 
-- ゲートウェイエンドポイント
-  - Amazon S3
-  - DynamoDB
-- インターフェースエンドポイント（AWS PrivateLink）
+- インターフェースエンドポイント
   - Amazon API Gateway
   - Amazon CloudWatch
   - Amazon CloudWatch Events
@@ -242,6 +242,11 @@ VPCエンドポイントは、VPC 内のインスタンスからインターネ�
   - AWS Systems Manager
   - 他の AWS アカウントによってホストされるエンドポイントサービス
   - サポートされる AWS Marketplace パートナーサービス
+- Gateway Load Balancerエンドポイント
+  - Gateway Load Balancer（GLB、GWLB）
+- ゲートウェイエンドポイント
+  - Amazon S3
+  - DynamoDB
 
 # ピアリング接続
 
