@@ -150,7 +150,7 @@ Controller は自作可能であるが、デフォルトで以下のような Co
     - Frakti
     - rktlet (rkt)
     - 参考：[Worker Node へのCRIランタイム設定方法](https://kubernetes.io/ja/docs/setup/production-environment/container-runtimes/)
-- 定位コンテナランタイム / **OCIランタイム**： 高位コンテナランライムから利用されるランタイム
+- 低位コンテナランタイム / **OCIランタイム**： 高位コンテナランライムから利用されるランタイム
     - runc
         - namespaces、cgroups、pivot_root、Linuxのセキュリティ機能などを利用して実装されている（詳しくは[ここ](https://medium.com/nttlabs/runc-overview-263b83164c98)）
     - runv
