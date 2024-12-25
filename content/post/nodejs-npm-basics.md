@@ -4,7 +4,7 @@ URL:         "nodejs-npm-basics"
 subtitle:    ""
 description: ""
 keyword:     ""
-date:        2025-12-25
+date:        2024-12-25
 author:      "ぺーぺーSE"
 image:       ""
 tags:
