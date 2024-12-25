@@ -4,7 +4,7 @@ URL:         "nodejs-npm-basics"
 subtitle:    ""
 description: ""
 keyword:     ""
-date:        2017-08-14
+date:        2025-12-25
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -16,6 +16,8 @@ categories:
 ---
 
 Node.js（npm）についてまとめる。
+
+<!--more-->
 
 npm（Node Packege Manager）は、Node.js用のパッケージ管理コマンド。  
 JavaScriptエコシステムツール・ライブラリはnpmで導入できるものが多い。  
@@ -29,23 +31,20 @@ v8.3.0で **99%** カバーしている。
 
 # インストール
 
-Node.jsのインストール方法は以下の「anyenv」を参照。
+ここでは、Node.jsのインストール方法は以下の「asdf」を利用する。
 
-- [すべての\*\*envを管理するanyenv](https://blog.pepese.com/anyenv/)
-
-## ndenv
-
-上記の手順でNode.jsを導入した場合、Node.jsのバージョンを `ndenv` でコントロールする。
+- [マルチランタイムバージョン管理ツールasdf](https://blog.pepese.com/asdf-basics/)
 
 ```bash
-$ ndenv install -l # インストールできるNode.jsのバージョン確認
-$ ndenv install v8.3.0 # バージョンを指定してインストール
-$ ndenv versions # インストールされたことを確認
-$ ndenv global v8.3.0 # バージョンを切り替え
-$ ndenv local v8.3.0 # 今いるプロジェクトだけバージョンを指定したい場合はこっち
-$ node -v # 確認
-$ npm update -g npm # npm のバージョンアップ
-$ npm -v # 確認
+$ asdf plugin add helm       # Node.jsプラグインを追加
+$ asdf list-all nodejs       # インストールできるNode.jsのバージョンを確認
+$ asdf install nodejs 23.5.0 # バージョンを指定してインストール
+$ asdf global nodejs 23.5.0  # バージョンの切り替え
+$ node -v                    # Node.js のバージョン確認
+v23.5.0
+$ npm install -g npm         # npm のバージョンアップ
+$ npm -v                     # npm のバージョン確認
+11.0.0
 ```
 
 # npmの使い方

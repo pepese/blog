@@ -19,9 +19,9 @@ categories:
 
 <!--more-->
 
-文法については触れない。また、前提の環境構築（ `npm` など）は以下。
+文法については触れない。また、前提の環境構築（ Node.js、npm ）は以下を参照。
 
-- https://blog.pepese.com/mac-dev-environment/
+- [Node.js・npm入門](https://blog.pepese.com/nodejs-npm-basics/)
 
 # 環境構築
 
