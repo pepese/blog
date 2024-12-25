@@ -107,7 +107,7 @@ Is this OK? (yes) yes
 
 これで Node.js プロジェクトが作成されたので、以下を実行して TypeScript プロジェクトにします。
 
-```
+```bash
 $ tsc --init
 
 Created a new tsconfig.json with:
