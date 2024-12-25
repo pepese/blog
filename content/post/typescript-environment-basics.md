@@ -4,7 +4,7 @@ URL:         "typescript-environment-basics"
 subtitle:    ""
 description: ""
 keyword:     ""
-date:        2017-05-14
+date:        2024-12-25
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -26,9 +26,14 @@ categories:
 # 環境構築
 
 ```bash
-$ npm install -g typescript@latest
-$ ndenv rehash$ tsc -v
-Version 2.3.2
+$ node -v
+v23.5.0
+$ npm install -g npm
+$ npm -v
+11.0.0
+$ npm install -g typescript
+$ tsc -v
+Version 5.7.2
 ```
 
 これで `tsc` コマンドを使って TypeScript の `.ts` ファイルをコンパイルできるようになる。
@@ -55,10 +60,75 @@ $ node greeter.js
 Hello, pepese
 ```
 
+## TypeScript プロジェクトの作成
+
+まずは、プロジェクトのルートディレクトリで以下を実行すると `package.json` が作成されます。
+
+```bash
+$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (typescript-sample)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+type: (commonjs)
+About to write to /Users/tanakakns/workspace/temp/typescript-sample/package.json:
+
+{
+  "name": "typescript-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": ""
+}
+
+
+Is this OK? (yes) yes
+```
+
+これで Node.js プロジェクトが作成されたので、以下を実行して TypeScript プロジェクトにします。
+
+```
+$ tsc --init
+
+Created a new tsconfig.json with:
+                                                                             TS
+  target: es2016
+  module: commonjs
+  strict: true
+  esModuleInterop: true
+  skipLibCheck: true
+  forceConsistentCasingInFileNames: true
+
+
+You can learn more at https://aka.ms/tsconfig
+```
+
+`tsconfig.json` が作成されます。
+
 # 設定ファイル
 
 TypeScriptの設定ファイルは `tsconfig.json` 。  
-`tsc` コマンドのオプションで様々設定できるが、設定ファイルがあれば省略できる。  
+`tsc` コマンドのオプションで様々設定できるが、設定ファイルがあればオプションを省略できる。  
 
 
 簡単な設定ファイルを作成してみて実行を確認にしてみる。  
