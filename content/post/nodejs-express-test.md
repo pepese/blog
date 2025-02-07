@@ -45,7 +45,7 @@ Node.js/Expressアプリケーションのテストをしてみる。
 
 以下の記事を読んだ前提で書く。
 
-- [Express入門](https://blog.pepese.github.com/nodejs-express-basics/)
+- [Express入門](https://blog.pepese.com/nodejs-express-basics/)
 
 # 環境設定
 

@@ -4,7 +4,7 @@ URL:         "asdf-basics"
 subtitle:    ""
 description: "asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツールです。この記事では、インストールから使い方の概要までをご紹介します。"
 keyword:     "asdf, プログラミング言語, CLI, バージョン管理, ランタイム, ツール"
-date:        2022-06-15
+date:        2025-02-07
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -16,22 +16,24 @@ categories:
 asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツールです。  
 この記事では、インストールから使い方の概要までをご紹介します。
 
+なお、2025年1月30日にリリースされた v0.16.0 にて asdf は bash から golang に実装が変わり、仕様が変わっています。  
+本記事では、 v0.16.0 以降の情報で記載します。
+
+- [Getting Started (v0.15.xまで)](https://asdf-vm.com/guide/upgrading-to-v0-16.html)
+- [Getting Started (v0.16.0以降)](https://asdf-vm.com/guide/getting-started.html)
+- [Upgrading to 0.16.0](https://asdf-vm.com/guide/upgrading-to-v0-16.html)
+
 <!--more-->
 
 # 環境構築
 
 ## インストール
 
-```bash
-$ brew install coreutils curl git
-$ brew install asdf
-$ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.bash_profile
-$ exec $SHELL -l
-```
+本記事では Homebrew を利用してインストールします。
 
-上記は `.bash_profile` に設定を追記していますが、 お使いの環境・好みに応じて `.zshrc` などへの追記つ読み替えてください。  
-環境により差分があるので、基本は `brew install asdf` 実行後の Homebrew の指示に従ってください。  
-Homebrew 以外の場合は [こちら](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf) を参照ください。
+```bash
+$ brew install asdf
+```
 
 ## アップデート
 
@@ -47,19 +49,7 @@ $ export ASDF_DIR=
 $ exec $SHELL -l
 ```
 
-さらに、`$HOME/.asdf/shim` ディレクトリ内のスクリプトに記述された asdf のパスが古いバージョンのままになっていることもあります。  
-この場合は、 `$HOME/.asdf/shim` ディレクトリを別のディレクトリに移動後（ `mv $HOME/.asdf/shim $HOME/.asdf/shim_bk` など）、 `asdf reshim` を実行することで `$HOME/.asdf/shim` ディレクトリ内のスクリプトを再生成することができるようです。（ [参考](https://github.com/asdf-vm/asdf/issues/1147) ）
-
 ## アンインストール
-
-`.bash_profile` などインストール時に設定したファイルから以下の行を削除します。
-
-```bash
-. $(brew --prefix asdf)/libexec/asdf.sh
-. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-```
-
-上記実施後に以下のコマンドなどで該当ディレクトリを削除します。
 
 ```bash
 $ brew uninstall asdf --force
@@ -80,42 +70,40 @@ Homebrew 以外の場合は [こちら](https://asdf-vm.com/manage/core.html#uni
 3. プラグインが追加されたか確認します
     - `asdf plugin list`
 4. 使いたいプログラミング言語・ツールのバージョンを探します
-    - `asdf list-all <name>`
+    - `asdf list all <name>`
 5. 使いたいプログラミング言語・ツールのバージョンを指定してインストールします
     - `asdf install <name> <version>`
-6. global/local/shell のいずれかでプログラミング言語・ツールのバージョンを設定します
-    - `asdf global <name> <version>`
+6. プログラミング言語・ツールのバージョンを設定します
+    - `asdf set <name> <version>`
 7. 現在のバージョンを確認します
     - `asdf current`
     - `asdf current <name>`
 
-例として helm で一連の流れを紹介します。
+例として golang で一連の流れを紹介します。
 
 ```bash
-$ asdf plugin list all | grep helm
-helm                          https://github.com/Antiarchitect/asdf-helm.git
-helm-cr                       https://github.com/Antiarchitect/asdf-helm-cr.git
-helm-ct                       https://github.com/tablexi/asdf-helm-ct.git
-helm-docs                     https://github.com/sudermanjr/asdf-helm-docs.git
-helmfile                      https://github.com/feniix/asdf-helmfile.git
+$ asdf plugin list all | grep golang
+golang                                      *https://github.com/asdf-community/asdf-golang.git
+golangci-lint                               https://github.com/hypnoglow/asdf-golangci-lint.git
 
-$ asdf plugin add helm
+$ asdf plugin add golang
 
 $ asdf plugin list
-helm
+golang
 
-$ asdf list-all helm
-3.4.1
+$ asdf list all golang
+1.23.6
 
-$ asdf install helm 3.4.1
+$ asdf install golang 1.23.6
 
-$ asdf global helm 3.4.1
+$ asdf set golang 1.23.6
 
-$ asdf current helm
-helm            3.4.1           /Users/xxxx/.tool-versions
+$ asdf current golang
+Name            Version         Source                      Installed
+golang          1.23.6          /Users/xxxxx/.tool-versions true
 
-$ helm version
-version.BuildInfo{Version:"v3.4.1", GitCommit:"c4e74854886b2efe3321e185578e6db9be0a6e29", GitTreeState:"clean", GoVersion:"go1.14.11"}
+$ go version
+go version go1.23.6 darwin/amd64
 ```
 
 ## プラグインのアップデート
