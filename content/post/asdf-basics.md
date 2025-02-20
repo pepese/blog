@@ -35,6 +35,12 @@ asdfはプログラミング言語やCLIのマルチランタイムバージョ�
 $ brew install asdf
 ```
 
+`~/.zshrc` に以下を追記します。
+
+```bash
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+```
+
 ## アップデート
 
 ```bash
