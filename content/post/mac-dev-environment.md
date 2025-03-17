@@ -3,8 +3,8 @@ title:       "Macで開発環境を作る"
 URL:         "mac-dev-environment"
 subtitle:    ""
 description: "ITエンジニアの方でMacを開発環境で利用されている方は多いと思います。この記事では、Macで開発環境を作成する際に筆者が実施することをご紹介します。"
-keyword:     "Mac, Homebrew, Git, SDKMAN, anyenv, asdf, Java, Maven"
-date:        2022-03-27
+keyword:     "Mac, Homebrew, Git, SDKMAN, asdf, Java, Maven"
+date:        2025-03-17
 author:      "ぺーぺーSE"
 image:       ""
 tags:
@@ -12,7 +12,6 @@ tags:
 - homebrew
 - git
 - sdkman
-- anyenv
 - asdf
 - java
 - maven
@@ -27,22 +26,24 @@ ITエンジニアの方でMacを開発環境で利用されている方は多い
 
 # OSの設定
 
+本設定は macOS Sequoia で確認したものになります。
+
 ## Dockの大きさを調整する
 
-- 「りんごマーク」->「システム環境設定」->「Dock」
-    - ここで好きなように設定（サイズは最小、拡大をチェックして最大、がオススメ）
+- 「りんごマーク」->「システム設定...」->「デスクトップとDock」->「Dock」
+    - ここで好きなように設定（サイズは最小、拡大をチェックして最大、が好み）
 
 ## トラックパッドの設定
 
-- 「りんごマーク」->「システム環境設定」->「トラックパッド」
-    - ここで好きなように設定（「タップでクリック」を選択）
-
-## ドラッグ＆ドロップの設定
-
-- 「りんごマーク」->「システム環境設定」->「アクセシビリティ」->「マウスとトラックパッド」を選択
--  「トラックパッドオプション」-> 「ドラッグを有効にする」->「ドラッグロックあり」
+- 「りんごマーク」->「システム設定...」->「アクセシビリティ」->「動作」->「ポインタコントロール」
+-  「トラックパッドオプション」-> 「ドラッグにトラックパッドを使用」->ドラッグ方法を「ドラッグロックあり」
 
 これで２タップ目でちょっと動かしたらファイル・ウィンドウをホールドでき、もう１タップしたリリースできる。
+
+## デスクトップをクリックしたら壁紙が拡大されないようにする
+
+- 「りんごマーク」->「システム設定...」->「デスクトップとDock」->「デスクトップステージマネージャ」
+    - 「壁紙をクリックしてデスクトップを表示」にて「ステージマネージャ使用時のみ」を選択
 
 ## デスクトップの整理
 
@@ -107,19 +108,17 @@ Gitの使い方は以下を参照してください。
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/git-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">Git入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">Gitの環境構築およびGithubの設定・使い方を絡めて説明。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
-## anyenvかasdfをインストール
+## asdfをインストール
 
 プログラミング言語・コマンドラインツールのインストール・バージョン管理ができるようになります。  
-以下を参照してください。（ asdf のほうがおすすめです）
-
-<div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/anyenv/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">すべての**envを管理するanyenv | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">anyenvはスクリプト言語のバージョン管理を行うツール。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
+以下を参照してください。
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/asdf-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">マルチランタイムバージョン管理ツールasdf | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">asdfはプログラミング言語やCLIのマルチランタイムバージョン管理ツール。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>
 
 ## SDKMAN をインストール
 
 Java 系ツールのインストール・バージョン管理ができるようになります。  
-anyenv・asdf がお好みでない方はこちらをご利用ください。  
+asdf がお好みでない方はこちらをご利用ください。  
 以下を参照してください。
 
 <div class="blogcardfu" style="width:auto;max-width:9999px;border:3px solid #FBE599;border-radius:3px;margin:10px 0;padding:15px;line-height:1.4;text-align:left;background:#FFFAEB;"><a href="https://blog.pepese.com/sdkman-basics/" target="_blank" style="display:block;text-decoration:none;"><span class="blogcardfu-image" style="float:right;width:100px;padding:0 0 0 10px;margin:0 0 5px 5px;"><img src="https://images.weserv.nl/?w=100&url=ssl:blog.pepese.com/img/yaruwo.gif" width="100" style="width:100%;height:auto;max-height:100px;min-width:0;border:0 none;margin:0;"></span><br style="display:none"><span class="blogcardfu-title" style="font-size:112.5%;font-weight:700;color:#333333;margin:0 0 5px 0;">SDKMAN入門 | ぺーぺーSEのブログ</span><br><span class="blogcardfu-content" style="font-size:87.5%;font-weight:400;color:#666666;">ぺーぺーSEがプログラミング（Go、Node.js、Python）、クラウド（AWS、Google Cloud）、Web構築などの経験・学習記録・おすすめ書籍などの情報を残すサイト。</span><br><span style="clear:both;display:block;overflow:hidden;height:0;">&nbsp;</span></a></div>

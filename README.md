@@ -12,7 +12,7 @@ $ asdf current gohugo
 Name            Version         Source                                                   Installed
 gohugo          0.120.4         /Users/xxxxx/workspace/github/pepese/blog/.tool-versions true
 $ hugo version
-hugo v0.120.4-f11bca5fec2ebb3a02727fb2a5cfb08da96fd9df darwin/amd64 BuildDate=2023-11-08T11:18:07Z VendorInfo=gohugoio
+hugo v0.120.4-f11bca5fec2ebb3a02727fb2a5cfb08da96fd9df darwin/arm64 BuildDate=2023-11-08T11:18:07Z VendorInfo=gohugoio
 ```
 
 本資材は **0.120.4** 以前のバージョンに対応している。
